@@ -4,6 +4,7 @@ import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
 import 'package:matching/questionare/_three_birthday.dart';
 import 'package:matching/questionare/_one_welcome.dart';
+import 'package:matching/data/app_data.dart';
 
 void main() {
   runApp(const NameQs());
@@ -25,7 +26,7 @@ class NameQs extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                const HeaderOne(message: "¿Cuál es tu primer nombre?",),
+                const HeaderOne(message: NameView.title,),
                 Padding(
                 padding:const EdgeInsets.symmetric(vertical: 14.0,),
                 child: TextFormField(
@@ -39,15 +40,15 @@ class NameQs extends StatelessWidget {
                       borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
                       ),
                     focusColor: Colors.black,
-                    labelText: 'Nombre',
+                    labelText: NameView.lblName,
                     labelStyle: TextStyle(color: Colors.grey)
                   ),
                 ),
               ),
-              const TextOne(message: "Así aparecerá en tu perfil.", xfontColor: textColor,),
-              const TextOne(message: "No podrás cambiarlo después", xfontColor:Colors.black, xfontWeight: FontWeight.bold,),
-              const Spacer(),
-              WidgetButton(topPadding: 40.0,bottomPadding: 10.0, message: "Siguiente", isGradient: true, 
+              const TextOne(message: NameView.adviceOne , xfontColor: textColor,),
+              const TextOne(message: NameView.adviceTwo, xfontColor:Colors.black, xfontWeight: FontWeight.bold,),
+              
+              WidgetButton(topPadding: 40.0,bottomPadding: 10.0, acceptOrContinue: false, isGradient: true, 
                 logicHere: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const BirthdayQs()));                
                 },

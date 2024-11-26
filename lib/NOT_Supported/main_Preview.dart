@@ -1,46 +1,65 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 
-class MultiSelectButtons extends StatefulWidget {
-  @override
-  _MultiSelectButtonsState createState() => _MultiSelectButtonsState();
+void main() {
+  runApp( const NeinApp());
 }
 
-class _MultiSelectButtonsState extends State<MultiSelectButtons> {
-  Set<int> selectedButtons = {};
-
-  void _onButtonSelected(int buttonIndex) {
-    setState(() {
-      if (selectedButtons.contains(buttonIndex)) {
-        selectedButtons.remove(buttonIndex);
-      } else {
-        selectedButtons.add(buttonIndex);
-      }
-    });
-  }
-
+class NeinApp extends StatelessWidget {
+  const NeinApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Multi-Select Buttons')),
-      body: Center(
-        child: Wrap(
-          spacing: 10,
-          children: List.generate(5, (index) {
-            final isSelected = selectedButtons.contains(index);
-            return ElevatedButton(
-              onPressed: () => _onButtonSelected(index),
-              style: ElevatedButton.styleFrom(
-                backgroundColor: isSelected ? Colors.blue : Colors.grey,
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Scrollable Section Example'),
+        ),
+        body: Column(
+          children: [
+            // A static header or other content
+            Container(
+              color: Colors.blue,
+              height: 100,
+              child: Center(
+                child: Text(
+                  'Static Header',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
               ),
-              child: Text('Button ${index + 1}'),
-            );
-          }),
+            ),
+            // Scrollable section
+            Expanded(
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.all(16.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: List.generate(30, (index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
+                        child: Text(
+                          'Item ${index + 1}',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                      );
+                    }),
+                  ),
+                ),
+              ),
+            ),
+            // A static footer or other content
+            Container(
+              color: Colors.green,
+              height: 100,
+              child: Center(
+                child: Text(
+                  'Static Footer',
+                  style: TextStyle(color: Colors.white, fontSize: 20),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
 }
-
-void main() => runApp(MaterialApp(home: MultiSelectButtons()));

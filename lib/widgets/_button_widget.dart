@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
-
+import 'package:matching/data/app_data.dart';
 class WidgetButton extends StatelessWidget {
   final double topPadding;
   final double bottomPadding;
   final String message;
+  final bool acceptOrContinue; //Not best practice but does the job.
   final double? buttonWidth; // Optional to allow full width by default
   final bool isGradient;
   final String printMessage;
@@ -12,16 +13,28 @@ class WidgetButton extends StatelessWidget {
   const WidgetButton({
     super.key,
     this.topPadding = 0.0, // default values
-    this.message = "Click me",
+    this.message="",
+    this.acceptOrContinue=true,
     this.buttonWidth, // Optional: default to full width
     this.bottomPadding = 0.0,
     this.isGradient = false,
     this.printMessage = "Button Pressed",
     this.logicHere,
-  });
+  }
+  );
 
   @override
   Widget build(BuildContext context) {
+    String message;
+    if (this.message==""){
+    message = acceptOrContinue? ButtonText.acString: ButtonText.conString;
+    }else{
+      message= this.message;
+    }
+
+
+
+
     return Padding(
       padding: EdgeInsets.only(
         top: topPadding,

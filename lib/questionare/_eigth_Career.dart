@@ -5,6 +5,7 @@ import 'package:matching/widgets/_close_appbar_widget.dart';
 import 'package:matching/questionare/_seven_lookingHeight.dart';
 import 'package:matching/questionare/_nine_LookingCareer.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
+import 'package:matching/data/app_data.dart';
 
 void main() {
   runApp(const CareerQs());
@@ -26,8 +27,6 @@ class CareerQsState extends State<CareerQs> {
     });
   }
 
-  
-
   @override
   Widget build(BuildContext context) {
     const Color textColor = Colors.grey;
@@ -46,40 +45,40 @@ class CareerQsState extends State<CareerQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const HeaderOne(
-              message: "¿A qué carrera perteneces?",
+              message: CareerView.title,
             ),
             const SizedBox(height: 10),
             const TextOne(
               message:
-                  "No te preocupes, podrás cambiar tu carrera más adelante si así lo deseas.",
+                  CareerView.description,
               xfontColor: textColor,
             ),
             const SizedBox(height: 18),
             SelectableButton(
-              label: 'Lic. Administración 📋',
+              label: QuestionOptions.lbladmin,
               isSelected: selectedButton == 1,
               onPressed: () => _onButtonSelected(1),
             ),
             SelectableButton(
-              label: 'Lic. Contabilidad 📊',
+              label: QuestionOptions.lblCont,
               isSelected: selectedButton == 2,
               onPressed: () => _onButtonSelected(2),
             ),
             SelectableButton(
-              label: 'Ing. Biotecnología 🧬',
+              label: QuestionOptions.lblBio,
               isSelected: selectedButton == 3,
               onPressed: () => _onButtonSelected(3),
               
             ),
             const SizedBox(width: 20), // Add some spacing between buttons
             SelectableButton(
-              label: 'Ing. Industrial 🏭',
+              label: QuestionOptions.lblInd,
               isSelected: selectedButton == 4,
               onPressed: () => _onButtonSelected(4),
               
             ),
             SelectableButton(
-              label: 'Ing. en Sistemas 💻',
+              label: QuestionOptions.lblSis,
               isSelected: selectedButton == 5,
               onPressed: () => _onButtonSelected(5),
             ),
@@ -87,7 +86,7 @@ class CareerQsState extends State<CareerQs> {
             WidgetButton(
               topPadding: 40.0,
               bottomPadding: 10.0,
-              message: "Siguiente",
+              acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
                 Navigator.push(

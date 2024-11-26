@@ -4,6 +4,7 @@ import 'package:matching/widgets/_logo_widget.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/questionare/_two_name.dart';
+import 'package:matching/data/app_data.dart';
 
 void main() {
   runApp(const WelcomeQs());
@@ -31,22 +32,22 @@ class WelcomeQs extends StatelessWidget {
                   SizedBox(width: 8),
                 ],
               ),
-              const HeaderOne(message: "Te damos la bienvenida a Matching.",),
-              const TextOne(message: "Por favor, sigue estas reglas.", xfontColor: textColor,),
+              const HeaderOne(message: WelcomeView.ruleTwoTitle,),
+              const TextOne(message: WelcomeView.description, xfontColor: textColor,),
               const SizedBox(height: sizeBoxSize),
-              const HeaderThree(message: "No finjas ser alguien más.",),
-              const TextOne(message: "Asegúrate de que tus fotos, edad y biografía correspondan con quien eres actualmente.", xfontColor:textColor,),
+              const HeaderThree(message: WelcomeView.ruleOneTitle,),
+              const TextOne(message: WelcomeView.ruleOneText, xfontColor:textColor,),
               const SizedBox(height: sizeBoxSize),
-              const HeaderThree(message: "Cuídate.",),
-              const TextOne(message: "No des tu información personal demasiado pronto.", xfontColor: textColor,),
+              const HeaderThree(message: WelcomeView.ruleTwoTitle,),
+              const TextOne(message: WelcomeView.ruleTwoText, xfontColor: textColor,),
               const SizedBox(height: sizeBoxSize),
-              const HeaderThree(message: "Tómalo con calma.",),
-              const TextOne(message: "Respeta a los demás y trpatalos como te gustaría que te trataran.", xfontColor: textColor,),
+              const HeaderThree(message: WelcomeView.ruleThreeTitle,),
+              const TextOne(message: WelcomeView.ruleThreeText, xfontColor: textColor,),
               const  SizedBox(height: sizeBoxSize),
-              const HeaderThree(message: "Toma la iniciativa.",),
-              const TextOne(message: "Siempre denuncia el mal comportamiento.", xfontColor: textColor,),
+              const HeaderThree(message: WelcomeView.ruleFourTitle,),
+              const TextOne(message: WelcomeView.ruleFourText, xfontColor: textColor,),
               const  Spacer(),
-              WidgetButton(topPadding: 40.0,bottomPadding: 10.0, message: "Acepto", isGradient: true, 
+              WidgetButton(topPadding: 40.0,bottomPadding: 10.0, acceptOrContinue: true, isGradient: true, 
                 logicHere: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const NameQs()));
                 },

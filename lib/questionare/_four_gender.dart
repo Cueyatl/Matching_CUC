@@ -5,6 +5,7 @@ import 'package:matching/widgets/_close_appbar_widget.dart';
 import 'package:matching/questionare/_three_birthday.dart';
 import 'package:matching/questionare/_five_lookingGenre.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
+import 'package:matching/data/app_data.dart';
 
 void main() {
   runApp(const GenderQs());
@@ -56,19 +57,19 @@ class GenderQsState extends State<GenderQs> {
                     icon: const Icon(Icons.close),
                     onPressed: () => Navigator.pop(context),
                   ),
-              const HeaderThree(message: "Enriquece tu perfil con tu identidad",xTextAlign: TextAlign.start,),
+              const HeaderThree(message: GenderView.titleBottomSheet,xTextAlign: TextAlign.start,),
               const SizedBox(height: 20,),
-              const TextOne(message: "Por favor cuentanos cómo te idenficicas Intentamos ser inclusivxs para todos los géneros.",xfontColor: Colors.grey,),
+              const TextOne(message: GenderView.descriptionBottomSheet,xfontColor: Colors.grey,),
               const SizedBox(height: 20,),
               const TextField(
                 decoration: InputDecoration(
-                  hintText: 'Escribe aquí tu género',
+                  hintText: GenderView.lblGenderBottomSheet,
                   hintStyle: TextStyle(color:Colors.grey),
                   border: OutlineInputBorder(),
                 ),
               ),
               const SizedBox(height: 20),
-              WidgetButton(message: "Siguiente", isGradient: true,logicHere:  () { 
+              WidgetButton(acceptOrContinue: false, isGradient: true,logicHere:  () { 
                 // Navigator.pop(context); //Return to genderQs
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const SearchGenderQs()));//Advance to next questions
                 },)
@@ -97,30 +98,30 @@ class GenderQsState extends State<GenderQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const HeaderOne(
-              message: "¿Qué género te representa mejor?",
+              message: GenderView.title,
             ),
             const SizedBox(height: 10),
             const TextOne(
               message:
-                  "Elige la opción que mejor te represente para que podamos brindarte la mejor experiencia.",
+                  GenderView.description,
               xfontColor: textColor,
             ),
             const SizedBox(height: 18),
             SelectableButton(
-              label: 'Hombre',
+              label: QuestionOptions.lblMan,
               isSelected: selectedButton == 1,
               onPressed: () => _onButtonSelected(1),
               
             ),
             const SizedBox(width: 20), // Add some spacing between buttons
             SelectableButton(
-              label: 'Mujer',
+              label: QuestionOptions.lblWoman,
               isSelected: selectedButton == 2,
               onPressed: () => _onButtonSelected(2),
               
             ),
             SelectableButton(
-              label: 'Otro',
+              label: QuestionOptions.lblOther,
               isSelected: selectedButton == 3,
               onPressed: () => _onButtonSelected(3),
               
@@ -129,7 +130,7 @@ class GenderQsState extends State<GenderQs> {
             WidgetButton(
               topPadding: 40.0,
               bottomPadding: 10.0,
-              message: "Siguiente",
+              acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
                 Navigator.push(

@@ -6,6 +6,7 @@ import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:intl/intl.dart';
 import 'package:matching/questionare/_two_name.dart';
 import 'package:matching/questionare/_four_gender.dart';
+import 'package:matching/data/app_data.dart';
 
 
 
@@ -17,10 +18,10 @@ class BirthdayQs extends StatefulWidget {
   const BirthdayQs({super.key});
 
   @override
-  _BirthdayQsState createState() => _BirthdayQsState();
+  BirthdayQsState createState() => BirthdayQsState();
 }
 
-class _BirthdayQsState extends State<BirthdayQs> {
+class BirthdayQsState extends State<BirthdayQs> {
   // Focus nodes for each TextFormField
   final FocusNode _focusNodeDD = FocusNode();
   final FocusNode _focusNodeMM = FocusNode();
@@ -64,7 +65,7 @@ class _BirthdayQsState extends State<BirthdayQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const HeaderOne(
-              message: "¿Tu cumpleaños?",
+              message: BirthdayView.title,
             ),
             Row(
               children: [
@@ -161,14 +162,14 @@ class _BirthdayQsState extends State<BirthdayQs> {
             ),
             const SizedBox(height: 20),
             const TextOne(
-              message: "Tu perfil muestra tu edad, no tu fecha de nacimiento",
+              message: BirthdayView.description,
               xfontColor: textColor,
             ),
-            const Spacer(),
+            
             WidgetButton(
               topPadding: 40.0,
               bottomPadding: 10.0,
-              message: "Siguiente",
+              acceptOrContinue: false,
               isGradient: true,
               logicHere:() {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>const GenderQs()));

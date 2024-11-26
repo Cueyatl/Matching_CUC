@@ -5,21 +5,12 @@ import 'package:matching/widgets/_close_appbar_widget.dart';
 import 'package:matching/questionare/_four_gender.dart';
 import 'package:matching/questionare/_six_height.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
+import 'package:matching/data/app_data.dart';
 
 
 void main() {
   runApp(const SearchGenderQs());
 }
-
-// class MyApp extends StatelessWidget {
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       home: SearchGenderQs(),
-//     );
-//   }
-// }
 
 class SearchGenderQs extends StatefulWidget {
   const SearchGenderQs({super.key});
@@ -76,34 +67,34 @@ class SearchGenderQsState extends State<SearchGenderQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const HeaderOne(
-              message: "¿A quién te interesa ver?",
+              message: GenderView.titleQ,
             ),
             const SizedBox(height: 10),
             const TextOne(
               message:
-                  "Selecciona todas las que apliquen, para que sepamos a quién recomendarte",
+                  GenderView.descriptionQ ,
               xfontColor: textColor,
             ),
             const SizedBox(height: 18),
             SelectableButton(
-              label: 'Hombres',
+              label: QuestionOptions.lblMan,
               isSelected:  selectedButtons.contains(1), 
               onPressed: () => _onButtonSelected(1),              
             ),
             const SizedBox(width: 20), // Add some spacing between buttons
             SelectableButton(
-              label: 'Mujeres',
+              label: QuestionOptions.lblWoman,
               isSelected: selectedButtons.contains(2),
               onPressed: () => _onButtonSelected(2),
               
             ),
             SelectableButton(
-              label: 'Más allá del género binario',
+              label: QuestionOptions.lblBeyondBin,
               isSelected: selectedButtons.contains(3),
               onPressed: () => _onButtonSelected(3),
             ),
             SelectableButton(
-              label: 'Todxs',
+              label: QuestionOptions.lblGenders,
               isSelected: selectedButtons.contains(4),
               onPressed: () => _onButtonSelected(4),
             ),
@@ -111,7 +102,7 @@ class SearchGenderQsState extends State<SearchGenderQs> {
             WidgetButton(
               topPadding: 40.0,
               bottomPadding: 10.0,
-              message: "Siguiente",
+              acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
                 Navigator.push(
