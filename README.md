@@ -1,8 +1,91 @@
 # Matching
 
+## **Algos**
+
+  **Resolver como filtrar y buscar resultados**
+
+Etiqutas de nomemclatura para listas
+
+Lista de listas?
+
+Travel sales man problem.
+
+hashtables
+
+Perct Total
+PROYECTO FINAL
+Objetivo del Proyecto:
+
+Desarrollar una aplicación en Python que permita a los usuarios crear un perfil personal en base a cuatro categorías: información personal y características físicas, personalidad, gustos e intereses, y lo que buscan en una pareja. Los usuarios podrán establecer no solo sus propios datos, sino también los criterios de búsqueda que desean en una pareja, permitiendo coincidencias personalizadas.
+ 
+Funcionalidades Clave:
+1. Pantallas Principales:
+
+   - Pantalla de bienvenida: Página inicial simple con opciones para iniciar sesión o crear una cuenta.
+
+   - Página de inicio de sesión: Donde los usuarios pueden acceder a sus cuentas.
+
+   - Página de creación de cuenta: Formulario para que nuevos usuarios se registren ingresando su información personal.
+
+   - Página de perfil: Donde los usuarios pueden completar sus perfiles, modificar su información y seleccionar criterios de búsqueda para su pareja ideal.
+
+   - Página de tarjetas de otros usuarios: Visualización de otros perfiles que coinciden con sus criterios de búsqueda.
+ 
+2. Menús Desplegables: 
+
+     - Información personal y características físicas: estatura, edad, orientación, complexión, cabello, etc.
+(Grupo de menús desplegables con opciones finitas)
+
+     - Personalidad: apertura a la experiencia, inclinación política, espiritualidad, hábitos, etc.
+(Grupo de menús desplegables con opciones generales)
+
+     - Gustos e intereses: hobbies, música, deportes, arte, etc.
+(Banco de items con mínimo y máximo de selección o menús desplegables con opciones finitas)
+
+     - Lo que buscan en una pareja: preferencia de estatura, intereses comunes, etc.
+(Menús desplegables con rangos acotados y criterios de ordenamiento)
+ 
+3. Cálculo de Porcentajes:
+
+   - Porcentaje de aceptación: La aplicación debe calcular el porcentaje promedio de aceptación que un usuario logra con base en los criterios de los demás usuarios.
+
+   - Porcentaje de coincidencia: Qué porcentaje de los criterios de búsqueda del usuario cumple cada perfil visible.
+   - Mostrar únicamente el porcentaje, sin mostrar en qué categorías o criterios existe mayor afinidad.
+ 
+4. Plazo y Entregables:
+   - Plazo: 6 de Diciembre de 2024
+   - Entegables: Código fuente funcional de la aplicación. Documento de especificaciones técnicas (detalles de arquitectura, tecnologías utilizadas, etc.). Presentación de los resultados y funcionalidades clave de la aplicación.
+ 
+**Criterios de Evaluación:**
+
+* 40% Funcionalidad: Que la aplicación cumpla con las funcionalidades descritas.
+* 10% Diseño: Interfaz de usuario clara y atractiva.
+* 20% Eficiencia: La aplicación debe ser rápida y manejar bien los cálculos de porcentajes.
+* 30% Trabajo en equipo: Organización y coordinación efectiva entre los desarrolladores.
+
+**La calificación final será calculada a partir del número de funcionalidades y elementos logrados en el tiempo disponible, el 50% será asignado por el docente y el otro 50% por medio de una coevaluación del equipo.**
+
+**EJEMPLOS DE ORGANIZACIÓN Y REPARTICIÓN DEL TRABAJO (únicamente informativo):**
+
+* Dev 1: Implementación de la pantalla de bienvenida y la lógica de inicio de sesión.
+
+* Dev 2: Desarrollo de la página de creación de cuenta, donde los usuarios ingresan información básica.
+
+* Dev 3: Desarrollo de la página de perfil, que incluye formularios de las cuatro categorías.
+
+* Dev 4: Implementación de la página de visualización de otros perfiles (tarjetas de usuarios).
+
+* Dev 5: Lógica para la selección y comparación de criterios de búsqueda.
+
+* Dev 6: Cálculo de los porcentajes de aceptación y coincidencia.
+
+* Dev 7: Testing, debugging, y optimización de la aplicación para un rendimiento eficiente.
+
+
 
 **TODOS:**
 
+**11/23 al 11/24**
 
 ✅DONE Deactivate continue Botton if no selection given for chars related to filter and minimum profile data.
 
@@ -30,7 +113,23 @@
 
 ✅DONE get logos and imageplaceholder
 
+**11/25**
+
 ✅DONE  Put this in github
+
+DONE Atomize textformfield, leave styles to the open. but make it smaller and centralized .
+
+DONE View Tags (github library)
+
+DONE EXTRA standarize buttons for continue and accept text for minimizing errors, but still accept personalized text.
+
+**11/26**
+🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢
+* Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
+DONE Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
+DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )
+* Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .
+* Add functionality to Add photos. (image picker)
 
 DO? TypeOfRelationship
 
@@ -38,20 +137,13 @@ TODO:
 * MAKE CARDS DEMO FOR BACKEND TESTING  
 * MAKE PROFILE DEMO FOR BACKEND TESTING TOO.
 
-* Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .
-* Atomize textformfield, leave styles to the open. but make it smaller and centraliz .
 * Add validation to name length and chars
 * add validation to dates according to LegalDate,add logic for "common sense" ages.
 * Add validation to heigth between 60cms and 2.60 meters (acodroplacia)
 * Add dissable buttons for options if no option selected.
-* Add functionality to Add photos. (image picker)
-* View Tags (github library)
 * view Cards (leave for later, too complicated)
 * view Profile (Can do that)
 * view Edit profile button and menu (this one's the easiest)
-* Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
-* Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )
-* Try to atomize all repeating componentes and eliminate floting doubles on site, sto  em in global variables dont know where.
 * Add logo before and start with sign in and sing up
 * Add logo before and  start of app.
 * Investigate ways to save info, metadata, cache on each phone.
@@ -75,7 +167,16 @@ https://github.com/davigmacode/flutter_chips_choice/tree/master
 ## Estética
 ### **COLORES**
 
+Otros colores propuestos.
+Calido
+* Texto: 0XFF2CE30
+* FONDO: 0XFFEADED2
+* Alegre: 
+* Texto: 0XFF2C3958
+* FONDO: 0XFFF2F2F2
 ```
+
+
  Color(0xFFF5588A), //PINK
  Color(0xFFED0037), //ACCENT RED
 ```
@@ -242,5 +343,3 @@ Sin embargo, hay mujeres para quienes la altura no es un factor crucial, y prior
 
 Hombres:
 Los hombres suelen ser más flexibles en cuanto a la altura de sus parejas, aunque muchos prefieren mujeres más bajas o de su misma estatura.
-
-

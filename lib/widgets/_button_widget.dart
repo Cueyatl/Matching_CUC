@@ -77,10 +77,10 @@ class WidgetButton extends StatelessWidget {
             child: Text(
               message,
               style:  TextStyle(
-                fontSize: 18,
+                fontSize: Styl.p3(context),
                 fontWeight: FontWeight.bold,
                 color: isGradient? 
-                 Colors.white : Colors.black, // Adjust text color for visibility
+                 Colors.white : Styl.textColorBase, // Adjust text color for visibility
               ),
             ),
           ),

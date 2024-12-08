@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/_three_birthday.dart';
-import 'package:matching/questionare/_one_welcome.dart';
+import 'package:matching/questionare/three_birthday.dart';
+import 'package:matching/questionare/one_welcome.dart';
 import 'package:matching/data/app_data.dart';
 
 void main() {
@@ -14,14 +14,17 @@ class NameQs extends StatelessWidget {
   const NameQs({super.key});
   @override
   Widget build(BuildContext context) {
-  const Color textColor = Colors.grey;
+    //Document Variables.
+  const Color textColor = Styl.textColorShade;
+  const Color textBaseColor = Styl.textColorBase;
+
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(goBack: true, lastPage: WelcomeQs(),),
       body: Padding(
         padding: const  EdgeInsets.symmetric(
-          vertical: 4.0,
-          horizontal: 24.0
+          vertical: Styl.verticalPadding,
+          horizontal: Styl.horizontalPadding,
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -30,25 +33,25 @@ class NameQs extends StatelessWidget {
                 Padding(
                 padding:const EdgeInsets.symmetric(vertical: 14.0,),
                 child: TextFormField(
-                  decoration: const InputDecoration(
-                    fillColor: Colors.white,
-                    contentPadding: EdgeInsets.only(bottom: 0.0),
+                  decoration:const InputDecoration(
+                    fillColor: Styl.bgBase,
+                    contentPadding:  EdgeInsets.only(bottom: 0.0),
                     enabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Colors.grey),
+                      borderSide: BorderSide(color: textColor),
                     ),
                     focusedBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(color: Color.fromARGB(255, 0, 0, 0)),
+                      borderSide: BorderSide(color:textBaseColor),
                       ),
-                    focusColor: Colors.black,
+                    focusColor: textBaseColor,
                     labelText: NameView.lblName,
-                    labelStyle: TextStyle(color: Colors.grey)
+                    labelStyle: TextStyle(color:textColor)
                   ),
                 ),
               ),
               const TextOne(message: NameView.adviceOne , xfontColor: textColor,),
-              const TextOne(message: NameView.adviceTwo, xfontColor:Colors.black, xfontWeight: FontWeight.bold,),
+              const TextOne(message: NameView.adviceTwo, xfontColor:textBaseColor, xfontWeight: FontWeight.bold,),
               
-              WidgetButton(topPadding: 40.0,bottomPadding: 10.0, acceptOrContinue: false, isGradient: true, 
+              WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: false, isGradient: true, 
                 logicHere: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const BirthdayQs()));                
                 },

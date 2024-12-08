@@ -7,14 +7,14 @@ import 'package:matching/data/app_data.dart';
 // import 'screens/profile_screen.dart';
 import 'screens/_login_signin.dart';
 import 'screens/_flasher.dart';
-import 'screens/_login.dart';
-import 'questionare/_one_welcome.dart';
-import 'questionare/_three_birthday.dart';
-import 'questionare/_five_lookingGenre.dart';
-import 'questionare/_four_gender.dart';
-import 'questionare/_six_height.dart';
-import 'questionare/Add_photos.dart';
-import 'questionare/_Tags.dart';
+import 'screens/login.dart';
+import 'questionare/one_welcome.dart';
+import 'questionare/three_birthday.dart';
+import 'questionare/five_lookingGenre.dart';
+import 'questionare/four_gender.dart';
+import 'questionare/six_height.dart';
+import 'questionare/add_photos.dart';
+import 'questionare/Tags.dart';
 // import 'NOT_Supported/main_Preview.dart';
 void main() {
   

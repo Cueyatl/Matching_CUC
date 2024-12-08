@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 // import '../widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_logo_widget.dart';
 import 'package:matching/widgets/_button_widget.dart';
-import 'package:matching/questionare/_one_welcome.dart';
+import 'package:matching/questionare/one_welcome.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
-
+import 'package:matching/data/app_data.dart';
 const double myHeight = 200;
 const double myWidth = 200;
 void main() {
@@ -17,7 +17,7 @@ class LogInForm extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        color: Colors.white,
+        color: Styl.bgBase,
         child: Padding(
           padding: const EdgeInsets.all(16.0),
           child: Column(
@@ -32,50 +32,51 @@ class LogInForm extends StatelessWidget {
                   gradient: false,),
               
               const Padding(
-              padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
-              child:  HeaderOne(message: "¡Bienvenido de vuelta!", xTextAlign: TextAlign.center,),
+              padding: EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding),
+              child:  HeaderOne(message: CredentialsView.title, xTextAlign: TextAlign.center,),
               ),
 
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding),
                 child: TextFormField(
                   decoration: InputDecoration(
-                    fillColor: Colors.white,
+                    fillColor: Styl.bgBase,
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11.0)),
-                    labelText: 'Usuario o correo electrónico',
+                    labelText: CredentialsView.tgUser,
                   ),
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding),
                 child: TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
-                    fillColor: Colors.white,
+                    fillColor: Styl.bgBase,
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11.0)),
-                    labelText: 'Contraseña',
+                    labelText: CredentialsView.tgPass,
                   ),
                 ),
               ),
             // HELLo
-          const WidgetButton(
-              topPadding: 10.0,
-              bottomPadding: 10.0,
-              message: "Iniciar sesión",
+          WidgetButton(
+              topPadding: Styl.respoHeightMedium(context),
+              bottomPadding: Styl.respoHeightSmall(context),
+              message: CredentialsView.lgIn,
               isGradient: true,
               printMessage: "Log in pushed",
             ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: Styl.respoHeightMedium(context)),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text("¿Todavía no tienes una cuenta?"),
+                    SizedBox(height: Styl.respoHeightMedium(context)),
+                    TextOne(message: CredentialsView.noCuenta.substring(0,20)),
                     GestureDetector(
                       onTap: () {
                         
@@ -83,10 +84,11 @@ class LogInForm extends StatelessWidget {
                         print('Navigate to welcoming of Sign in form');
                         
                       },
-                      child: const Text(
-                        " Regístrate aquí.",
+                      child:  Text(
+                        CredentialsView.sgnRegister,
                         style: TextStyle(
-                          color: Colors.black,
+                          fontSize: Styl.p3(context),
+                          color: Styl.textColorShade,
                           decoration: TextDecoration.underline,
                         ),
                         textAlign: TextAlign.center,

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:matching/screens/_login_signin.dart';
+import 'package:matching/data/app_data.dart';
+
 
 class WidgetCloseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final bool goBack;
@@ -15,7 +17,7 @@ class WidgetCloseAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: Colors.white,
+      backgroundColor: Styl.bgBase,
       elevation: 0,
       leading: IconButton(
         onPressed: () {
@@ -34,11 +36,11 @@ class WidgetCloseAppBar extends StatelessWidget implements PreferredSizeWidget {
         icon: goBack
             ? const Icon (
                 Icons.arrow_back,
-                color: Colors.black,
+                color: Styl.textColorBase,
               )
             : const Icon (
                 Icons.close,
-                color: Colors.black,
+                color: Styl.textColorBase,
               ),
       ),
     );

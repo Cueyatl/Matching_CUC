@@ -4,8 +4,8 @@ import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:intl/intl.dart';
-import 'package:matching/questionare/_two_name.dart';
-import 'package:matching/questionare/_four_gender.dart';
+import 'package:matching/questionare/two_name.dart';
+import 'package:matching/questionare/four_gender.dart';
 import 'package:matching/data/app_data.dart';
 
 
@@ -41,7 +41,7 @@ class BirthdayQsState extends State<BirthdayQs> {
 
     //Me gustan siempre y cuando sean legales. Cuchau!
 
-    const Color textColor = Colors.grey;
+    const Color textColor = Styl.textColorShade;
     DateTime now = DateTime.now();
 
     String formattedDate = DateFormat('dd/MM/yyyy').format(now);
@@ -51,16 +51,11 @@ class BirthdayQsState extends State<BirthdayQs> {
     int minimunLegalYear = int.parse(getYears)-18;
     
     String legalDate = formattedDate.replaceRange(6,null,minimunLegalYear.toString());
-    
-    
-    
-
-    
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(goBack: true, lastPage: NameQs(),),
       body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
+        padding: const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding,),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -79,15 +74,15 @@ class BirthdayQsState extends State<BirthdayQs> {
                     maxLength: 2,
                     textAlign: TextAlign.center,
                     focusNode: _focusNodeDD,
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       counterText: '',
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(bottom: 0.0),
+                      contentPadding:  const EdgeInsets.only(bottom: 0.0),
                       hintText: "DD",
                       hintStyle: TextStyle(
                         letterSpacing: 8.0,
-                        color: Colors.grey,
-                        fontSize: 20,
+                        color: textColor,
+                        fontSize: Styl.p3(context),
                       ),
                     ),
                     onChanged: (value) {
@@ -111,17 +106,17 @@ class BirthdayQsState extends State<BirthdayQs> {
                     maxLength: 2,
                     textAlign: TextAlign.center,
                     focusNode: _focusNodeMM,
-                    decoration: const InputDecoration(
+                    decoration:  InputDecoration(
                       counterText: '',
-                      border: OutlineInputBorder(
+                      border:const  OutlineInputBorder(
                         borderSide: BorderSide.none,
                       ),
                       contentPadding: EdgeInsets.zero,
                       hintText: "MM",
                       hintStyle: TextStyle(
                         letterSpacing: 8.0,
-                        color: Colors.grey,
-                        fontSize: 20,
+                        color: textColor,
+                        fontSize: Styl.p3(context),
                       ),
                     ),
                     onChanged: (value) {
@@ -134,7 +129,7 @@ class BirthdayQsState extends State<BirthdayQs> {
                 const TextOne(
                   message: "/",
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: Styl.respoSmall(context)),
                 // Year Field (YYYY)
                 Expanded(
                   child: TextFormField(
@@ -145,30 +140,30 @@ class BirthdayQsState extends State<BirthdayQs> {
                     maxLength: 4,
                     textAlign: TextAlign.center,
                     focusNode: _focusNodeYYYY,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       counterText: '',
                       border: InputBorder.none,
-                      contentPadding: EdgeInsets.only(bottom: 0.0),
+                      contentPadding:  const EdgeInsets.only(bottom: 0.0),
                       hintText: "YYYY",
                       hintStyle: TextStyle(
                         letterSpacing: 8.0,
-                        color: Colors.grey,
-                        fontSize: 20,
+                        color: textColor,
+                        fontSize: Styl.p3(context),
                       ),
                     ),
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: Styl.respoHeightMedium(context)),
             const TextOne(
               message: BirthdayView.description,
               xfontColor: textColor,
             ),
             
             WidgetButton(
-              topPadding: 40.0,
-              bottomPadding: 10.0,
+              topPadding: Styl.respoHeightMedium(context),
+              bottomPadding: Styl.respoHeightSmall(context),
               acceptOrContinue: false,
               isGradient: true,
               logicHere:() {

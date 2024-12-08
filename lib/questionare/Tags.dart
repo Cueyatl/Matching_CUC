@@ -3,8 +3,8 @@ import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/_three_birthday.dart';
-import 'package:matching/questionare/_one_welcome.dart';
+import 'package:matching/questionare/three_birthday.dart';
+import 'package:matching/questionare/one_welcome.dart';
 import 'package:choice/choice.dart';
 import 'package:matching/data/app_data.dart';
 
@@ -44,23 +44,23 @@ void setSelectedValue(String? value) {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Styl.bgBase,
         appBar: const WidgetCloseAppBar(
           goBack: true,
           lastPage: WelcomeQs(),
         ),
         body: Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
+                const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding,),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HeaderOne(
                   message: TagsView.title,
                 ),
-                const SizedBox(height: 10),
+                SizedBox(height: Styl.respoHeightSmall(context)),
                 const TextOne(message: TagsView.description,),
-                const SizedBox(height: 20),
+                SizedBox(height: Styl.respoHeightMedium(context)),
                   Expanded(
               child: SingleChildScrollView(
                 child:Padding(
@@ -96,8 +96,8 @@ void setSelectedValue(String? value) {
 
                 // const Spacer(),
                 WidgetButton(
-                  topPadding: 40.0,
-                  bottomPadding: 10.0,
+                  topPadding: Styl.respoHeightMedium(context),
+                  bottomPadding: Styl.respoHeightSmall(context),
                   acceptOrContinue: false,
                   isGradient: true,
                   logicHere: () {

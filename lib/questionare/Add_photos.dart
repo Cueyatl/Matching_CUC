@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/_Tags.dart';
-
+import 'package:matching/questionare/Tags.dart';
+import 'package:matching/data/app_data.dart';
 void main() {
   runApp(const AddPhotosQs());
 }
@@ -12,29 +12,31 @@ class AddPhotosQs extends StatelessWidget {
   const AddPhotosQs({super.key});
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Colors.grey;
+    const Color textColor = Styl.textColorShade;
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Styl.bgBase,
         appBar: const WidgetCloseAppBar(
           goBack: true,
           lastPage: PersonalityTags(),
         ),
         body: Padding(
             padding:
-                const EdgeInsets.symmetric(vertical: 4.0, horizontal: 24.0),
+                const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding,),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 const HeaderOne(
-                  message: "Agrega tus fotos recientes",
+                  message: PhotosView.title,
                 ),
-                const SizedBox(width: 10),
+                SizedBox(
+                  width: Styl.respoSmall(context),
+                  ),
                 const TextOne(
-                  message: "Agrega por lo menos 2 fotos para empezar.",
+                  message: PhotosView.description,
                   xfontColor: textColor,
                 ),
-                const SizedBox(
-                  height: 24.0,
+                SizedBox(
+                  height: Styl.respoHeightMedium(context),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment
@@ -72,7 +74,7 @@ class AddPhotosQs extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24.0,),
+                SizedBox(height: Styl.respoHeightMedium(context),),
                 Row(
                   mainAxisAlignment: MainAxisAlignment
                       .spaceEvenly, // Adjust spacing between images
@@ -111,9 +113,9 @@ class AddPhotosQs extends StatelessWidget {
                 ),
                 const Spacer(),
                 WidgetButton(
-                  topPadding: 40.0,
-                  bottomPadding: 10.0,
-                  message: "Siguiente",
+                  topPadding: Styl.respoHeightMedium(context),
+                  bottomPadding: Styl.respoHeightSmall(context),
+                  acceptOrContinue: false,
                   isGradient: true,
                   logicHere: () {
                     Navigator.push(

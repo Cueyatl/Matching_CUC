@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/app_data.dart';
 
 class SelectableButton extends StatelessWidget {
   final String label;
@@ -32,7 +33,7 @@ class SelectableButton extends StatelessWidget {
       child: Text(
         label,
         style: TextStyle(
-          color:isSelected? Colors.white: const Color.fromARGB(255, 0, 0, 0),
+          color:isSelected? Colors.white: Styl.textColorBase,
           fontWeight: FontWeight.bold,
         ),
       ),

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:matching/data/app_data.dart';
 // Recommended to use fitbox, scale the text to fit its container.
 // Ensures the text scales down if it overflows its container. Useful for layouts where space is constrained.
 // Base Font Size:
@@ -12,7 +12,7 @@ import 'package:flutter/material.dart';
 //     message,
 //     style: TextStyle(
 //       color: xfontColor,
-//       fontSize: 24.0, // Base font size (FittedBox scales it)
+//       fontSize: 24, // Base font size (FittedBox scales it)
 //       fontWeight: FontWeight.w700,
 //       letterSpacing: 1.0,
 //       wordSpacing: 2.0,
@@ -40,7 +40,7 @@ class HeaderOne extends StatelessWidget {
     this.xfontSize =10.0,
     this.xletterSpacing = 2.0,
     this.xwordSpacing=5.0,
-    this.xfontColor=Colors.black,
+    this.xfontColor=Styl.textColorBase,
     this.xTextAlign = TextAlign.start,
   });
 
@@ -53,7 +53,7 @@ class HeaderOne extends StatelessWidget {
         style: TextStyle(
           color: xfontColor,
           //  fontSize: MediaQuery.of(context).size.width * 0.06, // 6% of screen width
-          fontSize: 24.0,
+          fontSize: Styl.p2(context),
           fontWeight: FontWeight.w700,
           letterSpacing: 1.0,
           wordSpacing: 2.0,
@@ -82,7 +82,7 @@ class HeaderThree extends StatelessWidget {
     this.message ="",
     this.xletterSpacing = 2.0,
     this.xwordSpacing=5.0,
-    this.xfontColor=Colors.black,
+    this.xfontColor=Styl.textColorBase,
     this.xTextAlign = TextAlign.start,
   });
 
@@ -94,7 +94,7 @@ class HeaderThree extends StatelessWidget {
         message,
         style: TextStyle(
           color: xfontColor,
-          fontSize: 18.0,
+          fontSize: Styl.p3(context),
           fontWeight: FontWeight.w700,
           letterSpacing: 1.0,
           wordSpacing: 2.0,
@@ -122,7 +122,7 @@ class TextOne extends StatelessWidget {
     this.topPadding = 0.0, // default values
     this.bottomPadding = 0.0,
     this.message ="",
-    this.xfontColor=Colors.black,
+    this.xfontColor=Styl.textColorShade,
     this.xTextAlign = TextAlign.start,
     this.xfontWeight =FontWeight.normal,
   });
@@ -136,7 +136,7 @@ class TextOne extends StatelessWidget {
         style: TextStyle(
           fontWeight: xfontWeight,
           color: xfontColor,
-          fontSize: 16.0,
+          fontSize: Styl.p3(context),
   ),
   textAlign: xTextAlign,
 ),

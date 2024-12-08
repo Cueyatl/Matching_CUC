@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/_seven_lookingHeight.dart';
-import 'package:matching/questionare/_nine_LookingCareer.dart';
+import 'package:matching/questionare/seven_lookingHeight.dart';
+import 'package:matching/questionare/nine_LookingCareer.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
 import 'package:matching/data/app_data.dart';
 
@@ -19,7 +19,6 @@ class CareerQs extends StatefulWidget {
 
 class CareerQsState extends State<CareerQs> {
   int? selectedButton;
-  final double actualButtonWidth = 120.0;
 
   void _onButtonSelected(int buttonIndex) {
     setState(() {
@@ -29,17 +28,24 @@ class CareerQsState extends State<CareerQs> {
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Colors.grey;
+    final options = [
+  {'label': QuestionOptions.lbladmin, 'index': 1,},
+  {'label': QuestionOptions.lblCont, 'index': 2,},
+  {'label': QuestionOptions.lblBio, 'index': 3,},
+  {'label': QuestionOptions.lblInd, 'index': 4,},
+  {'label': QuestionOptions.lblSis, 'index': 5,},
+];
+    const Color textColor = Styl.textColorShade;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
         goBack: true,
         lastPage: LookingHeightQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 4.0,
-          horizontal: 24.0,
+          vertical: Styl.verticalPadding,
+          horizontal: Styl.horizontalPadding,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -47,45 +53,30 @@ class CareerQsState extends State<CareerQs> {
             const HeaderOne(
               message: CareerView.title,
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: Styl.respoHeightSmall(context)),
             const TextOne(
               message:
                   CareerView.description,
               xfontColor: textColor,
             ),
-            const SizedBox(height: 18),
-            SelectableButton(
-              label: QuestionOptions.lbladmin,
-              isSelected: selectedButton == 1,
-              onPressed: () => _onButtonSelected(1),
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblCont,
-              isSelected: selectedButton == 2,
-              onPressed: () => _onButtonSelected(2),
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblBio,
-              isSelected: selectedButton == 3,
-              onPressed: () => _onButtonSelected(3),
-              
-            ),
-            const SizedBox(width: 20), // Add some spacing between buttons
-            SelectableButton(
-              label: QuestionOptions.lblInd,
-              isSelected: selectedButton == 4,
-              onPressed: () => _onButtonSelected(4),
-              
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblSis,
-              isSelected: selectedButton == 5,
-              onPressed: () => _onButtonSelected(5),
-            ),
+            SizedBox(height: Styl.respoHeightMedium(context)),
+            Column(
+              children:
+                  options.map<Widget>((option) => Column(children: [
+                    SelectableButton(
+                      label: option['label'].toString(),
+                      isSelected: options.contains(option['index']),
+                      onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
+                    ),
+                    const SizedBox(height: Styl.heightSBoxSmall),
+                  ],
+                )
+              ).toList()
+            ),   
             const Spacer(),
             WidgetButton(
-              topPadding: 40.0,
-              bottomPadding: 10.0,
+              topPadding: Styl.respoHeightMedium(context),
+              bottomPadding: Styl.respoHeightSmall(context),
               acceptOrContinue: false,
               isGradient: true,
               logicHere: () {

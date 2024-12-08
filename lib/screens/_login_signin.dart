@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/app_data.dart';
 import '../widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_button_widget.dart';
-import 'package:matching/screens/_login.dart';
-import 'package:matching/questionare/_one_welcome.dart';
+import 'package:matching/screens/login.dart';
+import 'package:matching/questionare/one_welcome.dart';
 
 const double myHeight = 200;
 const double myWidth = 200;
@@ -36,29 +37,32 @@ class SignInLogIn extends StatelessWidget {
               WidgetButton(
                 topPadding: 2.0,
                 bottomPadding: 2.0,
-                message: "Log in",
+                message: CredentialsView.lgIn,
                 isGradient: false,
                 printMessage: "Log in pushed",
                 logicHere: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const LogInForm()),);
                 },
               ),
-              const SizedBox(height: 20),
+              SizedBox(height: Styl.respoHeightMedium(context)),
+              SizedBox(height: Styl.respoHeightXLarge(context)),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const Text("Don´t have an account?"),
+                    SizedBox(height: Styl.respoHeightSmall(context)),
+                    Text(CredentialsView.noCuenta.substring(0,21)),
                     GestureDetector(
                       onTap: () {
                         // Replace with your registration URL logic
                         Navigator.push(context, MaterialPageRoute(builder: (context)=>const WelcomeQs()),);
                         print('Navigate to welcoming of Sign in form');
                       },
-                      child: const Text(
-                        " Register here",
-                        style: TextStyle(
-                          color: Colors.black,
+
+                      child:  Text(
+                        CredentialsView.sgnRegister,
+                        style:const TextStyle(
+                          color:Styl.textColorBase,
                           decoration: TextDecoration.underline,
                         ),
                         textAlign: TextAlign.center,

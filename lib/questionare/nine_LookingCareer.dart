@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/_eigth_Career.dart';
-import 'package:matching/questionare/_six_height.dart';
+import 'package:matching/questionare/eigth_Career.dart';
+import 'package:matching/questionare/six_height.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
-import 'package:matching/questionare/Add_photos.dart';
+import 'package:matching/questionare/add_photos.dart';
 import 'package:matching/data/app_data.dart';
 
 void main() {
@@ -51,17 +51,17 @@ class LookingCareerQsState extends State<LookingCareerQs> {
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Colors.grey;
+    const Color textColor = Styl.textColorShade;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
         goBack: true,
         lastPage: CareerQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
-          vertical: 4.0,
-          horizontal: 24.0,
+          vertical: Styl.verticalPadding,
+          horizontal: Styl.horizontalPadding,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -69,19 +69,19 @@ class LookingCareerQsState extends State<LookingCareerQs> {
             const HeaderOne(
               message: CareerView.titleQ,
             ),
-            const SizedBox(height: 10),
+            SizedBox(height: Styl.respoHeightSmall(context)),
             const TextOne(
               message:
                   CareerView.descriptionQ,
               xfontColor: textColor,
             ),
-            const SizedBox(height: 18),
+            SizedBox(height: Styl.respoHeightMedium(context)),
             SelectableButton(
               label: QuestionOptions.lbladmin,
-              isSelected:  selectedButtons.contains(1), 
-              onPressed: () => _onButtonSelected(1),              
+              isSelected:  selectedButtons.contains(1),
+              onPressed: () => _onButtonSelected(1),   
             ),
-            const SizedBox(width: 20), // Add some spacing between buttons
+            SizedBox(width: Styl.respoSmall(context)), // Add some spacing between buttons
             SelectableButton(
               label: QuestionOptions.lblCont,
               isSelected: selectedButtons.contains(2),
@@ -110,8 +110,8 @@ class LookingCareerQsState extends State<LookingCareerQs> {
             ),
             const Spacer(),
             WidgetButton(
-              topPadding: 40.0,
-              bottomPadding: 10.0,
+              topPadding: Styl.respoHeightMedium(context),
+              bottomPadding: Styl.respoHeightSmall(context),
               acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
