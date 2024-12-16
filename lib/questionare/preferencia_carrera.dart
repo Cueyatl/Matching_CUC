@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/eigth_Career.dart';
-import 'package:matching/questionare/six_height.dart';
+import 'package:matching/questionare/carrera.dart';
+import 'package:matching/questionare/altura.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
-import 'package:matching/questionare/add_photos.dart';
+import 'package:matching/questionare/fotos.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
 void main() {
   runApp(const LookingCareerQs());
@@ -41,17 +42,21 @@ class LookingCareerQsState extends State<LookingCareerQs> {
           selectedButtons.remove(6);
         }
       }
-
-
           print(selectedButtons);
-      
     });
   }
 
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Styl.textColorShade;
+      final options = [
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLbladmin'), 'index': 1,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblCont'), 'index': 2,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblBio'), 'index': 3,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblInd'), 'index': 4,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblSis'), 'index': 5,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblCareers'), 'index': 6,},
+];
     return Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
@@ -66,48 +71,28 @@ class LookingCareerQsState extends State<LookingCareerQs> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeaderOne(
-              message: CareerView.titleQ,
+            HeaderOne(
+              message: AppLocalizations.of(context)!.translate('CareerViewTitleQ'),
             ),
             SizedBox(height: Styl.respoHeightSmall(context)),
-            const TextOne(
+            TextOne(
               message:
-                  CareerView.descriptionQ,
-              xfontColor: textColor,
+                  AppLocalizations.of(context)!.translate('CareerViewDescriptionQ'),
             ),
             SizedBox(height: Styl.respoHeightMedium(context)),
-            SelectableButton(
-              label: QuestionOptions.lbladmin,
-              isSelected:  selectedButtons.contains(1),
-              onPressed: () => _onButtonSelected(1),   
-            ),
-            SizedBox(width: Styl.respoSmall(context)), // Add some spacing between buttons
-            SelectableButton(
-              label: QuestionOptions.lblCont,
-              isSelected: selectedButtons.contains(2),
-              onPressed: () => _onButtonSelected(2),
-              
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblBio,
-              isSelected: selectedButtons.contains(3),
-              onPressed: () => _onButtonSelected(3),
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblInd,
-              isSelected: selectedButtons.contains(4),
-              onPressed: () => _onButtonSelected(4),
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblSis,
-              isSelected: selectedButtons.contains(5),
-              onPressed: () => _onButtonSelected(5),
-            ),
-            SelectableButton(
-              label: QuestionOptions.lblCareers,
-              isSelected: selectedButtons.contains(6),
-              onPressed: () => _onButtonSelected(6),
-            ),
+            Column(
+              children:
+                  options.map<Widget>((option) => Column(children: [
+                    SelectableButton(
+                      label: option['label'].toString(),
+                      isSelected: options.contains(option['index']),
+                      onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
+                    ),
+                    const SizedBox(height: Styl.heightSBoxSmall),
+                  ],
+                )
+              ).toList()
+            ),   
             const Spacer(),
             WidgetButton(
               topPadding: Styl.respoHeightMedium(context),

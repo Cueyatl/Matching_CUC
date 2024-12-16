@@ -3,10 +3,11 @@ import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/three_birthday.dart';
-import 'package:matching/questionare/one_welcome.dart';
+import 'package:matching/questionare/fecha_nacimiento.dart';
+import 'package:matching/questionare/bienvenida.dart';
 import 'package:choice/choice.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
 void main() {
   runApp(const PersonalityTags());
@@ -20,7 +21,7 @@ class PersonalityTags extends StatefulWidget {
 }
 
 class PersonalityTagsState extends State<PersonalityTags> {
-  List<String> choices = TagsView.matchTags;
+  
 
   String? selectedValue; // A nullable string to hold the last selected value
 Set<String> selectedValues = {}; // A set to manage multiple selections
@@ -43,6 +44,7 @@ void setSelectedValue(String? value) {
 
   @override
   Widget build(BuildContext context) {
+    const List<String> choices = TagsView.matchTags;
     return Scaffold(
         backgroundColor: Styl.bgBase,
         appBar: const WidgetCloseAppBar(
@@ -55,11 +57,9 @@ void setSelectedValue(String? value) {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const HeaderOne(
-                  message: TagsView.title,
-                ),
+                HeaderOne(message: AppLocalizations.of(context)!.translate('TagsViewTitle'),),
                 SizedBox(height: Styl.respoHeightSmall(context)),
-                const TextOne(message: TagsView.description,),
+                TextOne(message: AppLocalizations.of(context)!.translate('TagsViewDescription'),),
                 SizedBox(height: Styl.respoHeightMedium(context)),
                   Expanded(
               child: SingleChildScrollView(

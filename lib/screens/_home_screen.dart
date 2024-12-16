@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:matching/data/app_data.dart';
-import 'package:matching/questionare/one_welcome.dart';
+import 'package:matching/questionare/bienvenida.dart';
 
+//Do not use, still working
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
   @override

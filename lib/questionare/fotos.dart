@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/Tags.dart';
+import 'package:matching/questionare/etiquetas.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
+
 void main() {
   runApp(const AddPhotosQs());
 }
@@ -25,14 +27,14 @@ class AddPhotosQs extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const HeaderOne(
-                  message: PhotosView.title,
+                HeaderOne(
+                  message: AppLocalizations.of(context)!.translate('PhotosViewTitle'),
                 ),
                 SizedBox(
                   width: Styl.respoSmall(context),
                   ),
-                const TextOne(
-                  message: PhotosView.description,
+                TextOne(
+                  message: AppLocalizations.of(context)!.translate('PhotosViewDescription'),
                   xfontColor: textColor,
                 ),
                 SizedBox(

@@ -2,37 +2,58 @@
 
 import 'package:flutter/material.dart';
 import 'package:matching/data/app_data.dart';
-
-// import 'screens/home_screen.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:matching/screens/home_page.dart';
+// import 'package:matching/screens/_home_screen.dart';
 // import 'screens/profile_screen.dart';
 import 'screens/_login_signin.dart';
 import 'screens/_flasher.dart';
 import 'screens/login.dart';
-import 'questionare/one_welcome.dart';
-import 'questionare/three_birthday.dart';
-import 'questionare/five_lookingGenre.dart';
-import 'questionare/four_gender.dart';
-import 'questionare/six_height.dart';
-import 'questionare/add_photos.dart';
-import 'questionare/Tags.dart';
+import 'questionare/bienvenida.dart';
+import 'questionare/fecha_nacimiento.dart';
+import 'questionare/preferencia_genero.dart';
+import 'questionare/genero.dart';
+import 'questionare/altura.dart';
+import 'questionare/fotos.dart';
+import 'questionare/etiquetas.dart';
+import 'data/app_localizations.dart';
 // import 'NOT_Supported/main_Preview.dart';
-void main() {
-  
-  runApp(const MyApp());
 
+void main() {
+  runApp(MyApp());
 }
 
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
 
+class _MyAppState extends State<MyApp> {
+  Locale _locale = const Locale('en'); // Default to English
 
+  void setLocale(Locale locale) {
+    setState(() {
+      _locale = locale;
+    });
+  }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false, // Remove debug banner
-      home: PersonalityTags()
+    return MaterialApp(
+    debugShowCheckedModeBanner: false, // Remove debug banner
+      locale: _locale,
+      supportedLocales: const [
+        Locale('en', ''), // English
+        Locale('es', ''), // Spanish
+      ],
+      localizationsDelegates: const [
+        AppLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      // home: HomePage(onLocaleChange: setLocale),
+      home: const SignInLogIn(),
     );
-    
   }
 }

@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/three_birthday.dart';
-import 'package:matching/questionare/five_lookingGenre.dart';
+import 'package:matching/questionare/fecha_nacimiento.dart';
+import 'package:matching/questionare/preferencia_genero.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
 void main() {
   runApp(const GenderQs());
@@ -58,21 +59,21 @@ class GenderQsState extends State<GenderQs> {
                 icon: const Icon(Icons.close),
                 onPressed: () => Navigator.pop(context),
               ),
-              const HeaderThree(
-                message: GenderView.titleBottomSheet,
+              HeaderThree(
+                message: AppLocalizations.of(context)!.translate('BirthdayViewTitleBottomSheet'),
                 xTextAlign: TextAlign.start,
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              const TextOne(
-                message: GenderView.descriptionBottomSheet,
+              TextOne(
+                message: AppLocalizations.of(context)!.translate('BirthdayViewDescriptionBottomSheet'),
                 xfontColor: Styl.textColorShade,
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              const TextField(
+              TextField(
                 decoration: InputDecoration(
-                  hintText: GenderView.lblGenderBottomSheet,
-                  hintStyle: TextStyle(color: Styl.textColorShade),
-                  border: OutlineInputBorder(),
+                  hintText: AppLocalizations.of(context)!.translate('GenderViewLblGenderBottomSheet'),
+                  hintStyle: const TextStyle(color: Styl.textColorShade),
+                  border: const OutlineInputBorder(),
                 ),
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
@@ -98,9 +99,9 @@ class GenderQsState extends State<GenderQs> {
   @override
   Widget build(BuildContext context) {
     final options = [
-      {'label': QuestionOptions.lblMan, 'index': 1},
-      {'label': QuestionOptions.lblWoman, 'index': 2},
-      {'label': QuestionOptions.lblOther, 'index': 3},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblMan'), 'index': 1},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblWoman'), 'index': 2},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblOther'), 'index': 3},
     ];
 
     return Scaffold(
@@ -117,11 +118,11 @@ class GenderQsState extends State<GenderQs> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeaderOne(
-              message: GenderView.title,
+            HeaderOne(
+              message: AppLocalizations.of(context)!.translate('BirthdayViewTitle'),
             ),
-            const TextOne(
-              message: GenderView.description,
+            TextOne(
+              message: AppLocalizations.of(context)!.translate('BirthdayViewDescription'),
               xfontColor: Styl.textColorShade,
             ),
             SizedBox(height: Styl.respoHeightSmall(context)),

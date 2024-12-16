@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/four_gender.dart';
-import 'package:matching/questionare/six_height.dart';
+import 'package:matching/questionare/genero.dart';
+import 'package:matching/questionare/altura.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
 
 void main() {
@@ -52,10 +53,10 @@ class SearchGenderQsState extends State<SearchGenderQs> {
   @override
   Widget build(BuildContext context) {
     final options=[
-      {'label': QuestionOptions.lblMan, 'index': 1},
-      {'label': QuestionOptions.lblWoman, 'index': 2},
-      {'label': QuestionOptions.lblOther, 'index': 3},
-      {'label': QuestionOptions.lblGenders, 'index': 4},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblMan'), 'index': 1},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblWoman'), 'index': 2},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblOther'), 'index': 3},
+      {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblGenders'), 'index': 4},
     ];
     const Color textColor = Styl.textColorShade;
     return Scaffold(
@@ -72,13 +73,13 @@ class SearchGenderQsState extends State<SearchGenderQs> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeaderOne(
-              message: GenderView.titleQ,
+            HeaderOne(
+              message: AppLocalizations.of(context)!.translate('BirthdayViewTitleQ'),
             ),
             SizedBox(height: Styl.respoHeightSmall(context)),
-            const TextOne(
+            TextOne(
               message:
-                  GenderView.descriptionQ ,
+                  AppLocalizations.of(context)!.translate('BirthdayViewDescriptionQ'),
               xfontColor: textColor,
             ),
             Column(
@@ -97,24 +98,24 @@ class SearchGenderQsState extends State<SearchGenderQs> {
             
             // const SizedBox(height: 18),
             // SelectableButton(
-            //   label: QuestionOptions.lblMan,
+            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblMan'),
             //   isSelected:  selectedButtons.contains(1), 
             //   onPressed: () => _onButtonSelected(1),              
             // ),
             // const SizedBox(width: 20), // Add some spacing between buttons
             // SelectableButton(
-            //   label: QuestionOptions.lblWoman,
+            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblWoman'),
             //   isSelected: selectedButtons.contains(2),
             //   onPressed: () => _onButtonSelected(2),
               
             // ),
             // SelectableButton(
-            //   label: QuestionOptions.lblBeyondBin,
+            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblBeyond')Bin,
             //   isSelected: selectedButtons.contains(3),
             //   onPressed: () => _onButtonSelected(3),
             // ),
             // SelectableButton(
-            //   label: QuestionOptions.lblGenders,
+            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblGenders'),
             //   isSelected: selectedButtons.contains(4),
             //   onPressed: () => _onButtonSelected(4),
             // ),

@@ -2,15 +2,17 @@ import 'package:flutter/material.dart';
 // import '../widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_logo_widget.dart';
 import 'package:matching/widgets/_button_widget.dart';
-import 'package:matching/questionare/one_welcome.dart';
+import 'package:matching/questionare/bienvenida.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
+
 const double myHeight = 200;
 const double myWidth = 200;
 void main() {
   runApp(const LogInForm());
 }
-
+//Este es blanco, usuario y contraseña
 class LogInForm extends StatelessWidget {
   const LogInForm({super.key});
   @override
@@ -31,9 +33,11 @@ class LogInForm extends StatelessWidget {
                   bottomPadding: 0.0,
                   gradient: false,),
               
-              const Padding(
-              padding: EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding),
-              child:  HeaderOne(message: CredentialsView.title, xTextAlign: TextAlign.center,),
+              Padding(
+              padding:const EdgeInsets.symmetric(vertical: Styl.verticalPadding, horizontal: Styl.horizontalPadding),
+              child:  HeaderOne(message: 
+              (AppLocalizations.of(context)!.translate('CredentialsViewTitle')),
+              xTextAlign: TextAlign.center,),
               ),
 
               Padding(
@@ -44,7 +48,8 @@ class LogInForm extends StatelessWidget {
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11.0)),
-                    labelText: CredentialsView.tgUser,
+                    labelText:
+                    (AppLocalizations.of(context)!.translate('CredentialsViewTgUser')),
                   ),
                 ),
               ),
@@ -57,15 +62,16 @@ class LogInForm extends StatelessWidget {
                     filled: true,
                     border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(11.0)),
-                    labelText: CredentialsView.tgPass,
+                    labelText: 
+                    (AppLocalizations.of(context)!.translate('CredentialsViewTgPass')),
                   ),
                 ),
               ),
-            // HELLo
           WidgetButton(
               topPadding: Styl.respoHeightMedium(context),
               bottomPadding: Styl.respoHeightSmall(context),
-              message: CredentialsView.lgIn,
+              message: 
+              (AppLocalizations.of(context)!.translate('CredentialsViewLgIn')),
               isGradient: true,
               printMessage: "Log in pushed",
             ),
@@ -76,7 +82,8 @@ class LogInForm extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     SizedBox(height: Styl.respoHeightMedium(context)),
-                    TextOne(message: CredentialsView.noCuenta.substring(0,20)),
+                    TextOne(message:
+                    AppLocalizations.of(context)!.translate('CredentialsViewNoCuenta')),
                     GestureDetector(
                       onTap: () {
                         
@@ -85,7 +92,7 @@ class LogInForm extends StatelessWidget {
                         
                       },
                       child:  Text(
-                        CredentialsView.sgnRegister,
+                        (AppLocalizations.of(context)!.translate('CredentialsViewSgnRegister')),
                         style: TextStyle(
                           fontSize: Styl.p3(context),
                           color: Styl.textColorShade,

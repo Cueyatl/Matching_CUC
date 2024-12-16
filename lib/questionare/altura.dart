@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/five_lookingGenre.dart';
-import 'package:matching/questionare/seven_lookingHeight.dart';
+import 'package:matching/questionare/preferencia_genero.dart';
+import 'package:matching/questionare/preferencia_altura.dart';
 import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
-
+  
 void main() {
   runApp(const HeigthQs());
 }
@@ -16,6 +17,15 @@ class HeigthQs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   const Color textColor = Styl.textColorShade;
+
+
+  
+// -----------------------------------------
+// Lógica para validar datos de fechas ingresadas
+// -----------------------------------------
+
+
+
     return Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(goBack: true, lastPage: SearchGenderQs(),),
@@ -27,9 +37,9 @@ class HeigthQs extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                const HeaderOne(message: HeightView.title,),
+                HeaderOne(message: AppLocalizations.of(context)!.translate('HeightViewTitle'),),
                 SizedBox(height: Styl.respoHeightSmall(context)),
-                const TextOne(message: HeightView.description, xfontColor: textColor,),
+                TextOne(message: AppLocalizations.of(context)!.translate('HeightViewDescription'), xfontColor: textColor,),
                 SizedBox(width: Styl.respoSmall(context)),
               
               Padding(
@@ -50,7 +60,7 @@ class HeigthQs extends StatelessWidget {
                       ),
                       border: InputBorder.none,
                       contentPadding:const EdgeInsets.only(bottom: 0.0),
-                      hintText: HeightView.lblHeight,
+                      hintText: AppLocalizations.of(context)!.translate('HeightViewLblHeight'),
                       hintStyle: TextStyle(
                         letterSpacing: 8.0,
                         color: textColor,

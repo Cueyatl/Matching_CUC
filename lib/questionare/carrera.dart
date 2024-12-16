@@ -2,61 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/six_height.dart';
-import 'package:matching/questionare/eigth_Career.dart';
+import 'package:matching/questionare/preferencia_altura.dart';
+import 'package:matching/questionare/preferencia_carrera.dart';
 import 'package:matching/widgets/_selectable_option_widget.dart';
 import 'package:matching/data/app_data.dart';
-
+import 'package:matching/data/app_localizations.dart';
 
 void main() {
-  runApp(const LookingHeightQs());
+  runApp(const CareerQs());
 }
 
-class LookingHeightQs extends StatefulWidget {
-  const LookingHeightQs({super.key});
+class CareerQs extends StatefulWidget {
+  const CareerQs({super.key});
   @override
-  LookingHeightQsState createState() => LookingHeightQsState();
+  CareerQsState createState() => CareerQsState();
 }
 
-class LookingHeightQsState extends State<LookingHeightQs> {
-  // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
+class CareerQsState extends State<CareerQs> {
   int? selectedButton;
-  Set<int> selectedButtons = {};
 
   void _onButtonSelected(int buttonIndex) {
     setState(() {
-
-      if (selectedButtons.contains(buttonIndex)) {
-        selectedButtons.remove(buttonIndex); // Deselect if already selected
-      } else {
-        selectedButtons.add(buttonIndex); // Add to selected buttons
-      }
-      if (buttonIndex==4){
-        selectedButtons.clear();
-        selectedButtons.add(4);
-      } else {
-        if(selectedButtons.contains(4)){
-          selectedButtons.remove(4);
-        }
-      }      
+      selectedButton = buttonIndex;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     final options = [
-  {'label': HeightView.lblHighQ, 'index': 1,},
-  { 'label': HeightView.lblMidQ,  'index': 2,},
-  {  'label': HeightView.lblLowQ, 'index': 3,},
-  { 'label': HeightView.lblAllQ, 'index': 4,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLbladmin'), 'index': 1,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblCont'), 'index': 2,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblBio'), 'index': 3,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblInd'), 'index': 4,},
+  {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblSis'), 'index': 5,},
 ];
     const Color textColor = Styl.textColorShade;
-
     return Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPage: HeigthQs(),
+        lastPage: LookingHeightQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -66,13 +51,13 @@ class LookingHeightQsState extends State<LookingHeightQs> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const HeaderOne(
-              message:HeightView.titleQ,
+            HeaderOne(
+              message: AppLocalizations.of(context)!.translate('CareerViewTitle'),
             ),
             SizedBox(height: Styl.respoHeightSmall(context)),
-            const TextOne(
+            TextOne(
               message:
-                  HeightView.descriptionQ,
+                  AppLocalizations.of(context)!.translate('CareerViewDescription'),
               xfontColor: textColor,
             ),
             SizedBox(height: Styl.respoHeightMedium(context)),
@@ -88,7 +73,7 @@ class LookingHeightQsState extends State<LookingHeightQs> {
                   ],
                 )
               ).toList()
-            ),  
+            ),   
             const Spacer(),
             WidgetButton(
               topPadding: Styl.respoHeightMedium(context),
@@ -99,7 +84,7 @@ class LookingHeightQsState extends State<LookingHeightQs> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const CareerQs(),
+                    builder: (context) => const LookingCareerQs(),
                   ),
                 );
               },

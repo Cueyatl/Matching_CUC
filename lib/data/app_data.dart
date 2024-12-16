@@ -79,10 +79,8 @@ class Styl {
 
 class ButtonText {
   static const String conString = "Continuar";
-  static const String enConString = "Continue";
 
   static const String acString = "Acepto";
-  static const String enAcString = "Accept";
 }
 
 class CredentialsView {
@@ -91,9 +89,8 @@ class CredentialsView {
   static const String tgPass = 'Contraseña';
 
   static const String lgIn = "Ingresar";
-  static String noCuenta = "No tienes una cuenta? Registrate aquí";
-  static String noAccount = noCuenta.substring(0,20);
-  static String sgnRegister = noCuenta.substring(21, noCuenta.length);
+  static String noCuenta = "No tienes una cuenta?";
+  static String sgnRegister =  "Registrate aquí";
 }
 
 class WelcomeView {

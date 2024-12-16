@@ -124,12 +124,20 @@ DONE View Tags (github library)
 DONE EXTRA standarize buttons for continue and accept text for minimizing errors, but still accept personalized text.
 
 **11/26**
+
+The json.decode method always outputs Map<String, dynamic> because JSON can contain values of multiple types (e.g., numbers, strings, booleans).
+To conform to Map<String, String>, we map each key-value pair, ensuring the values are converted to String using value.toString().
+
+
 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢
-* Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
+DONE Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
 DONE Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
 DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )
+ON IT Translate to english
 * Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .
 * Add functionality to Add photos. (image picker)
+
+4,5,8 and 9 with questionOPtions.
 
 DO? TypeOfRelationship
 
