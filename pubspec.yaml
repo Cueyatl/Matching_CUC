@@ -76,7 +76,7 @@ flutter:
     - images/addButton.png
     - assets/languages/en.json
     - assets/languages/es.json
-    # - assets/dummyJson
+    - assets/dummyJson/dummy_data.json
 
 
 

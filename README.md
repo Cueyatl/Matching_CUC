@@ -128,14 +128,19 @@ DONE EXTRA standarize buttons for continue and accept text for minimizing errors
 The json.decode method always outputs Map<String, dynamic> because JSON can contain values of multiple types (e.g., numbers, strings, booleans).
 To conform to Map<String, String>, we map each key-value pair, ensuring the values are converted to String using value.toString().
 
-
+Port: 5433
 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢
 DONE Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
+
 DONE Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
-DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )
-ON IT Translate to english
-* Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .
-* Add functionality to Add photos. (image picker)
+
+DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )  
+
+ON IT Translate to english  
+
+* Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .  
+
+* Add functionality to Add photos. (image picker)  
 
 4,5,8 and 9 with questionOPtions.
 
@@ -176,21 +181,25 @@ https://github.com/davigmacode/flutter_chips_choice/tree/master
 ### **COLORES**
 
 Otros colores propuestos.
-Calido
+* Calido  
+
 * Texto: 0XFF2CE30
 * FONDO: 0XFFEADED2
-* Alegre: 
+
+* Alegre:   
+
 * Texto: 0XFF2C3958
 * FONDO: 0XFFF2F2F2
+
+Colores actuales  
+
 ```
-
-
  Color(0xFFF5588A), //PINK
  Color(0xFFED0037), //ACCENT RED
 ```
 Estos colores son usados para margenes, botones y fondo.
 
-Colores como blanco y negro son usados para títulos, textos y margentes. Se recomienda cambiarlos más adelante.
+Colores como blanco y negro son usados para títulos, textos y márgenes. Se recomienda cambiarlos más adelante.
 
 ## Requisitos del proyecto
 

@@ -17,6 +17,7 @@ import 'questionare/altura.dart';
 import 'questionare/fotos.dart';
 import 'questionare/etiquetas.dart';
 import 'data/app_localizations.dart';
+import 'screens/cards.dart';
 // import 'NOT_Supported/main_Preview.dart';
 
 void main() {
@@ -53,7 +54,7 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       // home: HomePage(onLocaleChange: setLocale),
-      home: const SignInLogIn(),
+      home:  const TinderCardApp(),
     );
   }
 }
