@@ -6,69 +6,123 @@ import 'package:matching/questionare/fecha_nacimiento.dart';
 import 'package:matching/questionare/bienvenida.dart';
 import 'package:matching/data/app_data.dart';
 import 'package:matching/data/app_localizations.dart';
-
+//Elimnita later
+import 'package:matching/NOT_Supported/main_preview.dart';
 void main() {
   runApp(const NameQs());
 }
 
-class NameQs extends StatelessWidget {
+class NameQs extends StatefulWidget {
   const NameQs({super.key});
+
+  @override
+  State<NameQs> createState() => _NameQsState();
+}
+
+class _NameQsState extends State<NameQs> {
+  final _formKey = GlobalKey<FormState>();
+  final TextEditingController _nameController = TextEditingController();
+  bool _isButtonEnabled = true; //ERROR: Cambiame a false antes de usar.
+
+  void _updateButtonState() {
+    setState(() {
+      _isButtonEnabled = _formKey.currentState?.validate() ?? false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController.addListener(_updateButtonState);
+  }
+
+  @override
+  void dispose() {
+    _nameController.removeListener(_updateButtonState);
+    _nameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    //Color Variables, change em to global vars from app_data.
-  const Color textColor = Styl.textColorShade;
-  const Color textBaseColor = Styl.textColorBase;
-  
-// -----------------------------------------
-// Lógica para validar datos de fechas ingresadas
-// -----------------------------------------
-
-
+    const Color textColor = Styl.textColorShade;
+    const Color textBaseColor = Styl.textColorBase;
 
     return Scaffold(
       backgroundColor: Styl.bgBase,
-      appBar: const WidgetCloseAppBar(goBack: true, lastPage: WelcomeQs(),),
+      appBar: const WidgetCloseAppBar(
+        goBack: true,
+        lastPage: WelcomeQs(),
+      ),
       body: Padding(
-        padding: const  EdgeInsets.symmetric(
+        padding: const EdgeInsets.symmetric(
           vertical: Styl.verticalPadding,
           horizontal: Styl.horizontalPadding,
-          ),
+        ),
+        child: Form(
+          key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-                HeaderOne(message: AppLocalizations.of(context)!.translate('NameViewTitle')),
-                Padding(
-                padding:const EdgeInsets.symmetric(vertical: 14.0,),
+              HeaderOne(
+                  message: AppLocalizations.of(context)!
+                      .translate('NameViewTitle')),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 14.0),
                 child: TextFormField(
+                  controller: _nameController,
                   decoration: InputDecoration(
                     fillColor: Styl.bgBase,
-                    contentPadding:const  EdgeInsets.only(bottom: 0.0),
-                    enabledBorder:const UnderlineInputBorder(
+                    contentPadding: const EdgeInsets.only(bottom: 0.0),
+                    enabledBorder: const UnderlineInputBorder(
                       borderSide: BorderSide(color: textColor),
                     ),
-                    focusedBorder:const UnderlineInputBorder(
-                      borderSide: BorderSide(color:textBaseColor),
-                      ),
+                    focusedBorder: const UnderlineInputBorder(
+                      borderSide: BorderSide(color: textBaseColor),
+                    ),
                     focusColor: textBaseColor,
-                    labelText: AppLocalizations.of(context)!.translate('NameViewLblName'),
-                    labelStyle:const TextStyle(color:textColor)
+                    labelText: AppLocalizations.of(context)!
+                        .translate('NameViewLblName'),
+                    labelStyle: const TextStyle(color: textColor),
                   ),
+                  maxLength: 30,
+                  // Validation Logic
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return  AppLocalizations.of(context)!.translate('nameVal');
+                    }
+                    // Regex for names only acceted vocals and letters and spaces.
+                    if (!RegExp(TypeValidation.valsForNames).hasMatch(value)) {
+                      return AppLocalizations.of(context)!.translate('nameValSpecification');
+                    }
+                    return null;
+                  },
                 ),
               ),
-              TextOne(message: AppLocalizations.of(context)!.translate('NameViewAdviceOne')),
-              TextOne(message: AppLocalizations.of(context)!.translate('NameViewAdviceTwo'),
-              xfontWeight: FontWeight.bold,),
-              
-              WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: false, isGradient: true, 
+              TextOne(
+                  message: AppLocalizations.of(context)!
+                      .translate('NameViewAdviceOne')),
+              TextOne(
+                message: AppLocalizations.of(context)!
+                    .translate('NameViewAdviceTwo'),
+                xfontWeight: FontWeight.bold,
+              ),
+              WidgetButton(
+                topPadding: Styl.respoHeightMedium(context),
+                bottomPadding: Styl.respoHeightSmall(context),
+                acceptOrContinue: false,
+                isGradient: true,
+                isEnabled: _isButtonEnabled, 
                 logicHere: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const BirthdayQs()));                
+                  if (_formKey.currentState?.validate() ?? false) {
+                    Navigator.pushNamed(context, '/BirthdayQs');
+                  }
                 },
-              )
-
+              ),
             ],
-          )
-
-      )
+          ),
+        ),
+      ),
     );
   }
 }

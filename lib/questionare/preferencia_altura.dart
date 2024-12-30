@@ -10,16 +10,16 @@ import 'package:matching/data/app_localizations.dart';
 
 
 void main() {
-  runApp(const LookingHeightQs());
+  runApp(const SearchHeightQs());
 }
 
-class LookingHeightQs extends StatefulWidget {
-  const LookingHeightQs({super.key});
+class SearchHeightQs extends StatefulWidget {
+  const SearchHeightQs({super.key});
   @override
-  LookingHeightQsState createState() => LookingHeightQsState();
+  SearchHeightQsState createState() => SearchHeightQsState();
 }
 
-class LookingHeightQsState extends State<LookingHeightQs> {
+class SearchHeightQsState extends State<SearchHeightQs> {
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
   int? selectedButton;
   Set<int> selectedButtons = {};
@@ -52,7 +52,7 @@ class LookingHeightQsState extends State<LookingHeightQs> {
   {  'label': AppLocalizations.of(context)!.translate('HeightViewLblLowQ'), 'index': 3,},
   { 'label': AppLocalizations.of(context)!.translate('HeightViewLblAllQ'), 'index': 4,},
 ];
-    const Color textColor = Styl.textColorShade;
+    
 
     return Scaffold(
       backgroundColor: Styl.bgBase,
@@ -82,7 +82,7 @@ class LookingHeightQsState extends State<LookingHeightQs> {
                   options.map<Widget>((option) => Column(children: [
                     SelectableButton(
                       label: option['label'].toString(),
-                      isSelected: options.contains(option['index']),
+                      isSelected: selectedButtons.contains(option['index']),
                       onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
                     ),
                     const SizedBox(height: Styl.heightSBoxSmall),

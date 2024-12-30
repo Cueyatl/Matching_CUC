@@ -74,12 +74,12 @@ class SearchGenderQsState extends State<SearchGenderQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeaderOne(
-              message: AppLocalizations.of(context)!.translate('BirthdayViewTitleQ'),
+              message: AppLocalizations.of(context)!.translate('GenderViewTitleQ'),
             ),
             SizedBox(height: Styl.respoHeightSmall(context)),
             TextOne(
               message:
-                  AppLocalizations.of(context)!.translate('BirthdayViewDescriptionQ'),
+                  AppLocalizations.of(context)!.translate('GenderViewDescriptionQ'),
               xfontColor: textColor,
             ),
             Column(
@@ -95,30 +95,6 @@ class SearchGenderQsState extends State<SearchGenderQs> {
                 )
               ).toList()
             ),       
-            
-            // const SizedBox(height: 18),
-            // SelectableButton(
-            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblMan'),
-            //   isSelected:  selectedButtons.contains(1), 
-            //   onPressed: () => _onButtonSelected(1),              
-            // ),
-            // const SizedBox(width: 20), // Add some spacing between buttons
-            // SelectableButton(
-            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblWoman'),
-            //   isSelected: selectedButtons.contains(2),
-            //   onPressed: () => _onButtonSelected(2),
-              
-            // ),
-            // SelectableButton(
-            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblBeyond')Bin,
-            //   isSelected: selectedButtons.contains(3),
-            //   onPressed: () => _onButtonSelected(3),
-            // ),
-            // SelectableButton(
-            //   label: AppLocalizations.of(context)!.translate('QuestionOptionsLblGenders'),
-            //   isSelected: selectedButtons.contains(4),
-            //   onPressed: () => _onButtonSelected(4),
-            // ),
             const Spacer(),
             WidgetButton(
               topPadding: Styl.respoHeightMedium(context),

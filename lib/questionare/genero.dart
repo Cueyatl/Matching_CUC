@@ -60,18 +60,30 @@ class GenderQsState extends State<GenderQs> {
                 onPressed: () => Navigator.pop(context),
               ),
               HeaderThree(
-                message: AppLocalizations.of(context)!.translate('BirthdayViewTitleBottomSheet'),
+                message: AppLocalizations.of(context)!.translate('GenderViewTitleBottomSheet'),
                 xTextAlign: TextAlign.start,
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
               TextOne(
-                message: AppLocalizations.of(context)!.translate('BirthdayViewDescriptionBottomSheet'),
+                message: AppLocalizations.of(context)!.translate('GenderViewDescriptionBottomSheet'),
                 xfontColor: Styl.textColorShade,
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              TextField(
+              TextFormField(
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return AppLocalizations.of(context)!.translate('nameVal');
+                  }
+                  // Regex for names only acceted vocals and letters and spaces.
+                  if (!RegExp(TypeValidation.valsForNames).hasMatch(value)) {
+                    return AppLocalizations.of(context)!
+                        .translate('nameValSpecification');
+                  }
+                  return null;
+                },
                 decoration: InputDecoration(
-                  hintText: AppLocalizations.of(context)!.translate('GenderViewLblGenderBottomSheet'),
+                  hintText: AppLocalizations.of(context)!
+                      .translate('GenderViewLblGenderBottomSheet'),
                   hintStyle: const TextStyle(color: Styl.textColorShade),
                   border: const OutlineInputBorder(),
                 ),
@@ -119,13 +131,13 @@ class GenderQsState extends State<GenderQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             HeaderOne(
-              message: AppLocalizations.of(context)!.translate('BirthdayViewTitle'),
+              message: AppLocalizations.of(context)!.translate('GenderViewTitle'),
             ),
             TextOne(
-              message: AppLocalizations.of(context)!.translate('BirthdayViewDescription'),
+              message: AppLocalizations.of(context)!.translate('GenderViewDescription'),
               xfontColor: Styl.textColorShade,
             ),
-            SizedBox(height: Styl.respoHeightSmall(context)),
+            SizedBox(height: Styl.respoHeightMedium(context)),
             Column(
               children: options
                   .map<Widget>((option) => Column(

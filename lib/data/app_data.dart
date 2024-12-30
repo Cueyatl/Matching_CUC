@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 
+
+class TypeValidation{
+  static const String valsForNames=r"^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$";
+}
 class Styl {
   static const double topP = 40.0;
   static const double bottomP = 10.0;
+  
   static const Color textColorShade =Color(0XFF2C3958);
+  static const Color languageToggleColor =Color(0XFFE75469);
+  static const Color languageToggleBG =Color(0XFFD6BD8E);
+
   static const Color textColorBase = Color.fromARGB(255, 21, 27, 42);
   static const Color textColorPink = Color(0xFFF5588A);
   static const Color textColorPinkAccent = Color(0xFFED0037);

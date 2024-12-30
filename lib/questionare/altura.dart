@@ -17,6 +17,7 @@ class HeigthQs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   const Color textColor = Styl.textColorShade;
+final formKey = GlobalKey<FormState>();
 
 
   
@@ -26,7 +27,12 @@ class HeigthQs extends StatelessWidget {
 
 
 
-    return Scaffold(
+    return
+    Form
+    (
+    key:formKey,
+    child: 
+    Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(goBack: true, lastPage: SearchGenderQs(),),
       body: Padding(
@@ -52,6 +58,16 @@ class HeigthQs extends StatelessWidget {
                     // ],
                     maxLength: 4,
                     textAlign: TextAlign.center,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'La altura es requerida';
+                        }
+                        final height = int.tryParse(value);
+                        if (height == null || height < 50 || height > 240) {
+                          return 'Introduce una altura válida (50 - 240 cm)';
+                        }
+                        return null;
+                      },
                     decoration:  InputDecoration(
                       counterText: '',
                       enabledBorder:const  UnderlineInputBorder(
@@ -66,6 +82,7 @@ class HeigthQs extends StatelessWidget {
                         color: textColor,
                         fontSize: Styl.p3(context),
                       ),
+                      
                     ),
                   ),
                 ),
@@ -73,12 +90,12 @@ class HeigthQs extends StatelessWidget {
               
               WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: false, isGradient: true, 
                 logicHere: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const LookingHeightQs()));                
+                  Navigator.pushNamed(context, '/SearchHeightQs');
                 },
               )
             ],
           )
-
+)
       )
     );
   }

@@ -1,32 +1,41 @@
 // ignore_for_file: unused_import
-
+// Importaciones de Flutter
 import 'package:flutter/material.dart';
-import 'package:matching/data/app_data.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:matching/screens/home_page.dart';
-// import 'package:matching/screens/_home_screen.dart';
-// import 'screens/profile_screen.dart';
-import 'screens/_login_signin.dart';
-import 'screens/_flasher.dart';
-import 'screens/login.dart';
+
+import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
+
+// Importaciones de Cuestionario
 import 'questionare/bienvenida.dart';
-import 'questionare/fecha_nacimiento.dart';
-import 'questionare/preferencia_genero.dart';
-import 'questionare/genero.dart';
-import 'questionare/altura.dart';
-import 'questionare/fotos.dart';
-import 'questionare/etiquetas.dart';
-import 'data/app_localizations.dart';
-import 'screens/cards.dart';
-// import 'NOT_Supported/main_Preview.dart';
+import 'package:matching/questionare/nombre.dart';
+import 'package:matching/questionare/fecha_nacimiento.dart';
+import 'package:matching/questionare/altura.dart';
+import 'package:matching/questionare/carrera.dart';
+import 'package:matching/questionare/etiquetas.dart';
+import 'package:matching/questionare/genero.dart';
+import 'package:matching/questionare/preferencia_altura.dart';
+import 'package:matching/questionare/preferencia_carrera.dart';
+import 'package:matching/questionare/preferencia_genero.dart';
+import 'package:matching/questionare/fotos.dart';
+
+// Importaciones Pantallas
+import 'screens/_flasher.dart';
+import 'screens/swipe_cards.dart';
+import 'screens/home_page.dart';
+import 'screens/login_page.dart';
+
+
+
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
   @override
-  State<MyApp> createState() => _MyAppState();
+  State<MyApp> createState() =>  _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
@@ -54,7 +63,28 @@ class _MyAppState extends State<MyApp> {
         GlobalCupertinoLocalizations.delegate,
       ],
       // home: HomePage(onLocaleChange: setLocale),
-      home:  const TinderCardApp(),
+      home:   LogInForm(onLocaleChange: setLocale,),
+      routes: {
+        '/': (context) =>   LogInForm(onLocaleChange: setLocale),       // Home Page
+      '/WelcomeQs': (context) => const  WelcomeQs(), // Calendar Page
+      '/name': (context) => const  NameQs(),
+      '/BirthdayQs': (context) => const  BirthdayQs(),
+      '/GenderQs': (context) => const  GenderQs(),
+      '/SearchGenderQs': (context) => const  SearchGenderQs(),
+      '/SearchHeightQs': (context) => const  SearchHeightQs(),
+      '/SearchCareerQs': (context) => const SearchCareerQs(),
+      '/AddPhotosQs': (context) => const AddPhotosQs(),
+      '/PersonalityTags': (context) => const PersonalityTags(),
+
+      // '/PersonalityTags': (context) => const PersonalityTags(),
+      '/SwipeCardsClass': (context) =>  SwipeCardsClass(),
+
+      
+
+
+
+      },
+
     );
   }
 }

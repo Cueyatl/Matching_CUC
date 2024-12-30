@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:matching/main.dart';
 
-import 'package:matching/screens/_login_signin.dart';
+import 'package:matching/screens/login_page.dart';
 import 'package:matching/data/app_data.dart';
+
 
 
 class WidgetCloseAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -21,18 +23,11 @@ class WidgetCloseAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: IconButton(
         onPressed: () {
-          if (goBack) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => lastPage!),
-            );
-          } else {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => const SignInLogIn()),
-            );
-          }
-        },
+        
+            Navigator.pop(context); 
+
+          },
+        
         icon: goBack
             ? const Icon (
                 Icons.arrow_back,

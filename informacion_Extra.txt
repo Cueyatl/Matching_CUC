@@ -1,0 +1,3 @@
+teoria de SetState para validacion de botones en _button_widget
+Base.py: Contiene metodos crud con print statements para verificar la informacion, Tiene un menu demostrativo tambien,
+busqueda.py: Metodo de busqueda y coneccion a la base de datos sqlite3

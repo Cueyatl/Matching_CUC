@@ -1,4 +1,8 @@
 {
+  "English": "English",
+  "Spanish": "Spanish",
+  "nameVal": "The name can't be empty",
+  "nameValSpecification": "Only letters and spaces allowed",
   "hello": "Hello",
   "ButtonTextConString": "Continue",
   "ButtonTextAcString": "Accept",
@@ -6,7 +10,7 @@
   "CredentialsViewTgUser": "Username or email",
   "CredentialsViewTgPass": "Password",
   "CredentialsViewLgIn": "Log in",
-  "CredentialsViewNoCuenta": "Don't have an account?",
+  "CredentialsViewNoCuenta": "Don't have an account? ",
   "CredentialsViewSgnRegister": "Register here",
   "WelcomeViewTitle": "Welcome to Matching.",
   "WelcomeViewDescription": "Please follow these rules.",
@@ -16,7 +20,7 @@
   "WelcomeViewRuleTwoText": "Don't share your personal information too soon.",
   "WelcomeViewRuleThreeTitle": "Take it easy.",
   "WelcomeViewRuleThreeText": "Respect others and treat them as you would like to be treated.",
-  "WelcomeViewRuleFourTitle": "Take the initiativ e.",
+  "WelcomeViewRuleFourTitle": "Take the initiative.",
   "WelcomeViewRuleFourText": "Always report inappropriate behavior.",
   "NameViewTitle": "What's your first name?",
   "NameViewLblName": "Name",
@@ -61,7 +65,11 @@
   "PhotosViewSelectCamera": "Camera",
   "PhotosViewSelectGallery": "Gallery",
   "TagsViewTitle": "What do you like?",
-  "TagsViewdescription": "Let everyone know what you like.",
+  "TagsViewDescription": "Let everyone know what you like.",
+  "PhotoAddMenu": "¿How would you like to add your photo?",
+  "Gallery": "Gallery",
+  "Camera": "Camera",
+
 
   "matchTags": [
     "Master chef... imagining 👩‍🍳",

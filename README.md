@@ -12,30 +12,30 @@ Travel sales man problem.
 
 hashtables
 
-Perct Total
-PROYECTO FINAL
-Objetivo del Proyecto:
+
+
+## **Objetivo del Proyecto:**
 
 Desarrollar una aplicación en Python que permita a los usuarios crear un perfil personal en base a cuatro categorías: información personal y características físicas, personalidad, gustos e intereses, y lo que buscan en una pareja. Los usuarios podrán establecer no solo sus propios datos, sino también los criterios de búsqueda que desean en una pareja, permitiendo coincidencias personalizadas.
- 
 Funcionalidades Clave:
+
 1. Pantallas Principales:
-
+DONE
    - Pantalla de bienvenida: Página inicial simple con opciones para iniciar sesión o crear una cuenta.
-
+IN 
    - Página de inicio de sesión: Donde los usuarios pueden acceder a sus cuentas.
-
+IN WORK
    - Página de creación de cuenta: Formulario para que nuevos usuarios se registren ingresando su información personal.
 
    - Página de perfil: Donde los usuarios pueden completar sus perfiles, modificar su información y seleccionar criterios de búsqueda para su pareja ideal.
-
+IN WORK
    - Página de tarjetas de otros usuarios: Visualización de otros perfiles que coinciden con sus criterios de búsqueda.
  
 2. Menús Desplegables: 
 
      - Información personal y características físicas: estatura, edad, orientación, complexión, cabello, etc.
 (Grupo de menús desplegables con opciones finitas)
-
+TODO
      - Personalidad: apertura a la experiencia, inclinación política, espiritualidad, hábitos, etc.
 (Grupo de menús desplegables con opciones generales)
 
@@ -56,32 +56,25 @@ Funcionalidades Clave:
    - Plazo: 6 de Diciembre de 2024
    - Entegables: Código fuente funcional de la aplicación. Documento de especificaciones técnicas (detalles de arquitectura, tecnologías utilizadas, etc.). Presentación de los resultados y funcionalidades clave de la aplicación.
  
-**Criterios de Evaluación:**
 
-* 40% Funcionalidad: Que la aplicación cumpla con las funcionalidades descritas.
-* 10% Diseño: Interfaz de usuario clara y atractiva.
-* 20% Eficiencia: La aplicación debe ser rápida y manejar bien los cálculos de porcentajes.
-* 30% Trabajo en equipo: Organización y coordinación efectiva entre los desarrolladores.
+** __________TASKS_________
+ Implementación de la pantalla de bienvenida y la lógica de inicio de sesión.
 
-**La calificación final será calculada a partir del número de funcionalidades y elementos logrados en el tiempo disponible, el 50% será asignado por el docente y el otro 50% por medio de una coevaluación del equipo.**
+Desarrollo de la página de creación de cuenta, donde los usuarios ingresan información básica.
 
-**EJEMPLOS DE ORGANIZACIÓN Y REPARTICIÓN DEL TRABAJO (únicamente informativo):**
+ Desarrollo de la página de perfil, que incluye formularios de las cuatro categorías.
 
-* Dev 1: Implementación de la pantalla de bienvenida y la lógica de inicio de sesión.
+Implementación de la página de visualización de otros perfiles (tarjetas de usuarios).
 
-* Dev 2: Desarrollo de la página de creación de cuenta, donde los usuarios ingresan información básica.
+Lógica para la selección y comparación de criterios de búsqueda.
 
-* Dev 3: Desarrollo de la página de perfil, que incluye formularios de las cuatro categorías.
+ Cálculo de los porcentajes de aceptación y coincidencia.
 
-* Dev 4: Implementación de la página de visualización de otros perfiles (tarjetas de usuarios).
+Testing, debugging, y optimización de la aplicación para un rendimiento eficiente.
 
-* Dev 5: Lógica para la selección y comparación de criterios de búsqueda.
+No type of rela.
 
-* Dev 6: Cálculo de los porcentajes de aceptación y coincidencia.
-
-* Dev 7: Testing, debugging, y optimización de la aplicación para un rendimiento eficiente.
-
-
+*****
 
 **TODOS:**
 
@@ -117,49 +110,85 @@ Funcionalidades Clave:
 
 ✅DONE  Put this in github
 
-DONE Atomize textformfield, leave styles to the open. but make it smaller and centralized .
+✅DONE Atomize textformfield, leave styles to the open. but make it smaller and centralized .
 
-DONE View Tags (github library)
+✅DONE View Tags (github library)
 
-DONE EXTRA standarize buttons for continue and accept text for minimizing errors, but still accept personalized text.
+✅DONE EXTRA standarize buttons for continue and accept text for minimizing errors, but still accept personalized text.
 
-**11/26**
+✅DONE Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
+
+**12/22**
+
+✅DONE Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
+
+✅DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )  
+
+✅DONE  Translate to english  
+Fix translations and add button for english in user menu and log in menu.
+
+
+✅DONE  Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .  
+
+✅DONE * MAKE CARDS DEMO FOR BACKEND TESTING  
+
+✅DONE  Add functionality to Add photos. (image picker)  
+
+✅DONE  Add validation to name length and char
+
+✅DONE view Cards (leave for later, too complicated)
+
+✅DONE Add button for eng/span in main.
+
+🗿🗿🗿🗿ACTIVE🗿🗿🗿🗿🗿
+
+
+🗿ACTIVE MAKE PROFILE DEMO FOR BACKEND TESTING TOO.
+
+
+⚠️BUG/TEST add validation to dates according to LegalDate,add logic for "common sense" ages.
+
+🗿ACTIVE Add validation to height
+
+🗿ACTIVE Add dissable buttons for options if no option selected.
+
+🗿ACTIVE view Profile (IRENE)
+
+
+ACTIVE NOW Add validation to gender option: "Others"
+
+TODO
+Edit button logic for data validation, at least select some.
+
+
+View page for  físicas: YA estatura,YA  edad,ya orientación, complexión, cabello.
+
+Create a preference page for this, maybe genres?:
+
+Tags in here:
+     - Personalidad: apertura a la experiencia, inclinación política, espiritualidad, hábitos, etc.
+
+     - Gustos e intereses: hobbies, música, deportes, arte, etc.
+(Banco de items con mínimo y máximo de selección o menús desplegables con opciones finitas)
+
+     - Lo que buscan en una pareja: preferencia de estatura, intereses comunes, etc.
+(Menús desplegables con rangos acotados y 
+* Add validation to heigth between 60cms and 2.60 meters (acodroplacia)
+
+* view Edit profile button and menu (this one's the easiest)
+IMPOSIBLE  Add logo before and start with sign in and sing up
+IMPOSIBLE Add logo before and  start of app.
+* Investigate ways to save info, metadata, cache on each phone.
+
+
+
 
 The json.decode method always outputs Map<String, dynamic> because JSON can contain values of multiple types (e.g., numbers, strings, booleans).
 To conform to Map<String, String>, we map each key-value pair, ensuring the values are converted to String using value.toString().
 
 Port: 5433
 🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢🐢
-DONE Try to atomize all repeating componentes and eliminate floting doubles on site, store  em in global variables dont know where.
 
-DONE Make texts and images responsive, check if divs of boxes too. (SEE REFERENCE AT A _photos* and text_style_widget )
-
-DONE Also change names of files and classes used.(it pops a warning in the PROBLEMS secti )  
-
-ON IT Translate to english  
-
-* Add bottom to top menu in Add pictures. SEE REFERENCE IN GENDERQS-> others butt .  
-
-* Add functionality to Add photos. (image picker)  
-
-4,5,8 and 9 with questionOPtions.
-
-DO? TypeOfRelationship
-
-TODO: 
-* MAKE CARDS DEMO FOR BACKEND TESTING  
-* MAKE PROFILE DEMO FOR BACKEND TESTING TOO.
-
-* Add validation to name length and chars
-* add validation to dates according to LegalDate,add logic for "common sense" ages.
-* Add validation to heigth between 60cms and 2.60 meters (acodroplacia)
-* Add dissable buttons for options if no option selected.
-* view Cards (leave for later, too complicated)
-* view Profile (Can do that)
-* view Edit profile button and menu (this one's the easiest)
-* Add logo before and start with sign in and sing up
-* Add logo before and  start of app.
-* Investigate ways to save info, metadata, cache on each phone.
 ***
 
 ## Recursos
@@ -174,22 +203,31 @@ Para etiquteas:
 https://fluttergems.dev/packages/chips_choice/Git
 https://github.com/davigmacode/flutter_chips_choice/tree/master
 
+Libraries used:
+  swipe_cards: ^2.0.0+1
+  image_picker: ^1.1.2
+  toggle_switch: ^2.3.0
 
 
 
 ## Estética
 ### **COLORES**
 
-Otros colores propuestos.
+Otros colores propuestos.0XFF
 * Calido  
 
-* Texto: 0XFF2CE30
-* FONDO: 0XFFEADED2
+* Texto: #F2CE30
+* FONDO: #EADED2
 
 * Alegre:   
 
-* Texto: 0XFF2C3958
-* FONDO: 0XFFF2F2F2
+* Texto: #2C3958
+* FONDO: #F2F2F2
+
+* Tranquilo:
+  FONDO: #D6BD8E
+  Texto: #E75469
+  
 
 Colores actuales  
 

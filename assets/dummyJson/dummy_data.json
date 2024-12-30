@@ -1,258 +1,218 @@
+
 [
   {
     "Nombre": "Karen Alejandra Flores Ozuna",
-    "Fecha de Nacimiento": "11/21/2005",
+    "Fecha de Nacimiento": "21/11/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.40 - 1.50",
-    "Observaciones": "Más alt@s que yo, De mi altura"
+    "pref_gender": "Más alt@s que yo, De mi altura",
+    "image":"images/imagePlaceholder.png"
   },
   {
     "Nombre": "Iván",
-    "Fecha de Nacimiento": "8/25/2005",
+    "Fecha de Nacimiento": "25/08/2005",
     "Genero": "Hombre",
-    "Contraparte": "Mujer",
+    "pref_heigth": "Mujer",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Alturas mas bajas que la mia"
+    "pref_gender": "Alturas mas bajas que la mia",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Estefania Neftali Arellano Pantoja",
-    "Fecha de Nacimiento": "11/19/2004",
+    "Fecha de Nacimiento": "19/11/2004",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Claudia Arellano",
-    "Fecha de Nacimiento": "3/6/1979",
+    "Fecha de Nacimiento": "06/03/1979",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Abril Mezquite Pérez",
-    "Fecha de Nacimiento": "6/27/2005",
+    "Fecha de Nacimiento": "27/06/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Karol María López Martínez",
-    "Fecha de Nacimiento": "4/2/2005",
+    "Fecha de Nacimiento": "02/04/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Miriam Citlali Murillo Gómez",
-    "Fecha de Nacimiento": "5/25/2005",
+    "Fecha de Nacimiento": "25/05/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Lourdes González Ximena",
-    "Fecha de Nacimiento": "4/26/2005",
+    "Fecha de Nacimiento": "26/04/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Evelin Hernández Cenobio",
-    "Fecha de Nacimiento": "12/10/2005",
+    "Fecha de Nacimiento": "10/12/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Emily",
-    "Fecha de Nacimiento": "2/14/2005",
+    "Fecha de Nacimiento": "14/02/2005",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Jesus Alejandro Acevedo",
-    "Fecha de Nacimiento": "3/23/2005",
+    "Fecha de Nacimiento": "23/03/2005",
     "Genero": "Hombre",
-    "Contraparte": "Mujer",
+    "pref_heigth": "Mujer",
     "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
+    "pref_gender": "Cualquier las alturas",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
     "Nombre": "Andrea",
-    "Fecha de Nacimiento": "5/24/1993",
+    "Fecha de Nacimiento": "24/05/1993",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  }, {
+    "Nombre": "Karen Alejandra Flores Ozuna",
+    "Fecha de Nacimiento": "21/11/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.40 - 1.50",
+    "pref_gender": "Más alt@s que yo, De mi altura",
+    "image":"images/imagePlaceholder.png"
   },
   {
-    "Nombre": "Lucas García",
-    "Fecha de Nacimiento": "2/18/2006",
+    "Nombre": "Iván",
+    "Fecha de Nacimiento": "25/08/2005",
     "Genero": "Hombre",
-    "Contraparte": "Mujer",
+    "pref_heigth": "Mujer",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Alturas mas bajas que la mia",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Estefania Neftali Arellano Pantoja",
+    "Fecha de Nacimiento": "19/11/2004",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Claudia Arellano",
+    "Fecha de Nacimiento": "06/03/1979",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Abril Mezquite Pérez",
+    "Fecha de Nacimiento": "27/06/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Karol María López Martínez",
+    "Fecha de Nacimiento": "02/04/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Miriam Citlali Murillo Gómez",
+    "Fecha de Nacimiento": "25/05/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Lourdes González Ximena",
+    "Fecha de Nacimiento": "26/04/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Evelin Hernández Cenobio",
+    "Fecha de Nacimiento": "10/12/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Emily",
+    "Fecha de Nacimiento": "14/02/2005",
+    "Genero": "Mujer",
+    "pref_heigth": "Hombre",
+    "Altura": "1.50 - 1.60",
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
+  },
+  {
+    "Nombre": "Jesus Alejandro Acevedo",
+    "Fecha de Nacimiento": "23/03/2005",
+    "Genero": "Hombre",
+    "pref_heigth": "Mujer",
     "Altura": "1.60 - 1.70",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Cualquier las alturas",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   },
   {
-    "Nombre": "Sofía Martínez",
-    "Fecha de Nacimiento": "11/5/2004",
+    "Nombre": "Andrea",
+    "Fecha de Nacimiento": "24/05/1993",
     "Genero": "Mujer",
-    "Contraparte": "Hombre",
+    "pref_heigth": "Hombre",
     "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Diego López",
-    "Fecha de Nacimiento": "4/10/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Alturas mas bajas que la mia"
-  },
-  {
-    "Nombre": "Valentina Pérez",
-    "Fecha de Nacimiento": "12/12/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Maximiliano Ruiz",
-    "Fecha de Nacimiento": "7/30/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
-  },
-  {
-    "Nombre": "Lucía González",
-    "Fecha de Nacimiento": "9/18/2004",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Álvaro Martínez",
-    "Fecha de Nacimiento": "1/15/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
-  },
-  {
-    "Nombre": "Isabella Rodríguez",
-    "Fecha de Nacimiento": "10/21/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Gabriel Pérez",
-    "Fecha de Nacimiento": "5/30/2004",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Alturas mas bajas que la mia"
-  },
-  {
-    "Nombre": "Victoria Jiménez",
-    "Fecha de Nacimiento": "8/7/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Ricardo Medina",
-    "Fecha de Nacimiento": "6/22/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
-  },
-  {
-    "Nombre": "Paola Díaz",
-    "Fecha de Nacimiento": "3/10/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Emiliano Torres",
-    "Fecha de Nacimiento": "4/14/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
-  },
-  {
-    "Nombre": "Martina Sánchez",
-    "Fecha de Nacimiento": "12/5/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Alejandro Ruiz",
-    "Fecha de Nacimiento": "11/21/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "Observaciones": "Cualquier las alturas"
-  },
-  {
-    "Nombre": "Camila Vázquez",
-    "Fecha de Nacimiento": "2/20/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Samuel Hernández",
-    "Fecha de Nacimiento": "5/5/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Alturas mas bajas que la mia"
-  },
-  {
-    "Nombre": "Mariana Soto",
-    "Fecha de Nacimiento": "9/10/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
-  },
-  {
-    "Nombre": "Carlos Rivera",
-    "Fecha de Nacimiento": "10/5/2005",
-    "Genero": "Hombre",
-    "Contraparte": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Alturas mas bajas que la mia"
-  },
-  {
-    "Nombre": "Ana María López",
-    "Fecha de Nacimiento": "6/1/2005",
-    "Genero": "Mujer",
-    "Contraparte": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "Observaciones": "Más alt@s que yo"
+    "pref_gender": "Más alt@s que yo",
+    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
   }
 ]

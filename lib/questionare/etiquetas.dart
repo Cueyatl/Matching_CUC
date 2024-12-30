@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:matching/questionare/fotos.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
@@ -49,7 +50,6 @@ void setSelectedValue(String? value) {
         backgroundColor: Styl.bgBase,
         appBar: const WidgetCloseAppBar(
           goBack: true,
-          lastPage: WelcomeQs(),
         ),
         body: Padding(
             padding:
@@ -101,11 +101,8 @@ void setSelectedValue(String? value) {
                   acceptOrContinue: false,
                   isGradient: true,
                   logicHere: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const BirthdayQs()));
-                  },
+                  Navigator.pushNamed(context, '/SwipeCardsClass');
+              },
                 )
               ],
               

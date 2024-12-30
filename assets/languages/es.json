@@ -1,5 +1,9 @@
 
 {
+  "English": "Inglés",
+  "Spanish": "Español",
+  "nameVal": "El nombre no puede estar vacío",
+  "nameValSpecification": "Solo se permiten letras y espacios",
   "hello": "hola",  
   "ButtonTextConString": "Continuar",
   "ButtonTextAcString": "Acepto",
@@ -7,7 +11,7 @@
   "CredentialsViewTgUser": "Usuario o correo electrónico",
   "CredentialsViewTgPass": "Contraseña",
   "CredentialsViewLgIn": "Ingresar",
-  "CredentialsViewNoCuenta": "No tienes una cuenta?",
+  "CredentialsViewNoCuenta": "No tienes una cuenta? ",
   "CredentialsViewSgnRegister": "Registrate aquí",
   "WelcomeViewTitle": "Te damos la bienvenida a Matching.",
   "WelcomeViewDescription": "Por favor, sigue estas reglas.",
@@ -63,6 +67,9 @@
   "PhotosViewSelectGallery": "Galería",
   "TagsViewTitle" : "¿Qué te gusta?",
   "TagsViewDescription" : "Hazle saber a todos lo que te gusta.",
+  "PhotoAddMenu": "¿Cómo quieres agregar tu foto?",
+  "Gallery": "Galería",
+  "Camera": "Cámara",
 
   "matchTags" : [
     "Master chef... imaginando 👩‍🍳",

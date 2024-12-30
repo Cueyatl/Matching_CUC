@@ -40,8 +40,7 @@ class CareerQsState extends State<CareerQs> {
     return Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
-        goBack: true,
-        lastPage: LookingHeightQs(),
+        
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -66,7 +65,7 @@ class CareerQsState extends State<CareerQs> {
                   options.map<Widget>((option) => Column(children: [
                     SelectableButton(
                       label: option['label'].toString(),
-                      isSelected: options.contains(option['index']),
+                      isSelected: selectedButton==option['index'],
                       onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
                     ),
                     const SizedBox(height: Styl.heightSBoxSmall),
@@ -81,12 +80,7 @@ class CareerQsState extends State<CareerQs> {
               acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const LookingCareerQs(),
-                  ),
-                );
+                Navigator.pushNamed(context, '/calendar');
               },
             ),
           ],

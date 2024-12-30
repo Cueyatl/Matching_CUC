@@ -8,23 +8,32 @@ class WidgetButton extends StatelessWidget {
   final double topPadding; // Espaciado superior.
   final double bottomPadding; // Espaciado inferior.
   final String message; // Mensaje personalizado que se muestra en el botón.
-  final bool acceptOrContinue; // Define si el botón será de tipo 'Aceptar' o 'Continuar'.
-  final double? buttonWidth; // Ancho del botón (opcional, por defecto ocupa todo el ancho).
-  final bool isGradient; // Define si el botón tendrá un fondo con gradiente o no.
-  final String printMessage; // Mensaje impreso en consola cuando se presiona el botón.
-  final VoidCallback? logicHere; // Función lógica opcional que se ejecuta al presionar el botón.
+  final bool
+      acceptOrContinue; // Define si el botón será de tipo 'Aceptar' o 'Continuar'.
+  final double?
+      buttonWidth; // Ancho del botón (opcional, por defecto ocupa todo el ancho).
+  final bool
+      isGradient; // Define si el botón tendrá un fondo con gradiente o no.
+  final String
+      printMessage; // Mensaje impreso en consola cuando se presiona el botón.
+  final VoidCallback?
+      logicHere; // Función lógica opcional que se ejecuta al presionar el botón.
+  final bool isEnabled;
 
   // Constructor con parámetros opcionales y valores por defecto.
   const WidgetButton({
     super.key,
     this.topPadding = 0.0, // Valor por defecto del espaciado superior.
     this.message = "", // Valor por defecto del mensaje.
-    this.acceptOrContinue = true, // Por defecto, el botón es del tipo "Aceptar".
+    this.acceptOrContinue =
+        true, // Por defecto, el botón es del tipo "Aceptar".
     this.buttonWidth, // Si no se proporciona, el ancho será infinito.
     this.bottomPadding = 0.0, // Valor por defecto del espaciado inferior.
     this.isGradient = false, // Por defecto, no tiene un fondo con gradiente.
-    this.printMessage = "Button Pressed", // Mensaje predeterminado para la consola.
+    this.printMessage =
+        "Button Pressed", // Mensaje predeterminado para la consola.
     this.logicHere, // Función opcional a ejecutar.
+    this.isEnabled = true,
   });
 
   @override
@@ -37,8 +46,8 @@ class WidgetButton extends StatelessWidget {
       message = acceptOrContinue
           ? AppLocalizations.of(context)!
               .translate('ButtonTextAcString') // Texto para botón "Aceptar".
-          : AppLocalizations.of(context)!
-              .translate('ButtonTextConString'); // Texto para botón "Continuar".
+          : AppLocalizations.of(context)!.translate(
+              'ButtonTextConString'); // Texto para botón "Continuar".
     } else {
       // Si se proporciona un mensaje, se usa directamente.
       message = this.message;
@@ -52,7 +61,8 @@ class WidgetButton extends StatelessWidget {
       ),
       child: Center(
         child: Container(
-          width: buttonWidth ?? double.infinity, // Si no se proporciona, ocupa todo el ancho.
+          width: buttonWidth ??
+              double.infinity, // Si no se proporciona, ocupa todo el ancho.
           height: 50.0, // Altura fija del botón.
           decoration: isGradient
               ? BoxDecoration(
@@ -63,28 +73,37 @@ class WidgetButton extends StatelessWidget {
                       Styl.textColorPinkAccent, // Color final del gradiente.
                     ],
                   ),
-                  borderRadius: BorderRadius.circular(14), // Bordes redondeados.
+                  borderRadius:
+                      BorderRadius.circular(14), // Bordes redondeados.
                 )
               : BoxDecoration(
                   // Estilo de fondo sólido (blanco) con borde gris.
                   color: Colors.white,
                   border: Border.all(color: Colors.grey), // Borde gris.
-                  borderRadius: BorderRadius.circular(14), // Bordes redondeados.
+                  borderRadius:
+                      BorderRadius.circular(14), // Bordes redondeados.
                 ),
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.transparent, // Fondo transparente para permitir gradientes.
-              shadowColor: Colors.transparent, // Elimina sombra para mantener estilo plano.
+              backgroundColor: Colors
+                  .transparent, // Fondo transparente para permitir gradientes.
+              shadowColor: Colors
+                  .transparent, // Elimina sombra para mantener estilo plano.
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(14), // Bordes redondeados del botón.
+                borderRadius:
+                    BorderRadius.circular(14), // Bordes redondeados del botón.
               ),
             ),
-            onPressed: () {
-              print(printMessage); // Imprime un mensaje en consola al presionar el botón.
-              if (logicHere != null) {
-                logicHere!(); // Ejecuta la función lógica si se proporciona.
-              }
-            },
+            onPressed: 
+              isEnabled
+                  ? () {
+                      print(printMessage); // Imprime un mensaje en consola al presionar el botón.
+                      if (logicHere != null) {
+                        logicHere!(); // Ejecuta la función lógica si se proporciona.
+                      }
+                    }
+                  : null,
+            
             child: Text(
               message, // Mensaje del botón.
               style: TextStyle(
@@ -92,7 +111,8 @@ class WidgetButton extends StatelessWidget {
                 fontWeight: FontWeight.bold, // Texto en negrita.
                 color: isGradient
                     ? Colors.white // Texto blanco para botones con gradiente.
-                    : Styl.textColorBase, // Color base del texto para botones sólidos.
+                    : Styl
+                        .textColorBase, // Color base del texto para botones sólidos.
               ),
             ),
           ),

@@ -15,7 +15,7 @@ class WelcomeQs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
   //Document Variables.
-  const Color textColor = Styl.textColorShade;
+  
   
     return Scaffold(
       backgroundColor: Styl.bgBase,
@@ -34,22 +34,22 @@ class WelcomeQs extends StatelessWidget {
                   SizedBox(width: 8),
                 ],
               ),
-              HeaderOne(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleTwoTitle',)),
-              TextOne(message: AppLocalizations.of(context)!.translate('CredentialsViewDescription',)),
+              HeaderOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleTwoTitle',)),
+              TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewDescription',)),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              HeaderThree(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleOneTitle',)),
-              TextOne(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleOneText',)),
+              HeaderThree(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleOneTitle',)),
+              TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleOneText',)),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              HeaderThree(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleTwoTitle',)),
-              TextOne(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleTwoText,' )),
+              HeaderThree(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleTwoTitle',)),
+              TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleTwoText' )),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              HeaderThree(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleThreeTitle',)),
-              TextOne(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleThreeText,' )),
+              HeaderThree(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleThreeTitle',)),
+              TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleThreeText' )),
               SizedBox(height: Styl.respoHeightMedium(context)),
-              HeaderThree(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleFourTitle',)),
-              TextOne(message: AppLocalizations.of(context)!.translate('CredentialsVieRuleFourText,' )),
+              HeaderThree(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleFourTitle',)),
+              TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleFourText' )),
               const  Spacer(),
-              WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: true, isGradient: true, 
+              WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: true, isGradient: true,isEnabled: true, 
                 logicHere: () {
                   Navigator.push(context, MaterialPageRoute(builder: (context)=>const NameQs()));
                 },

@@ -10,16 +10,16 @@ import 'package:matching/data/app_data.dart';
 import 'package:matching/data/app_localizations.dart';
 
 void main() {
-  runApp(const LookingCareerQs());
+  runApp(const SearchCareerQs());
 }
 
-class LookingCareerQs extends StatefulWidget {
-  const LookingCareerQs({super.key});
+class SearchCareerQs extends StatefulWidget {
+  const SearchCareerQs({super.key});
   @override
-  LookingCareerQsState createState() => LookingCareerQsState();
+  SearchCareerQsState createState() => SearchCareerQsState();
 }
 
-class LookingCareerQsState extends State<LookingCareerQs> {
+class SearchCareerQsState extends State<SearchCareerQs> {
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
   int? selectedButton;
   Set<int> selectedButtons = {};
@@ -59,10 +59,7 @@ class LookingCareerQsState extends State<LookingCareerQs> {
 ];
     return Scaffold(
       backgroundColor: Styl.bgBase,
-      appBar: const WidgetCloseAppBar(
-        goBack: true,
-        lastPage: CareerQs(),
-      ),
+      appBar: const WidgetCloseAppBar(goBack: true,),
       body: Padding(
         padding: const EdgeInsets.symmetric(
           vertical: Styl.verticalPadding,
@@ -85,7 +82,7 @@ class LookingCareerQsState extends State<LookingCareerQs> {
                   options.map<Widget>((option) => Column(children: [
                     SelectableButton(
                       label: option['label'].toString(),
-                      isSelected: options.contains(option['index']),
+                      isSelected: selectedButtons.contains(option['index']),
                       onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
                     ),
                     const SizedBox(height: Styl.heightSBoxSmall),
@@ -100,13 +97,8 @@ class LookingCareerQsState extends State<LookingCareerQs> {
               acceptOrContinue: false,
               isGradient: true,
               logicHere: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const AddPhotosQs(),
-                  ),
-                );
-              },
+                  Navigator.pushNamed(context, '/AddPhotosQs');
+                },
             ),
           ],
         ),

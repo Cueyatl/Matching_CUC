@@ -4,7 +4,7 @@ import 'package:matching/data/app_localizations.dart';
 class HomePage extends StatelessWidget {
   final Function(Locale) onLocaleChange;
 
-  const HomePage({required this.onLocaleChange, Key? key}) : super(key: key);
+  const HomePage({required this.onLocaleChange, super.key});
 
   @override
   Widget build(BuildContext context) {
