@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+import 'package:matching/data/app_localizations.dart';
+
+import 'package:matching/data/app_data.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
+import 'package:matching/widgets/_selectable_option_widget.dart';
 import 'package:matching/questionare/fecha_nacimiento.dart';
 import 'package:matching/questionare/preferencia_genero.dart';
-import 'package:matching/widgets/_selectable_option_widget.dart';
-import 'package:matching/data/app_data.dart';
-import 'package:matching/data/app_localizations.dart';
 
 void main() {
   runApp(const GenderQs());
@@ -90,8 +93,8 @@ class GenderQsState extends State<GenderQs> {
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
               WidgetButton(
-                acceptOrContinue: false,
-                isGradient: true,
+                // acceptOrContinue: false,
+                // isGradient: true,
                 logicHere: () {
                   // Navigator.pop(context); //Return to genderQs
                   Navigator.push(
@@ -116,6 +119,15 @@ class GenderQsState extends State<GenderQs> {
       {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblOther'), 'index': 3},
     ];
 
+  
+    String centralstatePost(BuildContext context, int? index) {
+      final option = options.firstWhere(
+    (element) => element['index'] == index
+  );
+  return option['label'] as String;
+    }
+
+    
     return Scaffold(
       backgroundColor: Styl.bgBase,
       appBar: const WidgetCloseAppBar(
@@ -155,17 +167,14 @@ class GenderQsState extends State<GenderQs> {
             ),
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SearchGenderQs(),
-                  ),
-                );
+                final user = Provider.of<CentralStateModel>(context, listen: false);
+                user.setGender(centralstatePost(context, selectedButton));
+                Navigator.pushNamed(context, '/PersonalityTags');
               },
             ),
           ],

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
@@ -20,6 +22,9 @@ class SearchGenderQs extends StatefulWidget {
 }
 
 class SearchGenderQsState extends State<SearchGenderQs> {
+  //Debug info, warning and error logs 
+  var logger = Logger();
+    
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
   int? selectedButton;
   Set<int> selectedButtons = {};
@@ -44,7 +49,7 @@ class SearchGenderQsState extends State<SearchGenderQs> {
       }
 
 
-          print(selectedButtons);
+          logger.i(selectedButtons);
       
     });
   }
@@ -97,10 +102,10 @@ class SearchGenderQsState extends State<SearchGenderQs> {
             ),       
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
                 Navigator.push(
                   context,

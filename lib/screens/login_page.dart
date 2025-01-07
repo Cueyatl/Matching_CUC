@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-// import '../widgets/_gradient_widget.dart';
+import 'package:logger/logger.dart';
+
 import 'package:matching/widgets/_logo_widget.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/questionare/bienvenida.dart';
@@ -22,6 +23,8 @@ class LogInForm extends StatefulWidget {
 }
 
 class LogInFormState extends State<LogInForm> {
+  //Debug info, warning and error logs 
+  var logger = Logger();
   int initialLabelIndex = 1; // Default value for the toggle
   
   @override
@@ -118,12 +121,12 @@ class LogInFormState extends State<LogInForm> {
                 ),
               ),
               WidgetButton(
-                topPadding: Styl.respoHeightMedium(context),
-                bottomPadding: Styl.respoHeightSmall(context),
+                // topPadding: Styl.respoHeightMedium(context),
+                // bottomPadding: Styl.respoHeightSmall(context),
                 message: (AppLocalizations.of(context)!
                     .translate('CredentialsViewLgIn')),
-                isGradient: true,
-                printMessage: "Log in pushed",
+                // isGradient: true,
+                // logger.iMessage: "Log in pushed",
 
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
@@ -137,12 +140,8 @@ class LogInFormState extends State<LogInForm> {
                             .translate('CredentialsViewNoCuenta')),
                     GestureDetector(
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const WelcomeQs()),
-                        );
-                        print('Navigate to welcoming of Sign in form');
+                        Navigator.pushNamed(context, '/DevsOne');
+                        logger.i('Navigate to welcoming of Sign in form');
                       },
                       child: Text(
                         (AppLocalizations.of(context)!

@@ -1,3 +1,277 @@
 teoria de SetState para validacion de botones en _button_widget
 Base.py: Contiene metodos crud con print statements para verificar la informacion, Tiene un menu demostrativo tambien,
 busqueda.py: Metodo de busqueda y coneccion a la base de datos sqlite3
+
+
+update and send data to sqlite3?
+
+first in each file that sends data, you need to add logic to each button
+
+For it to work, it needs to achieve certain activity
+
+First it needs a _formKey wucg us ysed in the setState of _updateButtonState()
+like this: 
+
+void _updateButtonState() {
+    setState(() {
+      _isButtonEnabled = _formKey.currentState?.validate() ?? false;
+    });
+  }
+
+
+EXPLANATION {
+
+
+'''
+final _formKey = GlobalKey<FormState>();
+'''
+
+  1. GlobalKey
+A GlobalKey is a special type of key in Flutter that is used to 
+uniquely identify a widget (or more specifically, a widget's state)
+ across the widget tree. This is important because Flutter's widget
+  tree is dynamic, and sometimes we need to access a widget's state
+   (such as a form or a scaffold) from outside the widget's own build method.
+
+A GlobalKey can be passed to a widget, and it allows you to access
+ that widget's state. By accessing the state, you can invoke certain
+  methods on that widget (e.g., validating a form, changing the state 
+  of a widget, or controlling focus).
+
+2. FormState
+FormState is the state associated with a Form widget.
+ It holds information and logic related to the form, such as the 
+ form’s validation state, whether it is valid or not, and its overall 
+ status. This state is used to control various actions such as:
+
+Validating the form (validate())
+Saving the form's data (save())
+Resetting the form (reset())
+In the case of a Form widget, the FormState manages the internal
+ state of the form fields and their validation, saving, and resetting behaviors.
+}
+
+
+//Helps interact with the form outside the widget.
+  final _formKey = GlobalKey<FormState>();
+  //controller for manipulating data from the textForm.
+  final TextEditingController _nameController = TextEditingController();
+  
+  bool _isButtonEnabled = false; //ERROR: Cambiame a false antes de usar.
+
+  void _updateButtonState() {
+    setState(() {
+      _isButtonEnabled = _formKey.currentState?.validate() ?? false;
+    });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _nameController.addListener(_updateButtonState);
+  }
+
+  @override
+  void dispose() {
+    _nameController.removeListener(_updateButtonState);
+    _nameController.dispose();
+    super.dispose();
+  }
+
+
+child: Form(
+  key: _formKey,
+  child:TextFormField(
+    controller: _nameController
+  )
+)
+
+ logicHere: () {
+                  if (_formKey.currentState?.validate() ?? false) {
+                    Navigator.pushNamed(context, '/BirthdayQs');
+                  }
+                },
+
+Que es un view y un viewmodel?
+
+
+
+
+DATA: options are stored under ints
+we can keep ints for processing algorithms.
+options can be used later are strings
+
+
+final Set<int> _selectedButtons = {};
+  
+  void centralStateUserData(selectedButtons, options){
+    List<int> setOptions = selectedButtons.toList();
+    final user = Provider.of<CentralStateModel>(context, listen: false);
+    user.setCareerPreferences(setOptions);
+  }
+
+########################
+
+CODIGO: 
+mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          childre:[
+       const SizedBox(
+              height: 30.0,
+            ),
+            NameInputField(
+              controller: _nameController,
+              onValidationChanged: (bool isValid) {
+                setState(() => _isButtonEnabled = isValid);
+              },
+            ),
+            NumberPicker(
+              value: _currentValueAge,
+              minValue: 16,
+              maxValue: 100,
+              onChanged: (value) => setState(() => _currentValueAge = value),
+            ),
+            TextOne(
+              message:
+                  '${AppLocalizations.of(context)!.translate('YourAge')} $_currentValueAge',
+            ),
+
+
+####################
+
+class OptionsHelper{
+
+    late BuildContext contextHere;
+    late List<String> optionMap;
+    late bool isPreference;
+
+      OptionsHelper({
+    required this.contextHere,
+    required this.optionMap,
+    required this.isPreference,
+  });
+
+    List<Map<String, dynamic>> generateOptionMap(BuildContext context, List<String> optionMap, bool isPreference) {
+    int optionMapLength = isPreference? optionMap.length : optionMap.length-1;
+      return List<Map<String, dynamic>>.generate(
+        optionMapLength,
+          (index) => {
+            'label': AppLocalizations.of(context)!.translate(optionMap[index]),
+            'index': index + 1,
+          },
+      );
+    }
+  late List<Map<String, dynamic>> optionMapGenerated = generateOptionMap(contextHere, optionMap, isPreference);
+    
+  void onMultipleButtonSelected(int buttonIndex, List<int> selectedPreferences,List<Map<String, dynamic>> optionMap ){
+    
+    if (selectedPreferences.contains(buttonIndex)) {
+      selectedPreferences.remove(buttonIndex); // Deselect
+    } else {
+      selectedPreferences.add(buttonIndex); // Select
+    }
+    Map<String, dynamic> lastElement = optionMap.last;
+    dynamic lastItem = lastElement['index'];
+    
+    if (buttonIndex == lastItem) {
+      selectedPreferences.clear();
+      selectedPreferences.add(lastItem);
+    } else {
+      // If lastItem was in there before, remove it once another is selected
+      if (selectedPreferences.contains(lastItem)) {
+        selectedPreferences.remove(lastItem);
+      }
+    }
+
+    logger.i( "last item $lastItem");
+    logger.i( "button index $buttonIndex");
+  }
+  
+  String singleListParser(
+      BuildContext context, int? index, List<Map<String, dynamic>> optionMap) {
+    final option = optionMap.firstWhere((element) => element['index'] == index);
+    return option['label'] as String;
+  }
+
+
+List<String> multiplelistParser(
+    BuildContext context,
+    List<int>? selectedIndices,
+    List<Map<String, dynamic>> optionMap,
+  ) {
+    if (selectedIndices == null || selectedIndices.isEmpty) {
+      return [];
+    }
+
+    return selectedIndices.map((index) {
+      final option = optionMap.firstWhere(
+        (element) => element['index'] == index,
+        orElse: () => {'label': 'N/A'}, // Fallback if not found
+      );
+      return option['label'] as String;
+    }).toList();
+  }
+
+
+
+}
+
+
+######################
+class OptionsData {
+  final List<String> _career = [
+    'QuestionOptionsLbladmin',
+    'QuestionOptionsLblCont',
+    'QuestionOptionsLblBio',
+    'QuestionOptionsLblInd',
+    'QuestionOptionsLblSis',
+    "QuestionOptionsLblCareers",
+  ];
+  
+  final List<String> _gender = [
+    "QuestionOptionsLblMan",
+    "QuestionOptionsLblWoman",
+    "QuestionOptionsLblOther",
+    "QuestionOptionsLblGenders",
+  ];
+
+  final List<String> _height = [
+    "HeightViewLblHighQ",
+    "HeightViewLblMidQ",
+    "HeightViewLblLowQ",
+    "HeightViewLblAllQ",
+  ];
+
+  final List<String> _skinColor = [
+    "ColorDePielUno",
+  "ColorDePielDos",
+  "ColorDePielTres",
+  "ColorDePielCuatro",
+  "ColorDePielCinco",
+  "ColorDePielSeis",
+  "ColorDePielSiete",
+  "ColorDePielOcho",
+  ];
+  final List<String> _bodyType = [
+    "ComplexionUno",
+    "ComplexionDos",
+    "ComplexionTres",
+  ];
+
+  final List<String> _personalityType=[
+    "PersonalidadUno",
+    "PersonalidadDos",
+  ];
+  List<String> get careerOptions => _career;
+
+  List<String> get genderOptions => _gender;
+  
+  List<String> get heightOptions => _height;
+
+  List<String> get skinColorOptions => _skinColor;
+
+  List<String> get bodyTypeOptions => _bodyType;
+
+  List<String> get personalityTypeOptions => _personalityType;
+  
+}

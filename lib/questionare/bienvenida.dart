@@ -49,12 +49,19 @@ class WelcomeQs extends StatelessWidget {
               HeaderThree(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleFourTitle',)),
               TextOne(message: AppLocalizations.of(context)!.translate('WelcomeViewRuleFourText' )),
               const  Spacer(),
-              WidgetButton(topPadding: Styl.respoHeightMedium(context),bottomPadding: Styl.respoHeightSmall(context), acceptOrContinue: true, isGradient: true,isEnabled: true, 
-                logicHere: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const NameQs()));
-                },
-                
-              )
+              WidgetButton(
+                  // topPadding: Styl.respoHeightMedium(context),
+                  // bottomPadding: Styl.respoHeightSmall(context),
+                  // acceptOrContinue: true,
+                  // isGradient: true,
+                  isEnabled: true,
+                  logicHere: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const NameQs()));
+                  },
+                )
             ],
           )
       )

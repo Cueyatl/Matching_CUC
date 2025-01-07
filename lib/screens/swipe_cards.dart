@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:logger/logger.dart';
+
 import 'package:swipe_cards/swipe_cards.dart';
 
 void main() {
@@ -8,6 +10,7 @@ void main() {
 }
 
 class SwipeCardsClass extends StatelessWidget {
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -87,6 +90,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //Debug info, warning and error logs 
+    var logger = Logger();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title!),
@@ -143,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ));
                 },
                 itemChanged: (SwipeItem item, int index) {
-                  print("item: ${item.content.text}, index: $index");
+                  logger.i("item: ${item.content.text}, index: $index");
                 },
                 leftSwipeAllowed: true,
                 rightSwipeAllowed: true,

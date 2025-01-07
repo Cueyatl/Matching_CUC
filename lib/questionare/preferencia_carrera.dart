@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
@@ -19,36 +22,46 @@ class SearchCareerQs extends StatefulWidget {
   SearchCareerQsState createState() => SearchCareerQsState();
 }
 
+
+
 class SearchCareerQsState extends State<SearchCareerQs> {
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
-  int? selectedButton;
-  Set<int> selectedButtons = {};
+
+  final Set<int> _selectedButtons = {};
+  
+  void centralStateUserData(selectedButtons, options){
+    List<int> setOptions = selectedButtons.toList();
+    final user = Provider.of<CentralStateModel>(context, listen: false);
+    
+//error: THIS IS OBSOLETE, USE METHODS SHOWN IN DEV_VIEW.DART  
+    // user.setCareerPreferences(setOptions);
+  }
 
 
   void _onButtonSelected(int buttonIndex) {
     setState(() {
 
-      if (selectedButtons.contains(buttonIndex)) {
-        selectedButtons.remove(buttonIndex); // Deselect if already selected
+      if (_selectedButtons.contains(buttonIndex)) {
+        _selectedButtons.remove(buttonIndex); // Deselect if already selected
       } else {
-        selectedButtons.add(buttonIndex); // Add to selected buttons
+        _selectedButtons.add(buttonIndex); // Add to selected buttons
       }
       
       if (buttonIndex==6){
-        selectedButtons.clear();
-        selectedButtons.add(6);
+        _selectedButtons.clear();
+        _selectedButtons.add(6);
       } else {
-        if(selectedButtons.contains(6)){
-          selectedButtons.remove(6);
+        if(_selectedButtons.contains(6)){
+          _selectedButtons.remove(6);
         }
       }
-          print(selectedButtons);
     });
   }
 
 
   @override
   Widget build(BuildContext context) {
+  
       final options = [
   {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLbladmin'), 'index': 1,},
   {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblCont'), 'index': 2,},
@@ -82,7 +95,7 @@ class SearchCareerQsState extends State<SearchCareerQs> {
                   options.map<Widget>((option) => Column(children: [
                     SelectableButton(
                       label: option['label'].toString(),
-                      isSelected: selectedButtons.contains(option['index']),
+                      isSelected: _selectedButtons.contains(option['index']),
                       onPressed: () => _onButtonSelected(int.parse(option['index'].toString()))
                     ),
                     const SizedBox(height: Styl.heightSBoxSmall),
@@ -92,11 +105,12 @@ class SearchCareerQsState extends State<SearchCareerQs> {
             ),   
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
+                  centralStateUserData(_selectedButtons, options);
                   Navigator.pushNamed(context, '/AddPhotosQs');
                 },
             ),

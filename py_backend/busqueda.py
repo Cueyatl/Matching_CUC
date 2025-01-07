@@ -48,7 +48,7 @@ def buscar_por_criterio():
             print("\nUsuarios que coinciden con el criterio:")
             for usuario in resultados:
                 print(f"ID: {usuario[0]}, Nombre: {usuario[1]}, Genero de Interes: {usuario[2]}, Edad de Interes: {usuario[3]}, Altura de Interes: {usuario[4]}"
-                      f"Color de piel: {usuario[5]}, Tipo de cuerpo de Interes: {usuario[6]}, Tipo de persona de Interes {usuario[7]}")
+                    f"Color de piel: {usuario[5]}, Tipo de cuerpo de Interes: {usuario[6]}, Tipo de persona de Interes {usuario[7]}")
         else:
             print("No se encontraron usuarios que coincidan con el criterio.")
         

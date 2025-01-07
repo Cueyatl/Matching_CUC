@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
@@ -6,23 +9,32 @@ import 'package:matching/questionare/fecha_nacimiento.dart';
 import 'package:matching/questionare/bienvenida.dart';
 import 'package:matching/data/app_data.dart';
 import 'package:matching/data/app_localizations.dart';
-//Elimnita later
-import 'package:matching/NOT_Supported/main_preview.dart';
+import 'package:matching/data/data_base_helper.dart';
+
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 void main() {
   runApp(const NameQs());
 }
 
 class NameQs extends StatefulWidget {
   const NameQs({super.key});
+  
 
   @override
   State<NameQs> createState() => _NameQsState();
 }
 
 class _NameQsState extends State<NameQs> {
+  //Helps interact with the form outside the widget.
   final _formKey = GlobalKey<FormState>();
+  //controller for manipulating data from the textForm.
   final TextEditingController _nameController = TextEditingController();
-  bool _isButtonEnabled = true; //ERROR: Cambiame a false antes de usar.
+
+  
+
+  bool _isButtonEnabled = false; //ERROR: Cambiame a false antes de usar.
 
   void _updateButtonState() {
     setState(() {
@@ -35,6 +47,8 @@ class _NameQsState extends State<NameQs> {
     super.initState();
     _nameController.addListener(_updateButtonState);
   }
+  
+
 
   @override
   void dispose() {
@@ -42,6 +56,9 @@ class _NameQsState extends State<NameQs> {
     _nameController.dispose();
     super.dispose();
   }
+  
+  
+
 
   @override
   Widget build(BuildContext context) {
@@ -97,6 +114,7 @@ class _NameQsState extends State<NameQs> {
                     }
                     return null;
                   },
+
                 ),
               ),
               TextOne(
@@ -108,14 +126,13 @@ class _NameQsState extends State<NameQs> {
                 xfontWeight: FontWeight.bold,
               ),
               WidgetButton(
-                topPadding: Styl.respoHeightMedium(context),
-                bottomPadding: Styl.respoHeightSmall(context),
-                acceptOrContinue: false,
-                isGradient: true,
                 isEnabled: _isButtonEnabled, 
-                logicHere: () {
+                logicHere: ()  {
                   if (_formKey.currentState?.validate() ?? false) {
                     Navigator.pushNamed(context, '/BirthdayQs');
+                    //This will send the data to Central_state.dart for later post method exec.
+                    final user = Provider.of<CentralStateModel>(context, listen: false);
+                    user.setName(_nameController.text);
                   }
                 },
               ),

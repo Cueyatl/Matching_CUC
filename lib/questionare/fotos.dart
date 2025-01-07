@@ -164,10 +164,10 @@ class AddPhotosQsState extends State<AddPhotosQs> {
             ),
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
                   Navigator.pushNamed(context, '/PersonalityTags');
               },

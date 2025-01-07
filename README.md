@@ -246,6 +246,20 @@ Colores como blanco y negro son usados para títulos, textos y márgenes. Se rec
 * Busqueda binaria
 * Ordenamiento merge
 * Ordenamiento Quicksort
+### Requisitos indispensables de perfil
+* id
+* nombre
+* edad
+* genero
+* carrera
+* preferencia carrera
+* altura
+* preferencia altura
+* preferenia de genero
+
+### Otros requisitos de perfil
+* etiquetas
+* fotos
 
 ###   filtro de busqueda
   
@@ -253,7 +267,7 @@ Colores como blanco y negro son usados para títulos, textos y márgenes. Se rec
 * Edad 
 * Carreras
 * Altura
-* Preferencia sexual
+* Preferencia de genero
 
   
 ***
@@ -398,3 +412,17 @@ Sin embargo, hay mujeres para quienes la altura no es un factor crucial, y prior
 
 Hombres:
 Los hombres suelen ser más flexibles en cuanto a la altura de sus parejas, aunque muchos prefieren mujeres más bajas o de su misma estatura.
+
+
+File Behavior:
+
+If crud_database.db already exists, SQLite will open and use that file.
+If it does not exist, SQLite will create a new file in the specified (or default) location.
+Access:
+
+All CRUD operations in base.py and busqueda.py interact with this crud_database.db file.
+The file is local to the environment running these scripts, and its data is persistent between script runs as long as the file remains in place.
+Implications:
+
+Since the database is local, it cannot be accessed remotely unless additional networking or sharing configurations are implemented.
+This local setup is ideal for development or small-scale applications. For larger or distributed systems, a centralized database server is usually preferred.
