@@ -64,16 +64,16 @@ class OptionsData {
 }
 
 class OptionsHelper{
-    int? selectedPreferences;
     late BuildContext context;
     late List<String> optionMap;
     late bool isPreference;
     late int? buttonIndex;
+    List<int>? selectedPreferencesInput;
       OptionsHelper({
     required this.context,
     required this.optionMap,
     required this.isPreference,
-    required this.buttonIndex,
+    required this.buttonIndex,    
   });
 
     List<Map<String, dynamic>> generateOptionMap() {
@@ -88,9 +88,10 @@ class OptionsHelper{
     }
   late List<Map<String, dynamic>> optionMapGenerated = generateOptionMap();
     
-  void onMultipleButtonSelected( List<int> selectedPreferences ){
+  void onMultipleButtonSelected(){
     
     int newButtonIndex = buttonIndex ?? 0;
+    List<int> selectedPreferences = selectedPreferencesInput ?? [];
     if (selectedPreferences.contains(buttonIndex)) {
       selectedPreferences.remove(buttonIndex); // Deselect
     } else {
@@ -124,9 +125,7 @@ class OptionsHelper{
 
 
 List<String> multiplelistParser(
-    BuildContext context,
     List<int>? selectedIndices,
-    optionMapGenerated,
   ) {
     if (selectedIndices == null || selectedIndices.isEmpty) {
       return [];
@@ -140,9 +139,10 @@ List<String> multiplelistParser(
       return option['label'] as String;
     }).toList();
   }
+  
+
+
 }
-
-
 
 class TypeValidation{
   static const String valsForNames=r"^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$";
@@ -229,71 +229,5 @@ class Styl {
 }
 
 
-class TagsView {
-  static const String title = "¿Qué te gusta?";
-  static const String description = "Hazle saber a todos lo que te gusta.";
-  static const List<String> matchTags = [
-    'Master chef... imaginando 👩‍🍳',
-    'Amo a los perritos 🐶',
-    'Goles épicos 🙌⚽',
-    'Listo para road trips 🚗',
-    'Fan de memes 24/7 😂',
-    'Adicto al café ☕',
-    'Cazador de vibes 🌈',
-    'Amo a los gatos 😻',
-    'Festivales > todo 🎶',
-    'Fotógrafo amateur 📸',
-    'Rey/reina karaoke 🎤',
-    'Soñador empedernido 🌌',
-    'Tatuajes y arte 🖋️',
-    'Buscando aventuras 🌍',
-    'Vivo por el sushi 🍣',
-    'Estilo comfy 🧢',
-    'Cine > fiesta 🎬',
-    'Match solo por memes 🤪',
-    'Amo los podcasts 🎧',
-    'Amigo de plantas 🌱',
-    'Gym hoy, pizza mañana 🍕',
-    'Procrastinador/a 💤',
-    'Día sol, noche fiesta 🌞🌙',
-    'Gamer adicto 🎮',
-    'Canciones tristes 🎵',
-    'Desayunos 24/7 🥓',
-    'Explorando cafés ☕📸',
-    'Turista activado 🗺️',
-    'Peli de terror 👻',
-    'Fan de libros 📚',
-    'Intento cocinar 🍳',
-    'Amo el ramen 🍜',
-    'Alma joven 🌿',
-    'Explorando nuevos spots 🌇',
-    'Fan del fútbol ⚽',
-    'Eterno aprendiz 🎓',
-    'Creo playlists 🎶',
-    'Próximo concierto 🎤',
-    'Adicto a selfies 🤳',
-    'Amo el chocolate 🍫',
-    'Netflix y pizza 🍕',
-    'Museos = fotos 🎨',
-    'Libro en mano 📖',
-    'Adicto a series 📺',
-    'Comida callejera 🌮',
-    'Fiestero/a 🕺',
-    'Cerveza artesanal 🍺',
-    'Filosofando 🌙',
-    'Hamburguesas top 🍔',
-    'Pelis vintage 🎥',
-    'Playlist indie 🎧',
-    'Amo gatos, no tengo 😿',
-    'Mi perro, mi amigo 🐾',
-    'Picante en todo 🌶️',
-    'Amo montañas 🏔️',
-    'Listo para picnic 🍉',
-    'Fotos para IG 📸',
-    'Amo adrenalina 🎢',
-    'Siempre audífonos 🎧',
-    'Chill vibes 🛋️',
-    'Reta de básquet 🏀',
-  ];
-}
+
 

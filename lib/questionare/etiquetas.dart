@@ -76,7 +76,7 @@ void setSelectedValue(String? value) {
   Widget build(BuildContext context) {
 
 
-    const List<String> choices = TagsView.matchTags;
+    final List<String> choices =AppLocalizations.of(context)!.translateList('matchTags') ;
     return Scaffold(
         backgroundColor: Styl.bgBase,
         appBar: const WidgetCloseAppBar(

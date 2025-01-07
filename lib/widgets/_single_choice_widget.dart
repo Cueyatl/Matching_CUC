@@ -10,12 +10,12 @@ class SelectableOptionListWidget extends StatefulWidget {
   //     centralStateUserData;
 
   const SelectableOptionListWidget({
-    Key? key,
+    super.key,
     required this.options,
     required this.selectedButton,
     required this.onButtonSelected,
     // required this.centralStateUserData,
-  }) : super(key: key);
+  });
 
   @override
   State<SelectableOptionListWidget> createState() =>

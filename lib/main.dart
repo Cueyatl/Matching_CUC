@@ -92,7 +92,7 @@ class _MyAppState extends State<MyApp> {
       // // '/PersonalityTags': (context) => const PersonalityTags(),
       // '/SwipeCardsClass': (context) =>  SwipeCardsClass(),
 
-      '/DevsOne': (context) => DevsOne(),
+      '/DevsOne': (context) => const DevsOne(),
 
 
 

@@ -8,11 +8,11 @@ class MultipleOptionListWidget extends StatelessWidget {
   final ValueChanged<int> onButtonsSelected;
 
   const MultipleOptionListWidget({
-    Key? key,
+    super.key,
     required this.options,
     required this.selectedButtons,
     required this.onButtonsSelected,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

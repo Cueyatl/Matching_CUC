@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:matching/data/app_data.dart'; // Archivo con datos de la aplicación.
 import 'package:matching/data/app_localizations.dart'; // Clase para manejar traducciones de la app.
-import 'package:flutter/material.dart';
-import 'package:matching/data/app_localizations.dart'; // Clase para manejar traducciones de la app.
 
 class WidgetButton extends StatelessWidget {
   final String message; // Mensaje personalizado que se muestra en el botón.

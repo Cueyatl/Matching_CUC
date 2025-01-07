@@ -10,6 +10,7 @@ def create_user():
     if not data:
         return jsonify({"error": "No data provided"}), 400
     try:
+        
         # Extract data from the request
         id_usuario = data.get('id')
         email = data.get('email')
@@ -33,10 +34,11 @@ def create_user():
 
         result = crear_usuario(
             id_usuario, email, contrasena, nombre, edad, genero, altura, color_piel,
-            carrera, complexion, tipo_de_persona, genero_interes, altura_interes,
-            color_piel_interes, personalidad_interes, carrera_interes, complexion_interes,
-            etiquetas, foto
+            carrera, complexion, tipo_de_persona, data['genero_interes'], data['altura_interes'], data['color_piel_interes'],
+            data['personalidad_interes'], data['carrera_interes'], data['complexion_interes'], 
+            data['etiquetas'], foto
         )
+        
         
         print(f"Creating user: {id_usuario}, {email}, {nombre}, {genero}, {edad}, {altura}, {color_piel}, {carrera}, {complexion}, {tipo_de_persona}, {genero_interes}, {altura_interes}, {color_piel_interes}, {personalidad_interes}, {carrera_interes}, {complexion_interes}, {etiquetas}, {foto}")
         print("Request JSON:", request.json)

@@ -57,29 +57,35 @@ class _DevsOneState extends State<DevsOne> {
 
   OptionsData optionsData = OptionsData();
   
-  OptionsHelper genderQuestion = OptionsHelper(context: context,optionMap: optionsData.genderOptions, isPreference: false, buttonIndex: selectedButtonGender);
-  OptionsHelper careerQuestion = OptionsHelper(context: context,optionMap: optionsData.careerOptions, isPreference: true, buttonIndex: selectedCarrerOption);
+  OptionsHelper genderQuestion = OptionsHelper(
+        context: context,
+        optionMap: optionsData.genderOptions,
+        isPreference: false,
+        buttonIndex: selectedButtonGender);
 
+    OptionsHelper careerQuestion = OptionsHelper(
+        context: context,
+        optionMap: optionsData.careerOptions,
+        isPreference: true,
+        buttonIndex: selectedCarrerOption,
+        );
+
+        careerQuestion.selectedPreferencesInput= _selectedGenderPreference;
+
+
+// ############# multiple
+  void onButtonSelectedCareer(int index) {
+      setState(() {
+        careerQuestion.buttonIndex = index;
+        careerQuestion.onMultipleButtonSelected();
+      });
+    }
   void onButtonSelectedGender(int buttonIndex) {
     setState(() {
       selectedButtonGender = buttonIndex;
     });
   }
 
-// ############# multiple
-  void onButtonSelectedCareer(int buttonIndex) {
-      setState(() {
-        careerQuestion.onMultipleButtonSelected(buttonIndex)
-      });
-    }
-    // REQUIRED LISTS
-    // List<Map<String, dynamic>> optionsGender =
-    //     generateOptionMap(context, optionsData.genderOptions, false);
-
-    // List<Map<String, dynamic>> optionsPreferenceGender =
-    //     generateOptionMap(context, optionsData.genderOptions, true);
-    // 
-   
     return Scaffold(
       body: SingleChildScrollView(
           child: Padding(
@@ -92,12 +98,14 @@ class _DevsOneState extends State<DevsOne> {
             const SizedBox(
               height: 30.0,
             ),
+            
             NameInputField(
               controller: _nameController,
               onValidationChanged: (bool isValid) {
                 setState(() => _isButtonEnabled = isValid);
               },
             ),
+            
             NumberPicker(
               value: _currentValueAge,
               minValue: 16,
@@ -141,9 +149,10 @@ class _DevsOneState extends State<DevsOne> {
                   user.setAge(_currentValueAge);
 
                   user.setGender(genderQuestion.setSingleData);
+                  
 
-                  // user.setGenderPreferences(multiplelistParser(context,
-                  //     _selectedGenderPreference, optionsPreferenceGender));
+                  user.setGenderPreferences(genderQuestion.multiplelistParser(
+                      _selectedGenderPreference));
                       
                 }
               },

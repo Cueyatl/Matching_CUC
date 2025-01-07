@@ -1,11 +1,12 @@
 import sqlite3
+import json
 
 #Configuración de la base de datos
 def conectar_db():
     return sqlite3.connect("crud_database.db")
 
 
-#Crear un nuevo usuario
+
 def mostrar_usuarios():
     try:
         conexion = conectar_db()
@@ -13,6 +14,14 @@ def mostrar_usuarios():
         
         cursor.execute("SELECT * FROM usuarios")
         registros = cursor.fetchall()
+        
+        for registro in registros:
+            genero_interes = json.loads(registro[11])
+            altura_interes = json.loads(registro[12])
+            color_piel_interes = json.loads(registro[13])
+            personalidad_interes = json.loads(registro[14])
+            carrera_interes = json.loads(registro[15])
+            complexion_interes = json.loads(registro[16])
 
         if not registros:
             print("La tabla 'usuarios' está vacía.")
@@ -29,12 +38,12 @@ def mostrar_usuarios():
                 print(f"Carrera: {registro[8]}")
                 print(f"Complexión: {registro[9]}")
                 print(f"Tipo de persona: {registro[10]}")
-                print(f"Género de interés: {registro[11]}")
-                print(f"Altura de interés: {registro[12]}")
-                print(f"Color de piel de interés: {registro[13]}")
-                print(f"Personalidad de interés: {registro[14]}")
-                print(f"Carrera de interés: {registro[15]}")
-                print(f"Complexión de interés: {registro[16]}")
+                print(f"Género de interés: {genero_interes}")
+                print(f"Altura de interés: {altura_interes}")
+                print(f"Color de piel de interés: {color_piel_interes}")
+                print(f"Personalidad de interés: {personalidad_interes}")
+                print(f"Carrera de interés: {carrera_interes}")
+                print(f"Complexión de interés: {complexion_interes}")
                 print(f"Etiquetas: {registro[17]}")
                 print(f"Foto: {registro[18]}")
                 print("-" * 70)
@@ -42,12 +51,22 @@ def mostrar_usuarios():
     except ValueError:
         print("Error: NO es posible acceder a la base de datos.")
 
-
+#Crear un nuevo usuario
 def crear_usuario(id_usuario, email, contrasena, nombre, edad, genero, altura, color_piel, carrera, complexion, tipo_de_persona, genero_interes, altura_interes, color_piel_interes, personalidad_interes, carrera_interes, complexion_interes, etiquetas, foto):
     try:
         # id_usuario = int(input("Ingresa el ID: "))
         conexion = conectar_db()
         cursor = conexion.cursor()
+        
+        # Serialize lists
+        genero_interes = json.dumps(genero_interes)
+        altura_interes = json.dumps(altura_interes)
+        color_piel_interes = json.dumps(color_piel_interes)
+        personalidad_interes = json.dumps(personalidad_interes)
+        carrera_interes = json.dumps(carrera_interes)
+        complexion_interes = json.dumps(complexion_interes)
+        etiquetas = json.dumps(etiquetas.split(", "))  # Split tags into a list, then serialize
+
 
         cursor.execute("SELECT id FROM usuarios WHERE id = ?", (id_usuario,))
         if cursor.fetchone():

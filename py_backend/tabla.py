@@ -30,15 +30,15 @@ def crear_tabla():
     conexion.close()
     print("Tabla 'usuarios' verificada o creada.")
     
-#ONLY FOR DEVOPS
-# def eliminar_tabla():
-#     conexion = sqlite3.connect("crud_database.db")
-#     cursor = conexion.cursor()
-#     cursor.execute("DROP TABLE IF EXISTS usuarios")e
-#     conexion.commit()
-#     conexion.close()
-#     print("Tabla 'usuarios' eliminada.")
-#     eliminar_tabla()
+# ONLY FOR DEVOPS
+def eliminar_tabla():
+    conexion = sqlite3.connect("crud_database.db")
+    cursor = conexion.cursor()
+    cursor.execute("DROP TABLE IF EXISTS usuarios")
+    conexion.commit()
+    conexion.close()
+    print("Tabla 'usuarios' eliminada.")
+    eliminar_tabla()
     
-# eliminar_tabla()
+eliminar_tabla()
 crear_tabla()
