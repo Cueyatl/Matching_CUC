@@ -1,10 +1,16 @@
+import 'package:flutter/material.dart';
+import 'package:matching/data/app_localizations.dart';
+import 'package:matching/widgets/_text_style_widget.dart';
+import 'package:matching/data/app_data.dart'; // for Styl
+import 'package:matching/data/data_base_helper.dart'; // for TypeValidation
+
 class InputField extends StatefulWidget {
   final TextEditingController controller;
   final ValueChanged<bool> onValidationChanged;
   final String translateTag;
   final String translateError;
   final String viewLblName;
-  final bool hidden; // Added parameter for password input
+  final bool hidden;
 
   const InputField({
     super.key,
@@ -13,7 +19,7 @@ class InputField extends StatefulWidget {
     required this.viewLblName,
     required this.translateTag,
     required this.translateError,
-    this.hidden = false, // Default to false for non-password fields
+    this.hidden=false
   });
 
   @override
@@ -23,8 +29,7 @@ class InputField extends StatefulWidget {
 class _InputFieldState extends State<InputField> {
   /// Local key for validating only this form.
   final _fieldKey = GlobalKey<FormState>();
-  bool _obscureText = true; // To toggle password visibility
-
+bool _obscureText = true; // T
   @override
   void initState() {
     super.initState();
@@ -57,7 +62,7 @@ class _InputFieldState extends State<InputField> {
           fontSize: 16.0, // Adjust font size
           fontWeight: FontWeight.normal, // Customize weight
         ),
-        obscureText: widget.hidden ? _obscureText : false, // Toggle password visibility
+         obscureText: widget.hidden ? _obscureText : false, // Toggle password visibility
         decoration: InputDecoration(
           fillColor: Styl.azulProfundo,
           contentPadding: const EdgeInsets.only(bottom: 0.0),
@@ -82,7 +87,7 @@ class _InputFieldState extends State<InputField> {
             fontSize: 12.0, // Adjust the font size
             fontWeight: FontWeight.bold, // Optional: make the text bold
           ),
-          suffixIcon: widget.hidden
+            suffixIcon: widget.hidden
               ? IconButton(
                   icon: Icon(
                     _obscureText ? Icons.visibility : Icons.visibility_off,
@@ -94,13 +99,14 @@ class _InputFieldState extends State<InputField> {
                     });
                   },
                 )
-              : null, // Add visibility toggle for password fields
+              : null, 
         ),
-        maxLength: 30,
+        
         validator: (value) {
           if (value == null || value.isEmpty) {
             return AppLocalizations.of(context)!.translate(widget.translateTag);
           }
+          // Regex for Names only accepted: vowels, letters, and spaces
           if (!RegExp(TypeValidation.valsForNames).hasMatch(value)) {
             return AppLocalizations.of(context)!
                 .translate(widget.translateError);

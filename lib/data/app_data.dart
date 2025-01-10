@@ -18,7 +18,6 @@ class OptionsData {
   final List<String> _gender = [
     "QuestionOptionsLblMan",
     "QuestionOptionsLblWoman",
-    "QuestionOptionsLblOther",
     "QuestionOptionsLblGenders",
   ];
 
@@ -148,21 +147,35 @@ class TypeValidation{
   static const String valsForNames=r"^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$";
 }
 class Styl {
+
+//   Colores
+// Fondo
+// #05182d: "Azul Profundo Nocturno"
+
+// Colores principales
+// #144daf: "Azul Real Vibrante"
+// #e1eaf2: "Cielo Nevado"
+
+// Colores secundarios
+// #e789ef: "Rosa Fantasía"
+// #f8ff15: "Amarillo Neón"
+// #f8680b: "Naranja Lava"
+// #aeb7bf: "Gris Nevado"
+
   static const double topP = 40.0;
   static const double bottomP = 10.0;
   
-  static const Color textColorShade =Color(0XFF2C3958);
-  static const Color languageToggleColor =Color(0XFFE75469);
-  static const Color languageToggleBG =Color(0XFFD6BD8E);
+  static const Color azulProfundo = Color(0XFF05182d);
+  static const Color azulReal = Color(0XFF144daf);
+  static const Color cieloNevado = Color(0xffe1eaf2);
+  static const Color grisNevado =Color(0XFFaeb7bf);
+  static const Color rosaFantasia = Color(0xFFe789ef);
+  static const Color naranjaLava =Color(0XFFf8680b);
+  static const Color amarilloNeon =Color(0XFFf8ff15);
 
-  static const Color textColorBase = Color.fromARGB(255, 21, 27, 42);
-  static const Color textColorPink = Color(0xFFF5588A);
-  static const Color textColorPinkAccent = Color(0xFFED0037);
-  static const Color bgBase = Color(0XFFF2F2F2);
-  static const Color bgShade = Color(0XFFF2F2F2);
-
-  static const double verticalPadding = 4.0;
-  static const double horizontalPadding = 24.0;
+  
+// ##################### NOOOOO
+  
   
   
 
@@ -175,6 +188,26 @@ class Styl {
   static const double pSizeMedium = 0.04;
   static const double pSizeLarge = 0.06;
   static const double pSizeXLarge = 0.08;
+  // ############## YESSS
+
+  static const double headerOneSize =35.0;
+  static const double headerTwoSize =20.0;
+  static const double textOneSize =18.0;
+
+  static const double letterSpacing =2.0;
+  static const double wordSpacing =1.0;
+
+  static const double sizeBoxSpace =24.0;
+  static const double buttonHeight =76.0;
+
+  static const double verticalPadding = 4.0;
+  static const double horizontalPadding = 24.0;
+  static const double horizontalPaddingSmall = 40.0;
+
+  //OPTION BUTTONS
+  static const double spaceBetweenButtons= 14;
+  
+
 
   static double respoLarge(BuildContext context) {
     return MediaQuery.of(context).size.width * Styl.heightSBoxMedium;

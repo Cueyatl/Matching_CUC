@@ -1,35 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:matching/data/app_data.dart';
-// Recommended to use fitbox, scale the text to fit its container.
-// Ensures the text scales down if it overflows its container. Useful for layouts where space is constrained.
-// Base Font Size:
-// You set a base size (24.0 in this case), and FittedBox will reduce it as needed
-// Or use the commented line in headerone's fontsize.
-
-// child: FittedBox(
-//   fit: BoxFit.scaleDown,
-//   child: Text(
-//     message,
-//     style: TextStyle(
-//       color: xfontColor,
-//       fontSize: 24, // Base font size (FittedBox scales it)
-//       fontWeight: FontWeight.w700,
-//       letterSpacing: 1.0,
-//       wordSpacing: 2.0,
-//     ),
-//     textAlign: xTextAlign,
-//   ),
-// ),
 
 
 class HeaderOne extends StatelessWidget {
   final double topPadding;
   final double bottomPadding;
   final String message;
-  final double xfontSize;
-  final double xletterSpacing;
-  final double xwordSpacing;
-  final Color xfontColor;
   final TextAlign xTextAlign;
 
   const HeaderOne({
@@ -37,10 +13,6 @@ class HeaderOne extends StatelessWidget {
     this.topPadding = 0.0, // default values
     this.bottomPadding = 0.0,
     this.message ="",
-    this.xfontSize =10.0,
-    this.xletterSpacing = 2.0,
-    this.xwordSpacing=5.0,
-    this.xfontColor=Styl.textColorBase,
     this.xTextAlign = TextAlign.start,
   });
 
@@ -50,13 +22,12 @@ class HeaderOne extends StatelessWidget {
       padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         child:  Text(
         message,
-        style: TextStyle(
-          color: xfontColor,
-          //  fontSize: MediaQuery.of(context).size.width * 0.06, // 6% of screen width
-          fontSize: Styl.p2(context),
+        style:const TextStyle(
+          color: Styl.cieloNevado,
+          fontSize: Styl.headerOneSize,
           fontWeight: FontWeight.w700,
-          letterSpacing: 1.0,
-          wordSpacing: 2.0,
+          letterSpacing: Styl.letterSpacing,
+          wordSpacing: Styl.wordSpacing,
   ),
   textAlign: xTextAlign,
 ),
@@ -66,23 +37,19 @@ class HeaderOne extends StatelessWidget {
 }
 
 
-class HeaderThree extends StatelessWidget {
+class HeaderTwo extends StatelessWidget {
   final double topPadding;
   final double bottomPadding;
   final String message;
-  final double xletterSpacing;
-  final double xwordSpacing;
-  final Color xfontColor;
+  
+  
   final TextAlign xTextAlign;
 
-  const HeaderThree({
+  const HeaderTwo({
     super.key,
     this.topPadding = 0.0, // default values
     this.bottomPadding = 0.0,
     this.message ="",
-    this.xletterSpacing = 2.0,
-    this.xwordSpacing=5.0,
-    this.xfontColor=Styl.textColorBase,
     this.xTextAlign = TextAlign.start,
   });
 
@@ -92,12 +59,12 @@ class HeaderThree extends StatelessWidget {
       padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         child:  Text(
         message,
-        style: TextStyle(
-          color: xfontColor,
-          fontSize: Styl.p3(context),
+        style:const TextStyle(
+          color: Styl.cieloNevado,
+          fontSize: Styl.headerTwoSize,
           fontWeight: FontWeight.w700,
-          letterSpacing: 1.0,
-          wordSpacing: 2.0,
+          letterSpacing: Styl.letterSpacing,
+          wordSpacing: Styl.letterSpacing,
   ),
   textAlign: xTextAlign,
 ),
@@ -122,7 +89,7 @@ class TextOne extends StatelessWidget {
     this.topPadding = 0.0, // default values
     this.bottomPadding = 0.0,
     this.message ="",
-    this.xfontColor=Styl.textColorShade,
+    this.xfontColor =Styl.grisNevado,
     this.xTextAlign = TextAlign.start,
     this.xfontWeight =FontWeight.normal,
   });
@@ -136,11 +103,10 @@ class TextOne extends StatelessWidget {
         style: TextStyle(
           fontWeight: xfontWeight,
           color: xfontColor,
-          fontSize: Styl.p3(context),
+          fontSize: Styl.textOneSize,
   ),
   textAlign: xTextAlign,
-),
-      
+),    
     );
   }
 }

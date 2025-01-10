@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../widgets/_selectable_option_widget.dart'; // Example import
+import 'package:matching/data/app_data.dart';
 // Import or define Styl.heightSBoxSmall accordingly
 
 class SelectableOptionListWidget extends StatefulWidget {
@@ -37,12 +38,14 @@ class _SelectableOptionListWidgetState
         final index = option['index'] as int;
         return Column(
           children: [
+            Padding(padding: EdgeInsets.symmetric(vertical: Styl.spaceBetweenButtons)),
             SelectableButton(
+
               label: option['label'].toString(),
               isSelected: widget.selectedButton == index,
               onPressed: () => _handleSelection(index),
             ),
-            const SizedBox(height: 8.0), // or Styl.heightSBoxSmall
+            // or Styl.heightSBoxSmall
           ],
         );
       }).toList(),

@@ -82,9 +82,13 @@ flutter:
     - images/placeholder_blank.png
     - images/deleteButton.png
     - images/addButton.png
+    - images/duotoneHugger.png
+    - images/huggerBanner.jpg
     - assets/languages/en.json
     - assets/languages/es.json
     - assets/dummyJson/dummy_data.json
+
+
 
 
 

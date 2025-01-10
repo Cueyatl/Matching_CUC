@@ -18,12 +18,42 @@ class WidgetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     // Define el mensaje predeterminado si no se proporciona.
     final buttonText = message.isNotEmpty
-        ? message 
+        ? message
         : AppLocalizations.of(context)!.translate('ButtonTextDefault');
 
     return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Styl.azulProfundo,
+        padding: const EdgeInsets.symmetric(
+          vertical: 12,
+          horizontal: 12,
+          ), // Remove padding for full gradient effect.
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12), // Rounded corners for the button.
+        ),
+      ),
       onPressed: isEnabled ? logicHere : null, // Activa o desactiva el botón.
-      child: Text(buttonText), // Mensaje del botón.
+      child: Ink(
+        decoration: BoxDecoration(
+          gradient:const LinearGradient(
+            colors: [Styl.rosaFantasia, Styl.azulReal], // Gradient colors.
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+          ),
+          borderRadius: BorderRadius.circular(12), // Match the shape of the button.
+        ),
+        child: Container(
+          alignment: Alignment.center, // Centers the text.
+          padding: const EdgeInsets.symmetric(vertical: 16), // Button height.
+          child: Text(
+            buttonText,
+            style: const TextStyle(
+              color: Styl.cieloNevado, // Text color.
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

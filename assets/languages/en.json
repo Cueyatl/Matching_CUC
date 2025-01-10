@@ -1,8 +1,8 @@
 {
   "English": "English",
   "Spanish": "Spanish",
-  "nameVal": "The name can't be empty",
-  "nameValSpecification": "Only letters and spaces allowed",
+
+  
   "hello": "Hello",
   "ButtonTextDefault": "Continue",
   "ButtonTextAcString": "Accept",
@@ -22,10 +22,25 @@
   "WelcomeViewRuleThreeText": "Respect others and treat them as you would like to be treated.",
   "WelcomeViewRuleFourTitle": "Take the initiative.",
   "WelcomeViewRuleFourText": "Always report inappropriate behavior.",
+
+
   "NameViewTitle": "What's your first name?",
-  "NameViewLblName": "Name",
   "NameViewAdviceOne": "This is how it will appear on your profile.",
   "NameViewAdviceTwo": "You won't be able to change it later.",
+  
+  "NameViewLblName": "Name",
+  "nameWarning": "The name can't be empty",
+  "nameWarningSpecification": "Only letters and spaces allowed",
+
+  "emailViewLbl":"email@example.com",
+  "emailWarning": "Email can't be empty",
+  "emailWarningSpecification": "It's not a valid email",
+  
+  "passwordViewLabel": "password",
+  "passwordWarning":"Password can´t be empty.",
+  "passwordWarn": "",
+
+
 
   "BirthdayViewTitle": "What's your age?",
   "BirthdayViewDescription": "This will enrich your profile",

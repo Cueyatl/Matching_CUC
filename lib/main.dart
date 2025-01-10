@@ -1,8 +1,10 @@
 // ignore_for_file: unused_import
 // Importaciones de Flutter
+import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:matching/data/central_state.dart';
+import 'package:matching/questionare/altura.dart';
 import 'package:provider/provider.dart';
 
 import 'package:matching/data/app_data.dart';
@@ -12,8 +14,9 @@ import 'package:matching/data/app_localizations.dart';
 import 'questionare/bienvenida.dart';
 import 'package:matching/questionare/nombre.dart';
 import 'package:matching/questionare/fecha_nacimiento.dart';
+import 'package:matching/questionare/carrera.dart';
+
 // import 'package:matching/questionare/altura.dart';
-// import 'package:matching/questionare/carrera.dart';
 import 'package:matching/questionare/genero.dart';
 // import 'package:matching/questionare/preferencia_altura.dart';
 // import 'package:matching/questionare/preferencia_carrera.dart';
@@ -35,12 +38,17 @@ import 'screens/login_page.dart';
 
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (_) => CentralStateModel(),
-      child:const MyApp(),
-    ),
-  );
+  WidgetsFlutterBinding.ensureInitialized();
+  SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp, // Lock to portrait mode
+  ]).then((_) {
+    runApp(
+      ChangeNotifierProvider(
+        create: (_) => CentralStateModel(),
+        child: const MyApp(),
+      ),
+    );
+  });
 }
 
 
@@ -80,9 +88,11 @@ class _MyAppState extends State<MyApp> {
       routes: {
       '/': (context) =>   LogInForm(onLocaleChange: setLocale),       // Home Page
       '/WelcomeQs': (context) => const  WelcomeQs(), // Calendar Page
-      '/name': (context) => const  NameQs(),
+      '/Name': (context) => const  NameQs(),
       '/BirthdayQs': (context) => const  BirthdayQs(),
       '/GenderQs': (context) => const  GenderQs(),
+      '/CarrerQs': (context) => const CareerQs(),
+      '/HeightQs': (context) => const HeigthQs(),
       // '/SearchGenderQs': (context) => const  SearchGenderQs(),
       // '/SearchHeightQs': (context) => const  SearchHeightQs(),
       // '/SearchCareerQs': (context) => const SearchCareerQs(),

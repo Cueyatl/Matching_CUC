@@ -68,7 +68,7 @@ class AddPhotosQsState extends State<AddPhotosQs> {
                           });
                         }
                       },
-                      child: HeaderThree(message:
+                      child: HeaderTwo(message:
                       AppLocalizations.of(context)!
                   .translate('Gallery'),),
                     ),
@@ -83,7 +83,7 @@ class AddPhotosQsState extends State<AddPhotosQs> {
                           });
                         }
                       },
-                      child: HeaderThree(message: 
+                      child: HeaderTwo(message: 
                       AppLocalizations.of(context)!
                   .translate('Camera'),
                       ),
@@ -126,10 +126,10 @@ class AddPhotosQsState extends State<AddPhotosQs> {
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Styl.textColorShade;
+    const Color textColor = Styl.grisNevado;
 
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
       ),

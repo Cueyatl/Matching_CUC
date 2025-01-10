@@ -119,7 +119,7 @@ mainAxisAlignment: MainAxisAlignment.spaceEvenly,
        const SizedBox(
               height: 30.0,
             ),
-            NameInputField(
+            InputField(
               controller: _nameController,
               onValidationChanged: (bool isValid) {
                 setState(() => _isButtonEnabled = isValid);

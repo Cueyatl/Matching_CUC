@@ -78,7 +78,7 @@ void setSelectedValue(String? value) {
 
     final List<String> choices =AppLocalizations.of(context)!.translateList('matchTags') ;
     return Scaffold(
-        backgroundColor: Styl.bgBase,
+        backgroundColor: Styl.azulProfundo,
         appBar: const WidgetCloseAppBar(
           goBack: true,
         ),

@@ -63,12 +63,12 @@ class SearchGenderQsState extends State<SearchGenderQs> {
       {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblOther'), 'index': 3},
       {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblGenders'), 'index': 4},
     ];
-    const Color textColor = Styl.textColorShade;
+    const Color textColor = Styl.grisNevado;
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPage: GenderQs(),
+        // lastPage: GenderQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(

@@ -71,7 +71,7 @@ class SearchCareerQsState extends State<SearchCareerQs> {
   {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblCareers'), 'index': 6,},
 ];
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(goBack: true,),
       body: Padding(
         padding: const EdgeInsets.symmetric(

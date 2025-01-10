@@ -9,7 +9,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // xfontColor: Styl.textColorBase
+        // xfontColor: Styl.cieloNevado
         title: const Text('Home Screen'), ),
       body: Center(
         child: ElevatedButton(

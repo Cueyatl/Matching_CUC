@@ -9,7 +9,7 @@ import 'package:matching/data/app_data.dart';
 
 //My widgets
 import 'package:matching/widgets/_button_widget.dart';
-import 'package:matching/widgets/_name_question.dart';
+import 'package:matching/widgets/_input_field.dart';
 import 'package:matching/widgets/_single_choice_widget.dart';
 import 'package:matching/widgets/_multiple_choice_widget.dart';
 
@@ -72,6 +72,11 @@ class _DevsOneState extends State<DevsOne> {
 
         careerQuestion.selectedPreferencesInput= _selectedGenderPreference;
 
+  void onButtonSelectedGender(int buttonIndex) {
+    setState(() {
+      selectedButtonGender = buttonIndex;
+    });
+  }
 
 // ############# multiple
   void onButtonSelectedCareer(int index) {
@@ -80,11 +85,8 @@ class _DevsOneState extends State<DevsOne> {
         careerQuestion.onMultipleButtonSelected();
       });
     }
-  void onButtonSelectedGender(int buttonIndex) {
-    setState(() {
-      selectedButtonGender = buttonIndex;
-    });
-  }
+
+    
 
     return Scaffold(
       body: SingleChildScrollView(
@@ -99,7 +101,10 @@ class _DevsOneState extends State<DevsOne> {
               height: 30.0,
             ),
             
-            NameInputField(
+            InputField(
+              viewLblName:"NameViewLblName" ,
+              translateError: "nameWarningSpecification",
+              translateTag: "nameWarning",
               controller: _nameController,
               onValidationChanged: (bool isValid) {
                 setState(() => _isButtonEnabled = isValid);

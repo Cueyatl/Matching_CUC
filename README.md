@@ -139,31 +139,79 @@ Fix translations and add button for english in user menu and log in menu.
 ✅DONE view Cards (leave for later, too complicated)
 
 ✅DONE Add button for eng/span in main.
+**01/06**
 
-🗿🗿🗿🗿ACTIVE🗿🗿🗿🗿🗿
+✅DONE Connect crud to database
+
+✅DONE Modidify crud for each type, (some are in arrays)
+
+✅DONE add necessary params for profile creation in central_state
+
+✅DONE modify python tabla for accomodation of required params
+
+✅DONE modify methos in base.py for accomadtion of required params
+
+✅DONE Centralized logic for creation of multiple and single options for questionare
+
+✅DONE Simplify logic for options of questionare by gathering methods inside a class.
+
+✅DONE Create a two page steps for POST data questionare into db.
+
+✅DONE GABO Add validation to height 
+
+✅DONE Eliminate strings from app_data
+
+✅DONE modify methos for optionsMapGenerator in app_data.dart
+
+✅DONE Method for translating "MatchTags" for tagsView
 
 
+
+### 🗿🗿🗿🗿ACTIVE🗿🗿🗿🗿🗿
 🗿ACTIVE MAKE PROFILE DEMO FOR BACKEND TESTING TOO.
-
-
-⚠️BUG/TEST add validation to dates according to LegalDate,add logic for "common sense" ages.
-
-🗿ACTIVE Add validation to height
 
 🗿ACTIVE Add dissable buttons for options if no option selected.
 
 🗿ACTIVE view Profile (IRENE)
 
+Add Slidder from (GABO)
 
-ACTIVE NOW Add validation to gender option: "Others"
+
+
+⚠️BUG/TEST add validation to dates according to LegalDate,add logic for "common sense" ages.
+
+
+
+
+STOPPED FOR ASYNC from DESIGN NOW Add validation to gender option: "Others"
 
 TODO
+
+Get method from cards
+Put method from userView
+
+Arquitecture diagram for Documento de Especificaciones técnicas.
+
+Percentage add on in cards view.
+
+Match case? How to handle that shit!!?!??
+
+##Questions?
+ * How to handle db traffic?
+ * What happens when all cards have passed by?
+ * algos for showing up cards
+ 
+
+
 Edit button logic for data validation, at least select some.
 
+Add zodiac sign data to app_data, en, es, pybackend and files from data folder/address.
 
-View page for  físicas: YA estatura,YA  edad,ya orientación, complexión, cabello.
+STOPPED FOR ASYNC from DESIGN  do for  físicas: YA estatura,YA  edad,ya orientación, complexión, cabello.
 
-Create a preference page for this, maybe genres?:
+STOPPED FOR ASYNC from DESIGN Create a preference page for this, maybe genres?:
+
+
 
 Tags in here:
      - Personalidad: apertura a la experiencia, inclinación política, espiritualidad, hábitos, etc.
@@ -248,14 +296,23 @@ Colores como blanco y negro son usados para títulos, textos y márgenes. Se rec
 * Ordenamiento Quicksort
 ### Requisitos indispensables de perfil
 * id
-* nombre
+correo, contraseña
+nombre, 
 * edad
 * genero
 * carrera
-* preferencia carrera
+
+DESDE AQUI:
 * altura
+* complexion
+* personalidad
+* preferencia carrera
 * preferencia altura
 * preferenia de genero
+* preferencia complexion
+* preferencia personalidad
+* preferencia color de piel 
+* etiquetas
 
 ### Otros requisitos de perfil
 * etiquetas

@@ -2,8 +2,8 @@
 {
   "English": "Inglés",
   "Spanish": "Español",
-  "nameVal": "El nombre no puede estar vacío",
-  "nameValSpecification": "Solo se permiten letras y espacios",
+  "nameWarning": "El nombre no puede estar vacío",
+  "nameWarningSpecification": "Solo se permiten letras y espacios",
   "hello": "hola",  
   "ButtonTextDefault": "Continuar",
   "ButtonTextAcString": "Acepto",

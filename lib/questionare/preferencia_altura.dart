@@ -55,10 +55,10 @@ class SearchHeightQsState extends State<SearchHeightQs> {
     
 
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPage: HeigthQs(),
+        // lastPage: HeigthQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
