@@ -139,31 +139,79 @@ Fix translations and add button for english in user menu and log in menu.
 ✅DONE view Cards (leave for later, too complicated)
 
 ✅DONE Add button for eng/span in main.
+**01/06**
 
-🗿🗿🗿🗿ACTIVE🗿🗿🗿🗿🗿
+✅DONE Connect crud to database
+
+✅DONE Modidify crud for each type, (some are in arrays)
+
+✅DONE add necessary params for profile creation in central_state
+
+✅DONE modify python tabla for accomodation of required params
+
+✅DONE modify methos in base.py for accomadtion of required params
+
+✅DONE Centralized logic for creation of multiple and single options for questionare
+
+✅DONE Simplify logic for options of questionare by gathering methods inside a class.
+
+✅DONE Create a two page steps for POST data questionare into db.
+
+✅DONE GABO Add validation to height 
+
+✅DONE Eliminate strings from app_data
+
+✅DONE modify methos for optionsMapGenerator in app_data.dart
+
+✅DONE Method for translating "MatchTags" for tagsView
 
 
+
+### 🗿🗿🗿🗿ACTIVE🗿🗿🗿🗿🗿
 🗿ACTIVE MAKE PROFILE DEMO FOR BACKEND TESTING TOO.
-
-
-⚠️BUG/TEST add validation to dates according to LegalDate,add logic for "common sense" ages.
-
-🗿ACTIVE Add validation to height
 
 🗿ACTIVE Add dissable buttons for options if no option selected.
 
 🗿ACTIVE view Profile (IRENE)
 
+Add Slidder from (GABO)
 
-ACTIVE NOW Add validation to gender option: "Others"
+
+
+⚠️BUG/TEST add validation to dates according to LegalDate,add logic for "common sense" ages.
+
+
+
+
+STOPPED FOR ASYNC from DESIGN NOW Add validation to gender option: "Others"
 
 TODO
+
+Get method from cards
+Put method from userView
+
+Arquitecture diagram for Documento de Especificaciones técnicas.
+
+Percentage add on in cards view.
+
+Match case? How to handle that shit!!?!??
+
+##Questions?
+ * How to handle db traffic?
+ * What happens when all cards have passed by?
+ * algos for showing up cards
+ 
+
+
 Edit button logic for data validation, at least select some.
 
+Add zodiac sign data to app_data, en, es, pybackend and files from data folder/address.
 
-View page for  físicas: YA estatura,YA  edad,ya orientación, complexión, cabello.
+STOPPED FOR ASYNC from DESIGN  do for  físicas: YA estatura,YA  edad,ya orientación, complexión, cabello.
 
-Create a preference page for this, maybe genres?:
+STOPPED FOR ASYNC from DESIGN Create a preference page for this, maybe genres?:
+
+
 
 Tags in here:
      - Personalidad: apertura a la experiencia, inclinación política, espiritualidad, hábitos, etc.
@@ -246,6 +294,29 @@ Colores como blanco y negro son usados para títulos, textos y márgenes. Se rec
 * Busqueda binaria
 * Ordenamiento merge
 * Ordenamiento Quicksort
+### Requisitos indispensables de perfil
+* id
+correo, contraseña
+nombre, 
+* edad
+* genero
+* carrera
+
+DESDE AQUI:
+* altura
+* complexion
+* personalidad
+* preferencia carrera
+* preferencia altura
+* preferenia de genero
+* preferencia complexion
+* preferencia personalidad
+* preferencia color de piel 
+* etiquetas
+
+### Otros requisitos de perfil
+* etiquetas
+* fotos
 
 ###   filtro de busqueda
   
@@ -253,7 +324,7 @@ Colores como blanco y negro son usados para títulos, textos y márgenes. Se rec
 * Edad 
 * Carreras
 * Altura
-* Preferencia sexual
+* Preferencia de genero
 
   
 ***
@@ -398,3 +469,17 @@ Sin embargo, hay mujeres para quienes la altura no es un factor crucial, y prior
 
 Hombres:
 Los hombres suelen ser más flexibles en cuanto a la altura de sus parejas, aunque muchos prefieren mujeres más bajas o de su misma estatura.
+
+
+File Behavior:
+
+If crud_database.db already exists, SQLite will open and use that file.
+If it does not exist, SQLite will create a new file in the specified (or default) location.
+Access:
+
+All CRUD operations in base.py and busqueda.py interact with this crud_database.db file.
+The file is local to the environment running these scripts, and its data is persistent between script runs as long as the file remains in place.
+Implications:
+
+Since the database is local, it cannot be accessed remotely unless additional networking or sharing configurations are implemented.
+This local setup is ideal for development or small-scale applications. For larger or distributed systems, a centralized database server is usually preferred.

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:logger/logger.dart';
+
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
@@ -20,6 +22,9 @@ class SearchGenderQs extends StatefulWidget {
 }
 
 class SearchGenderQsState extends State<SearchGenderQs> {
+  //Debug info, warning and error logs 
+  var logger = Logger();
+    
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
   int? selectedButton;
   Set<int> selectedButtons = {};
@@ -44,7 +49,7 @@ class SearchGenderQsState extends State<SearchGenderQs> {
       }
 
 
-          print(selectedButtons);
+          logger.i(selectedButtons);
       
     });
   }
@@ -58,12 +63,12 @@ class SearchGenderQsState extends State<SearchGenderQs> {
       {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblOther'), 'index': 3},
       {'label': AppLocalizations.of(context)!.translate('QuestionOptionsLblGenders'), 'index': 4},
     ];
-    const Color textColor = Styl.textColorShade;
+    const Color textColor = Styl.grisNevado;
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPage: GenderQs(),
+        // lastPage: GenderQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -97,10 +102,10 @@ class SearchGenderQsState extends State<SearchGenderQs> {
             ),       
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
                 Navigator.push(
                   context,

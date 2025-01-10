@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
+
+
 import 'package:matching/questionare/fotos.dart';
 import 'package:matching/widgets/_button_widget.dart';
 import 'package:matching/widgets/_gradient_widget.dart';
 import 'package:matching/widgets/_text_style_widget.dart';
 import 'package:matching/widgets/_close_appbar_widget.dart';
-import 'package:matching/questionare/fecha_nacimiento.dart';
 import 'package:matching/questionare/bienvenida.dart';
+import 'package:matching/questionare/fecha_nacimiento.dart';
 import 'package:choice/choice.dart';
 import 'package:matching/data/app_data.dart';
 import 'package:matching/data/app_localizations.dart';
@@ -22,7 +29,8 @@ class PersonalityTags extends StatefulWidget {
 }
 
 class PersonalityTagsState extends State<PersonalityTags> {
-  
+  //Debug info, warning and error logs 
+  var logger = Logger();
 
   String? selectedValue; // A nullable string to hold the last selected value
 Set<String> selectedValues = {}; // A set to manage multiple selections
@@ -37,17 +45,40 @@ void setSelectedValue(String? value) {
     } else {
       selectedValues.add(value); // Add the value if it's not selected
     }
-    print(selectedValues);
+    logger.t(selectedValue);
+    
   }
   );
 }
 
+    //TESTS NEEDED.
+    Future<void> _sendUserData() async {
+    final user = Provider.of<CentralStateModel>(context, listen: false);
+      const url = 'http://192.168.1.66:5000/create_user';
+      final response = await http.post(
+        Uri.parse(url),
+        headers: {'Content-Type': 'application/json'},
+        body: jsonEncode(user.toJson()),
+      );
+
+      if (response.statusCode == 200) {
+        logger.i('User saved successfully: ${response.body}');
+        if (mounted){
+        Navigator.pushNamed(context, '/SwipeCardsClass');
+        }
+      } else {
+        logger.e('Failed to save user: ${response.body}', error: 'Send user data failure');
+      }
+    } 
+
 
   @override
   Widget build(BuildContext context) {
-    const List<String> choices = TagsView.matchTags;
+
+
+    final List<String> choices =AppLocalizations.of(context)!.translateList('matchTags') ;
     return Scaffold(
-        backgroundColor: Styl.bgBase,
+        backgroundColor: Styl.azulProfundo,
         appBar: const WidgetCloseAppBar(
           goBack: true,
         ),
@@ -96,12 +127,14 @@ void setSelectedValue(String? value) {
 
                 // const Spacer(),
                 WidgetButton(
-                  topPadding: Styl.respoHeightMedium(context),
-                  bottomPadding: Styl.respoHeightSmall(context),
-                  acceptOrContinue: false,
-                  isGradient: true,
-                  logicHere: () {
-                  Navigator.pushNamed(context, '/SwipeCardsClass');
+                  isEnabled: true,  
+                  // topPadding: Styl.respoHeightMedium(context),
+                  // bottomPadding: Styl.respoHeightSmall(context),
+                  // acceptOrContinue: false,
+                  // isGradient: true,
+                  logicHere: () async {
+                  //Also this sends us directly to cards.
+                  await _sendUserData();
               },
                 )
               ],

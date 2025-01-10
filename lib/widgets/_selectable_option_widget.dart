@@ -18,23 +18,27 @@ class SelectableButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return 
+    
     SizedBox(
+      height: Styl.buttonHeight,
        width: buttonWidth ?? double.infinity, // Full width by default
       child:ElevatedButton(
       onPressed: onPressed,
       
       style: ElevatedButton.styleFrom(
         
-        backgroundColor: isSelected ? const Color(0xFFED0037) : const Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: isSelected ? Styl.azulReal : Styl.cieloNevado,
+        
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
+              borderRadius: BorderRadius.circular(50), // Large radius for pill shape
+            ),
       ),
       child: Text(
         label,
         style: TextStyle(
-          color:isSelected? Colors.white: Styl.textColorBase,
+          color:isSelected? Colors.white: Styl.azulProfundo,
           fontWeight: FontWeight.bold,
+          fontSize: Styl.textOneSize
         ),
       ),
     ),

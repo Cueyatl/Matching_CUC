@@ -55,10 +55,10 @@ class SearchHeightQsState extends State<SearchHeightQs> {
     
 
     return Scaffold(
-      backgroundColor: Styl.bgBase,
+      backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPage: HeigthQs(),
+        // lastPage: HeigthQs(),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(
@@ -92,10 +92,10 @@ class SearchHeightQsState extends State<SearchHeightQs> {
             ),  
             const Spacer(),
             WidgetButton(
-              topPadding: Styl.respoHeightMedium(context),
-              bottomPadding: Styl.respoHeightSmall(context),
-              acceptOrContinue: false,
-              isGradient: true,
+              // topPadding: Styl.respoHeightMedium(context),
+              // bottomPadding: Styl.respoHeightSmall(context),
+              // acceptOrContinue: false,
+              // isGradient: true,
               logicHere: () {
                 Navigator.push(
                   context,

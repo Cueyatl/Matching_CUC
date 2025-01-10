@@ -1,13 +1,18 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:logger/logger.dart';
+
 import 'package:swipe_cards/swipe_cards.dart';
 
 void main() {
-  runApp(SwipeCardsClass());
+  runApp(const SwipeCardsClass());
 }
 
 class SwipeCardsClass extends StatelessWidget {
+  const SwipeCardsClass({super.key});
+
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -16,7 +21,7 @@ class SwipeCardsClass extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Swipe Cards Demo'),
+      home: const MyHomePage(title: 'Swipe Cards Demo'),
       debugShowCheckedModeBanner: false,
     );
   }
@@ -31,16 +36,17 @@ class Content {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, this.title}) : super(key: key);
+  const MyHomePage({super.key, this.title});
 
   final String? title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<SwipeItem> _swipeItems = <SwipeItem>[];
+  final List<SwipeItem> _swipeItems = <SwipeItem>[];
   MatchEngine? _matchEngine;
   List<Map<String, dynamic>> profiles = [];
 
@@ -64,19 +70,19 @@ class _MyHomePageState extends State<MyHomePage> {
           likeAction: () {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text("Liked ${profile['Nombre']}"),
-              duration: Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 500),
             ));
           },
           nopeAction: () {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text("Nope ${profile['Nombre']}"),
-              duration: Duration(milliseconds: 500),
+              duration:const Duration(milliseconds: 500),
             ));
           },
           superlikeAction: () {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
               content: Text("Superliked ${profile['Nombre']}"),
-              duration: Duration(milliseconds: 500),
+              duration:const Duration(milliseconds: 500),
             ));
           },
         ));
@@ -87,12 +93,14 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
+    //Debug info, warning and error logs 
+    var logger = Logger();
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title!),
       ),
       body: profiles.isEmpty
-          ? Center(child: CircularProgressIndicator())
+          ?const Center(child: CircularProgressIndicator())
           : Stack(children: [
               SwipeCards(
                 matchEngine: _matchEngine!,
@@ -100,11 +108,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   final content = _swipeItems[index].content as Content;
                   return Container(
                     alignment: Alignment.center,
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16.0),
-                      boxShadow: [
+                      boxShadow:const [
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 10.0,
@@ -118,32 +126,32 @@ class _MyHomePageState extends State<MyHomePage> {
                         content.image != null
                             ? Image.asset(content.image!, height: 150)
                             : Container(),
-                        SizedBox(height: 20),
+                        const SizedBox(height: 20),
                         Text(
                           content.text!,
-                          style: TextStyle(
+                          style: const TextStyle(
                             fontSize: 24,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        SizedBox(height: 10),
+                       const SizedBox(height: 10),
                         Text(
                           content.description!,
                           textAlign: TextAlign.center,
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style:const TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                       ],
                     ),
                   );
                 },
                 onStackFinished: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                     content: Text("No more profiles!"),
                     duration: Duration(milliseconds: 500),
                   ));
                 },
                 itemChanged: (SwipeItem item, int index) {
-                  print("item: ${item.content.text}, index: $index");
+                  logger.i("item: ${item.content.text}, index: $index");
                 },
                 leftSwipeAllowed: true,
                 rightSwipeAllowed: true,
