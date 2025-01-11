@@ -48,7 +48,7 @@ class GenderQsState extends State<GenderQs> {
       backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        // lastPage: BirthdayQs(),
+        lastPageDirection: "/BirthdayQs",
       ),
       body:
         ResponsiveLayout(
@@ -75,7 +75,7 @@ class GenderQsState extends State<GenderQs> {
         ),
     ],),
       bottomNavigationBar: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),  
         child: SizedBox(
           width: double.infinity,
           height: Styl.buttonHeight,
@@ -85,7 +85,7 @@ class GenderQsState extends State<GenderQs> {
               final user =
                   Provider.of<CentralStateModel>(context, listen: false);
               user.setGender(genderQuestion.setSingleData);
-              Navigator.pushNamed(context, '/CarrerQs');
+              Navigator.pushNamed(context, '/CareerQs');
             },
           ),
         ),

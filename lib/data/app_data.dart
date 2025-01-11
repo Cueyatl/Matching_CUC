@@ -21,6 +21,13 @@ class OptionsData {
     "QuestionOptionsLblGenders",
   ];
 
+  
+  
+  final List<String> _gendePlural = [
+    "QuestionOptionsLblManPlural",
+    "QuestionOptionsLblWomanPlural",
+    "QuestionOptionsLblOtherPlural",
+  ];
   final List<String> _height = [
     "HeightViewLblHighQ",
     "HeightViewLblMidQ",
@@ -39,18 +46,83 @@ class OptionsData {
   "ColorDePielOcho",
   ];
   final List<String> _bodyType = [
-    "ComplexionUno",
-    "ComplexionDos",
-    "ComplexionTres",
+    "ComplextionOne",
+    "ComplextionTwo",
+    "ComplextionThree",
+    "Todos",
   ];
 
   final List<String> _personalityType=[
-    "PersonalidadUno",
-    "PersonalidadDos",
+   "PersonalityOne",
+  "PersonalityTwo",
+  "Todos",
   ];
+
+  final List<String> _tagsMatch=[
+
+"TagLoveDiscoveringNewThings",
+"TagAlwaysLearning",
+"TagExploringIdeas",
+"TagLoveNewAndDifferent",
+"TagOpenToExperiences",
+"TagAdaptEasily",
+"TagSocialCauses",
+"TagProgressiveMindset",
+"TagFreedomBelief",
+"TagCreativeThinking",
+"TagProudOfCountry",
+"TagFairWorldBelief",
+"TagSpiritualityImportance",
+"TagPracticeMeditation",
+"TagSpiritConnection",
+"TagSearchForPurpose",
+"TagTrustIntuition",
+"TagTranscendenceBelief",
+"TagHealthyHabits",
+"TagBookReadingPassion",
+"TagLoveOrganizing",
+"TagTimeManagement",
+"TagReadingLifestyle",
+"TagSelfDiscipline",
+"TagMindBodyCare",
+"TagCookingLove",
+"TagTravelHobby",
+"TagCoffeeEnjoyment",
+"TagPhotographyPassion",
+"TagExpressiveWriting",
+"TagMusicPassion",
+"TagMusicDiversity",
+"TagMusicCultureSeeking",
+"TagArtLove",
+"TagFreeTimeSinging",
+"TagInstrumentPlaying",
+"TagMusicComposing",
+"TagSoccerFan",
+"TagBasketballFan",
+"TagTennisFan",
+"TagSwimmingLove",
+"TagHikingPassion",
+"TagCyclingSport",
+"TagGymRegularly",
+"TagEnjoyPainting",
+"TagSculptureAdmiration",
+"TagArtisticPhotography",
+"TagGraphicDesign",
+"TagContemporaryArt",
+"TagDancingLove",
+"TagTheaterPassion",
+"TagClassicalMusicRelaxation",
+"TagDigitalArtInterest",
+
+  ];
+
+
+
+  
   List<String> get careerOptions => _career;
 
   List<String> get genderOptions => _gender;
+  List<String> get genderOptionsplural => _gendePlural;
   
   List<String> get heightOptions => _height;
 
@@ -59,6 +131,10 @@ class OptionsData {
   List<String> get bodyTypeOptions => _bodyType;
 
   List<String> get personalityTypeOptions => _personalityType;
+  
+  List<String> get matchTags => _tagsMatch;
+
+
   
 }
 
@@ -147,20 +223,6 @@ class TypeValidation{
   static const String valsForNames=r"^[a-zA-ZáéíóúÁÉÍÓÚüÜñÑ\s]+$";
 }
 class Styl {
-
-//   Colores
-// Fondo
-// #05182d: "Azul Profundo Nocturno"
-
-// Colores principales
-// #144daf: "Azul Real Vibrante"
-// #e1eaf2: "Cielo Nevado"
-
-// Colores secundarios
-// #e789ef: "Rosa Fantasía"
-// #f8ff15: "Amarillo Neón"
-// #f8680b: "Naranja Lava"
-// #aeb7bf: "Gris Nevado"
 
   static const double topP = 40.0;
   static const double bottomP = 10.0;

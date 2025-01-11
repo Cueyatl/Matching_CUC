@@ -11,39 +11,39 @@ import 'package:matching/widgets/_single_choice_widget.dart';
 import 'package:matching/widgets/_responsive_layout_widget.dart';
 
 void main() {
-  runApp(const CareerQs());
+  runApp(const PersonalityQs());
 }
 
-class CareerQs extends StatefulWidget {
-  const CareerQs({super.key});
+class PersonalityQs extends StatefulWidget {
+  const PersonalityQs({super.key});
   @override
-  CareerQsState createState() => CareerQsState();
+  PersonalityQsState createState() => PersonalityQsState();
 }
 
-class CareerQsState extends State<CareerQs> {
-  int? selectedButtonCareer;
+class PersonalityQsState extends State<PersonalityQs> {
+  int? selectedButtonPersonality;
 
   @override
   Widget build(BuildContext context) {
     
     OptionsData optionsData = OptionsData();
 
-    OptionsHelper careerQuestion = OptionsHelper(
+    OptionsHelper personalityQuestion = OptionsHelper(
         context: context,
-        optionMap: optionsData.careerOptions,
+        optionMap: optionsData.personalityTypeOptions,
         isPreference: false,
-        buttonIndex: selectedButtonCareer);
+        buttonIndex: selectedButtonPersonality);
 
-    void onButtonSelectedCareer(int buttonIndex) {
+    void onButtonSelectedPersonality(int buttonIndex) {
       setState(() {
-        selectedButtonCareer = buttonIndex;
+        selectedButtonPersonality = buttonIndex;
       });
     }
     return Scaffold(
       backgroundColor: Styl.azulProfundo,
       appBar: const WidgetCloseAppBar(
         goBack: true,
-        lastPageDirection: "/GenderQs",
+        lastPageDirection: "/BodyTypeQs",
       ),
       body: ResponsiveLayout(
         verticalPadding: Styl.verticalPadding,
@@ -52,16 +52,15 @@ class CareerQsState extends State<CareerQs> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              HeaderOne(message:AppLocalizations.of(context)!.translate('CareerViewTitle'),),
-              TextOne(message: AppLocalizations.of(context)!.translate('CareerViewDescription'),
+              HeaderOne(message:AppLocalizations.of(context)!.translate('PersonalityTitle'),),
+              TextOne(message: AppLocalizations.of(context)!.translate('PersonalityDescr'),
                 bottomPadding: Styl.sizeBoxSpace,),
-              
               Padding(padding:const EdgeInsets.symmetric(horizontal:  Styl.horizontalPaddingSmall),
                 child: 
               SelectableOptionListWidget(
-                  options: careerQuestion.optionMapGenerated, //List<Map(string, dynamic)
-                  selectedButton: selectedButtonCareer, //int?
-                  onButtonSelected: onButtonSelectedCareer, //dynamic function setstate
+                  options: personalityQuestion.optionMapGenerated, //List<Map(string, dynamic)
+                  selectedButton: selectedButtonPersonality, //int?
+                  onButtonSelected: onButtonSelectedPersonality, //dynamic function setstate
                 ),
               ),
               
@@ -79,8 +78,8 @@ class CareerQsState extends State<CareerQs> {
             logicHere: () {
               final user =
                   Provider.of<CentralStateModel>(context, listen: false);
-              user.setCareer(careerQuestion.setSingleData);
-              Navigator.pushNamed(context, '/HeightQs');
+              user.setPersonalityType(personalityQuestion.setSingleData);
+              Navigator.pushNamed(context, '/SearchCareerQs');
             },  
           ),
         ),

@@ -160,8 +160,7 @@ class LogInFormState extends State<LogInForm> {
                 // bottomPadding: Styl.respoHeightSmall(context),
                 message: (AppLocalizations.of(context)!
                     .translate('CredentialsViewLgIn')),
-                // isGradient: true,
-                // logger.iMessage: "Log in pushed",
+                logicHere: (){ Navigator.pushNamed(context, '/SwipeCardsClass');}
               ),
               SizedBox(height: Styl.respoHeightMedium(context)),
               Row(
@@ -174,7 +173,7 @@ class LogInFormState extends State<LogInForm> {
                             .translate('CredentialsViewNoCuenta')),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, '/GenderQs');
+                        Navigator.pushNamed(context, '/WelcomeQs');
                         logger.i('Navigate to welcoming of Sign in form');
                       },
                       child: Text(

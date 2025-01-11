@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:matching/widgets/_button_widget.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+
 import 'package:matching/widgets/_text_style_widget.dart';
+
 import 'package:matching/widgets/_close_appbar_widget.dart';
+import 'package:matching/widgets/_responsive_layout_widget.dart';
+
 import 'package:matching/questionare/preferencia_genero.dart';
 import 'package:matching/questionare/preferencia_altura.dart';
 import 'package:matching/data/app_data.dart';
@@ -20,7 +26,7 @@ class HeigthQs extends StatefulWidget {
 
 class _HeigthQsState extends State<HeigthQs> {
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  double _currentHeight = 160; // Valor inicial de la altura
+  double _currentHeight = 120; // Valor inicial de la altura
 
   @override
   Widget build(BuildContext context) {
@@ -30,14 +36,16 @@ class _HeigthQsState extends State<HeigthQs> {
         backgroundColor: Styl.azulProfundo,
         appBar: const WidgetCloseAppBar(
           goBack: true,
-          lastPageDirection: 'GenderQs',
+          lastPageDirection: '/CareerQs',
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            vertical: Styl.verticalPadding,
-            horizontal: Styl.horizontalPadding,
-          ),
-          child: Column(
+        body:
+
+          ResponsiveLayout(
+        verticalPadding: Styl.verticalPadding,
+        horizontalPadding: Styl.horizontalPadding,
+        children: [
+          
+          Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HeaderOne(message:AppLocalizations.of(context)!.translate('HeightViewTitle'),),
@@ -63,9 +71,9 @@ class _HeigthQsState extends State<HeigthQs> {
                     ),
                     Slider(
                       value: _currentHeight,
-                      min: 100,
-                      max: 240,
-                      divisions: 140, // Number of integer steps
+                      min: 120,
+                      max: 190,
+                      divisions: 70, // Number of integer steps
                       label:
                           '${_currentHeight.round()} cm', // Convert to integer without decimals
                       onChanged: (double value) {
@@ -80,7 +88,25 @@ class _HeigthQsState extends State<HeigthQs> {
               ),
             ],
           ),
+        ],
         ),
+        bottomNavigationBar: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: SizedBox(
+          width: double.infinity,
+          height: Styl.buttonHeight,
+          child: WidgetButton(
+            isEnabled: true,
+            logicHere: () {
+              int setHeight=_currentHeight.round();
+              final user =
+                  Provider.of<CentralStateModel>(context, listen: false);
+              user.setHeight(setHeight);
+              Navigator.pushNamed(context, '/BodyTypeQs');
+            },
+          ),
+        ),
+      ),
       ),
     );
   }

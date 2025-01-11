@@ -84,6 +84,7 @@ flutter:
     - images/addButton.png
     - images/duotoneHugger.png
     - images/huggerBanner.jpg
+    - images/bodyTypes.png
     - assets/languages/en.json
     - assets/languages/es.json
     - assets/dummyJson/dummy_data.json

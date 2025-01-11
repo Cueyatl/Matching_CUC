@@ -301,8 +301,6 @@ nombre,
 * edad
 * genero
 * carrera
-
-DESDE AQUI:
 * altura
 * complexion
 * personalidad
@@ -310,9 +308,35 @@ DESDE AQUI:
 * preferencia altura
 * preferenia de genero
 * preferencia complexion
+DESDE AQUI:
 * preferencia personalidad
+
+*INGORAR
+* color de piel
 * preferencia color de piel 
 * etiquetas
+
+  '/': (context) =>   LogInForm(onLocaleChange: setLocale),       // Home Page
+      '/WelcomeQs': (context) => const  WelcomeQs(), // Calendar Page
+      '/Name': (context) => const  NameQs(),
+      '/BirthdayQs': (context) => const  BirthdayQs(),
+      '/GenderQs': (context) => const  GenderQs(),
+      '/CarrerQs': (context) => const CareerQs(),
+      '/HeightQs': (context) => const HeigthQs(),
+      '/BodyTypeQs': (context) => const BodyTypeQs(),
+      '/PersonalityQs': (context) => const PersonalityQs(),
+
+      '/SearchCareerQs': (context) => const SearchCareerQs(),
+      '/SearchHeightQs': (context) => const  SearchHeightQs(),
+      '/SearchGenderQs': (context) => const  SearchGenderQs(),
+      '/SearchBodyTypeQs': (context) => const  SearchBodyTypeQs(),
+      '/SearchPersonalityTypeQs': (context) => const  SearchPersonalityQs(),
+      
+
+      // '/AddPhotosQs': (context) => const AddPhotosQs(),
+      '/PersonalityTags': (context) => const PersonalityTags(),
+
+      // '/SwipeCardsClass': (context) =>  SwipeCardsClass(),
 
 ### Otros requisitos de perfil
 * etiquetas
