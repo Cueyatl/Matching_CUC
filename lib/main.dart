@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:matching/data/central_state.dart';
-import 'package:matching/questionare/altura.dart';
+
 import 'package:provider/provider.dart';
 
 import 'package:matching/data/app_data.dart';
@@ -14,19 +14,26 @@ import 'package:matching/data/app_localizations.dart';
 import 'questionare/bienvenida.dart';
 import 'package:matching/questionare/nombre.dart';
 import 'package:matching/questionare/fecha_nacimiento.dart';
-import 'package:matching/questionare/carrera.dart';
-
-// import 'package:matching/questionare/altura.dart';
 import 'package:matching/questionare/genero.dart';
-// import 'package:matching/questionare/preferencia_altura.dart';
-// import 'package:matching/questionare/preferencia_carrera.dart';
-// import 'package:matching/questionare/preferencia_genero.dart';
+import 'package:matching/questionare/carrera.dart';
+import 'package:matching/questionare/complexion.dart';
+import 'package:matching/questionare/personality.dart';
+import 'package:matching/questionare/altura.dart';
+import 'package:matching/questionare/preferencia_carrera.dart';
+import 'package:matching/questionare/preferencia_genero.dart';
+import 'package:matching/questionare/preferencia_complexion.dart';
+import 'package:matching/questionare/preferencia_personalidad.dart';
+
+
+
+import 'package:matching/questionare/preferencia_altura.dart';
 // import 'package:matching/questionare/fotos.dart';
 import 'package:matching/questionare/etiquetas.dart';
 
 // Importaciones Pantallas
 // import 'screens/_flasher.dart';
-// import 'screens/swipe_cards.dart';
+import 'screens/swipe_cards.dart';
+import 'screens/profile_page.dart';
 
 //THIS IS FOR DEVOPS ONLY
 import 'package:matching/screens/dev_view.dart';
@@ -86,26 +93,30 @@ class _MyAppState extends State<MyApp> {
       // home:LogInForm(onLocaleChange: setLocale),
 
       routes: {
-      '/': (context) =>   LogInForm(onLocaleChange: setLocale),       // Home Page
-      '/WelcomeQs': (context) => const  WelcomeQs(), // Calendar Page
-      '/Name': (context) => const  NameQs(),
-      '/BirthdayQs': (context) => const  BirthdayQs(),
-      '/GenderQs': (context) => const  GenderQs(),
-      '/CarrerQs': (context) => const CareerQs(),
-      '/HeightQs': (context) => const HeigthQs(),
-      // '/SearchGenderQs': (context) => const  SearchGenderQs(),
-      // '/SearchHeightQs': (context) => const  SearchHeightQs(),
-      // '/SearchCareerQs': (context) => const SearchCareerQs(),
-      // '/AddPhotosQs': (context) => const AddPhotosQs(),
-      '/PersonalityTags': (context) => const PersonalityTags(),
+        '/': (context) =>   LogInForm(onLocaleChange: setLocale),       // Home Page
+        '/WelcomeQs': (context) => const  WelcomeQs(), // Calendar Page
+        '/Name': (context) => const  NameQs(),
+        '/BirthdayQs': (context) => const  BirthdayQs(),
+        '/GenderQs': (context) => const  GenderQs(),
+        '/CareerQs': (context) => const CareerQs(),
+        '/HeightQs': (context) => const HeigthQs(),
+        '/BodyTypeQs': (context) => const BodyTypeQs(),
+        '/PersonalityQs': (context) => const PersonalityQs(),
 
-      // // '/PersonalityTags': (context) => const PersonalityTags(),
-      // '/SwipeCardsClass': (context) =>  SwipeCardsClass(),
+        '/SearchCareerQs': (context) => const SearchCareerQs(),
+        '/SearchHeightQs': (context) => const  SearchHeightQs(),
+        '/SearchGenderQs': (context) => const  SearchGenderQs(),
+        '/SearchBodyTypeQs': (context) => const  SearchBodyTypeQs(),
+        '/SearchPersonalityTypeQs': (context) => const  SearchPersonalityQs(),
+        
+        // '/AddPhotosQs': (context) => const AddPhotosQs(),
 
-      '/DevsOne': (context) => const DevsOne(),
+        '/PersonalityTags': (context) => const PersonalityTags(),
 
+        '/SwipeCardsClass': (context) =>  const SwipeCardsClass(),
+        '/ProfileView': (context) =>  const ProfileView(),
 
-
+        '/DevsOne': (context) => const DevsOne(),
       },
 
     );

@@ -2,8 +2,24 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:logger/logger.dart';
-
+import 'package:matching/data/app_localizations.dart';
+import 'package:matching/widgets/_responsive_layout_widget.dart';
+import 'package:matching/widgets/_text_style_widget.dart';
+import 'package:matching/data/app_data.dart';
 import 'package:swipe_cards/swipe_cards.dart';
+import 'package:matching/widgets/_button_widget.dart';
+
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+
+
+
+import 'package:matching/widgets/_close_appbar_widget.dart';
+
+
+import 'package:matching/questionare/preferencia_genero.dart';
+import 'package:matching/questionare/preferencia_altura.dart';
+
 
 void main() {
   runApp(const SwipeCardsClass());
@@ -12,7 +28,6 @@ void main() {
 class SwipeCardsClass extends StatelessWidget {
   const SwipeCardsClass({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -30,9 +45,8 @@ class SwipeCardsClass extends StatelessWidget {
 class Content {
   final String? text;
   final String? description;
-  final String? image;
 
-  Content({this.text, this.description, this.image});
+  Content({this.text, this.description});
 }
 
 class MyHomePage extends StatefulWidget {
@@ -57,32 +71,47 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> loadProfiles() async {
-    String data = await rootBundle.loadString('assets/dummyJson/dummy_data.json');
+    String data =
+        await rootBundle.loadString('assets/dummyJson/dummy_data.json');
     setState(() {
       profiles = List<Map<String, dynamic>>.from(json.decode(data));
       for (var profile in profiles) {
         _swipeItems.add(SwipeItem(
-          content: Content(
-            text: profile['Nombre'],
-            description: "${profile['Observaciones']} (${profile['Altura']})",
-            image: profile['image'] ?? 'assets/default_placeholder.png',
-          ),
+          content: 
+            Column(children: [
+
+            HeaderTwo(message: profile['nombre'],),
+            TextOne(message: "${profile['carrera']} - ${profile['altura']} cm",
+              bottomPadding: Styl.sizeBoxSpace,
+            ),
+            TextOne(message: "${profile['carrera']} - ${profile['altura']} cm",
+              bottomPadding: Styl.sizeBoxSpace,
+            )
+
+            ],),
+
+            
+            // text: profile['nombre'],
+            // description: "${profile['carrera']} - ${profile['altura']} cm",
+          
+
+
           likeAction: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text("Liked ${profile['Nombre']}"),
-              duration: const Duration(milliseconds: 500),
-            ));
+            // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            //   content: Text("Liked ${profile['nombre']}"),
+            //   duration: const Duration(milliseconds: 500),
+            // ));
           },
           nopeAction: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text("Nope ${profile['Nombre']}"),
-              duration:const Duration(milliseconds: 500),
-            ));
+            // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            //   content: Text("Nope ${profile['nombre']}"),
+            //   duration: const Duration(milliseconds: 500),
+            // ));
           },
           superlikeAction: () {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text("Superliked ${profile['Nombre']}"),
-              duration:const Duration(milliseconds: 500),
+              content: Text("Superliked ${profile['nombre']}"),
+              duration: const Duration(milliseconds: 500),
             ));
           },
         ));
@@ -93,15 +122,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //Debug info, warning and error logs 
-    var logger = Logger();
+    //Debug info, warning and error logs
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title!),
-      ),
-      body: profiles.isEmpty
-          ?const Center(child: CircularProgressIndicator())
-          : Stack(children: [
+      backgroundColor: Styl.azulProfundo,
+
+    
+body: SafeArea(child: 
+profiles.isEmpty
+    ? const Center(child: CircularProgressIndicator())
+    : Padding(
+        padding: const EdgeInsets.symmetric(vertical: Styl.verticalPadding*2, horizontal: Styl.horizontalPadding), // Adjust the padding as needed
+        child: Column(
+          children: [
+            Expanded(
+              child: Stack(
+                children: [
               SwipeCards(
                 matchEngine: _matchEngine!,
                 itemBuilder: (BuildContext context, int index) {
@@ -112,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(16.0),
-                      boxShadow:const [
+                      boxShadow: const [
                         BoxShadow(
                           color: Colors.black12,
                           blurRadius: 10.0,
@@ -123,9 +159,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        content.image != null
-                            ? Image.asset(content.image!, height: 150)
-                            : Container(),
                         const SizedBox(height: 20),
                         Text(
                           content.text!,
@@ -134,11 +167,12 @@ class _MyHomePageState extends State<MyHomePage> {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                       const SizedBox(height: 10),
+                        const SizedBox(height: 10),
                         Text(
                           content.description!,
                           textAlign: TextAlign.center,
-                          style:const TextStyle(fontSize: 16, color: Colors.grey),
+                          style:
+                              const TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                       ],
                     ),
@@ -151,14 +185,97 @@ class _MyHomePageState extends State<MyHomePage> {
                   ));
                 },
                 itemChanged: (SwipeItem item, int index) {
-                  logger.i("item: ${item.content.text}, index: $index");
+                  // logger.i("item: ${item.content.text}, index: $index");
                 },
                 leftSwipeAllowed: true,
                 rightSwipeAllowed: true,
-                upSwipeAllowed: true,
+                upSwipeAllowed: false,
                 fillSpace: true,
               ),
-            ]),
+            ],
+              ),
+            ),
+          ],
+        ),
+      ),
+
+),
+
+      bottomNavigationBar: Container(
+        color: Styl.azulProfundo, // Add a background color if needed
+        padding: const EdgeInsets.symmetric(vertical: Styl.spaceBetweenButtons),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: <Widget>[
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+              icon: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    colors: [
+                      Styl.naranjaLava,
+                      Styl.rosaFantasia
+                    ], // Define your gradient colors
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ).createShader(bounds);
+                },
+                child: const Icon(
+                  Icons.favorite,
+                  size: Styl.headerOneSize, // Your custom size
+                  color: Styl.cieloNevado, // Required to make gradient visible
+                ),
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/');
+              },
+              icon: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    colors: [
+                      Styl.naranjaLava,
+                      Styl.rosaFantasia
+                    ], // Define your gradient colors
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ).createShader(bounds);
+                },
+                child: const Icon(
+                  Icons.chat,
+                  size: Styl.headerOneSize, // Your custom size
+                  color: Colors.white, // Required to make gradient visible
+                ),
+              ),
+            ),
+            IconButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/BodyTypeQs');
+              },
+              icon: ShaderMask(
+                shaderCallback: (Rect bounds) {
+                  return const LinearGradient(
+                    colors: [
+                      Styl.naranjaLava,
+                      Styl.rosaFantasia
+                    ], // Define your gradient colors
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                  ).createShader(bounds);
+                },
+                child: const Icon(
+                  Icons.person,
+                  size: Styl.headerOneSize, // Your custom size
+                  color: Styl.cieloNevado, // Required to make gradient visible
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

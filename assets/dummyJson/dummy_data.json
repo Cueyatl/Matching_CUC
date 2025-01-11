@@ -1,218 +1,251 @@
 
 [
-  {
-    "Nombre": "Karen Alejandra Flores Ozuna",
-    "Fecha de Nacimiento": "21/11/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.40 - 1.50",
-    "pref_gender": "Más alt@s que yo, De mi altura",
-    "image":"images/imagePlaceholder.png"
-  },
-  {
-    "Nombre": "Iván",
-    "Fecha de Nacimiento": "25/08/2005",
-    "Genero": "Hombre",
-    "pref_heigth": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Alturas mas bajas que la mia",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Estefania Neftali Arellano Pantoja",
-    "Fecha de Nacimiento": "19/11/2004",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Claudia Arellano",
-    "Fecha de Nacimiento": "06/03/1979",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Abril Mezquite Pérez",
-    "Fecha de Nacimiento": "27/06/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Karol María López Martínez",
-    "Fecha de Nacimiento": "02/04/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Miriam Citlali Murillo Gómez",
-    "Fecha de Nacimiento": "25/05/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Lourdes González Ximena",
-    "Fecha de Nacimiento": "26/04/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Evelin Hernández Cenobio",
-    "Fecha de Nacimiento": "10/12/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Emily",
-    "Fecha de Nacimiento": "14/02/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Jesus Alejandro Acevedo",
-    "Fecha de Nacimiento": "23/03/2005",
-    "Genero": "Hombre",
-    "pref_heigth": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "pref_gender": "Cualquier las alturas",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Andrea",
-    "Fecha de Nacimiento": "24/05/1993",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  }, {
-    "Nombre": "Karen Alejandra Flores Ozuna",
-    "Fecha de Nacimiento": "21/11/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.40 - 1.50",
-    "pref_gender": "Más alt@s que yo, De mi altura",
-    "image":"images/imagePlaceholder.png"
-  },
-  {
-    "Nombre": "Iván",
-    "Fecha de Nacimiento": "25/08/2005",
-    "Genero": "Hombre",
-    "pref_heigth": "Mujer",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Alturas mas bajas que la mia",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Estefania Neftali Arellano Pantoja",
-    "Fecha de Nacimiento": "19/11/2004",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Claudia Arellano",
-    "Fecha de Nacimiento": "06/03/1979",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Abril Mezquite Pérez",
-    "Fecha de Nacimiento": "27/06/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Karol María López Martínez",
-    "Fecha de Nacimiento": "02/04/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Miriam Citlali Murillo Gómez",
-    "Fecha de Nacimiento": "25/05/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Lourdes González Ximena",
-    "Fecha de Nacimiento": "26/04/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Evelin Hernández Cenobio",
-    "Fecha de Nacimiento": "10/12/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Emily",
-    "Fecha de Nacimiento": "14/02/2005",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Jesus Alejandro Acevedo",
-    "Fecha de Nacimiento": "23/03/2005",
-    "Genero": "Hombre",
-    "pref_heigth": "Mujer",
-    "Altura": "1.60 - 1.70",
-    "pref_gender": "Cualquier las alturas",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  },
-  {
-    "Nombre": "Andrea",
-    "Fecha de Nacimiento": "24/05/1993",
-    "Genero": "Mujer",
-    "pref_heigth": "Hombre",
-    "Altura": "1.50 - 1.60",
-    "pref_gender": "Más alt@s que yo",
-    "image":"https://plus.unsplash.com/premium_photo-1664474619075-644dd191935f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aW1hZ2V8ZW58MHx8MHx8fDA%3D"
-  }
+
+  
+    {
+      "nombre": "Luis Perez",
+      "edad": 22,
+      "genero": "hombre",
+      "altura": 178,
+      "carrera": "QuestionOptionsLblAdmin",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Ana Gomez",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 162,
+      "carrera": "QuestionOptionsLblCont",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Carlos Ruiz",
+      "edad": 23,
+      "genero": "hombre",
+      "altura": 185,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Mariana Lopez",
+      "edad": 21,
+      "genero": "mujer",
+      "altura": 170,
+      "carrera": "QuestionOptionsLblInd",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Fernando Torres",
+      "edad": 20,
+      "genero": "hombre",
+      "altura": 180,
+      "carrera": "QuestionOptionsLblSis",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Sofia Ramirez",
+      "edad": 22,
+      "genero": "mujer",
+      "altura": 158,
+      "carrera": "QuestionOptionsLblAdmin",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Jorge Hernandez",
+      "edad": 21,
+      "genero": "hombre",
+      "altura": 175,
+      "carrera": "QuestionOptionsLblCont",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Laura Vargas",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 165,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Pedro Morales",
+      "edad": 23,
+      "genero": "hombre",
+      "altura": 182,
+      "carrera": "QuestionOptionsLblInd",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Andrea Castillo",
+      "carrera": "QuestionOptionsLblSis",
+      "altura": 160,
+      "edad": 20,
+      "genero": "mujer",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Diego Salinas",
+      "edad": 22,
+      "genero": "hombre",
+      "altura": 179,
+      "carrera": "QuestionOptionsLblAdmin",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Valeria Perez",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 155,
+      "carrera": "QuestionOptionsLblCont",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Ricardo Ortega",
+      "edad": 21,
+      "genero": "hombre",
+      "altura": 172,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Natalia Flores",
+      "edad": 23,
+      "genero": "mujer",
+      "altura": 168,
+      "carrera": "QuestionOptionsLblInd",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Hector Medina",
+      "edad": 20,
+      "genero": "hombre",
+      "altura": 185,
+      "carrera": "QuestionOptionsLblSis",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Karen Alejandra Flores Ozuna",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 145,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Iván",
+      "edad": 20,
+      "genero": "hombre",
+      "altura": 158,
+      "carrera": "QuestionOptionsLblSis",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Estefania Neftali Arellano Pantoja",
+      "edad": 21,
+      "genero": "mujer",
+      "altura": 152,
+      "carrera": "QuestionOptionsLblCont",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Claudia Arellano",
+      "edad": 22,
+      "genero": "mujer",
+      "altura": 160,
+      "carrera": "QuestionOptionsLblAdmin",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Abril Mezquite Pérez",
+      "edad": 20,
+      "genero": "mujer",
+      "altura": 159,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Karol María López Martínez",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 155,
+      "carrera": "QuestionOptionsLblInd",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Miriam Citlali Murillo Gómez",
+      "edad": 21,
+      "genero": "mujer",
+      "altura": 157,
+      "carrera": "QuestionOptionsLblSis",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Lourdes González Ximena",
+      "edad": 20,
+      "genero": "mujer",
+      "altura": 160,
+      "carrera": "QuestionOptionsLblCont",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Evelin Hernández Cenobio",
+      "edad": 19,
+      "genero": "mujer",
+      "altura": 154,
+      "carrera": "QuestionOptionsLblAdmin",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Emily",
+      "edad": 21,
+      "genero": "mujer",
+      "altura": 156,
+      "carrera": "QuestionOptionsLblBio",
+      "complexion": "ComplextionOne",
+      "personalidad": "PersonalityTwo"
+    },
+    {
+      "nombre": "Jesus Alejandro Acevedo",
+      "edad": 22,
+      "genero": "hombre",
+      "altura": 170,
+      "carrera": "QuestionOptionsLblInd",
+      "complexion": "ComplextionTwo",
+      "personalidad": "PersonalityOne"
+    },
+    {
+      "nombre": "Andrea",
+      "edad": 23,
+      "genero": "mujer",
+      "altura": 161,
+      "carrera": "QuestionOptionsLblSis",
+      "complexion": "ComplextionThree",
+      "personalidad": "PersonalityTwo"
+    }
+  
+  
+
 ]

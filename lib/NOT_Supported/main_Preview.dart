@@ -1,113 +1,157 @@
-class InputField extends StatefulWidget {
-  final TextEditingController controller;
-  final ValueChanged<bool> onValidationChanged;
-  final String translateTag;
-  final String translateError;
-  final String viewLblName;
-  final bool hidden; // Added parameter for password input
+import 'package:flutter/material.dart';
+import 'package:matching/data/central_state.dart';
+import 'package:provider/provider.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
 
-  const InputField({
-    super.key,
-    required this.controller,
-    required this.onValidationChanged,
-    required this.viewLblName,
-    required this.translateTag,
-    required this.translateError,
-    this.hidden = false, // Default to false for non-password fields
-  });
+import 'package:matching/questionare/fotos.dart';
+import 'package:matching/widgets/_button_widget.dart';
+import 'package:matching/widgets/_gradient_widget.dart';
+import 'package:matching/widgets/_text_style_widget.dart';
+import 'package:matching/widgets/_close_appbar_widget.dart';
+import 'package:matching/questionare/bienvenida.dart';
+import 'package:matching/questionare/fecha_nacimiento.dart';
+import 'package:choice/choice.dart';
+import 'package:matching/data/app_data.dart';
+import 'package:matching/data/app_localizations.dart';
 
-  @override
-  State<InputField> createState() => _InputFieldState();
+void main() {
+  runApp(const PersonalityTags());
 }
 
-class _InputFieldState extends State<InputField> {
-  /// Local key for validating only this form.
-  final _fieldKey = GlobalKey<FormState>();
-  bool _obscureText = true; // To toggle password visibility
-
+class PersonalityTags extends StatefulWidget {
+  const PersonalityTags({super.key});
   @override
-  void initState() {
-    super.initState();
-    widget.controller.addListener(_validateField);
+  // State<PersonalityTags>
+  PersonalityTagsState createState() => PersonalityTagsState();
+}
+
+class PersonalityTagsState extends State<PersonalityTags> {
+  //Debug info, warning and error logs
+  var logger = Logger();
+
+  String? selectedValue; // A nullable string to hold the last selected value
+  Set<String> selectedValues = {}; // A set to manage multiple selections
+
+  void setSelectedValue(String? value) {
+    if (value == null) return; // Ensure the value is not null
+
+    setState(() {
+      selectedValue =
+          value; // Update the last selected value (if needed elsewhere)
+      if (selectedValues.contains(value)) {
+        selectedValues
+            .remove(value); // Remove the value if it's already selected
+      } else {
+        selectedValues.add(value); // Add the value if it's not selected
+      }
+      logger.t(selectedValue);
+    });
   }
 
-  @override
-  void dispose() {
-    widget.controller.removeListener(_validateField);
-    super.dispose();
-  }
+  //TESTS NEEDED.
+  Future<void> _sendUserData() async {
+    final user = Provider.of<CentralStateModel>(context, listen: false);
+    const url = 'http://192.168.1.66:5000/create_user';
+    final response = await http.post(
+      Uri.parse(url),
+      headers: {'Content-Type': 'application/json'},
+      body: jsonEncode(user.toJson()),
+    );
 
-  /// Called whenever the controller’s text changes.
-  void _validateField() {
-    bool isValid = _fieldKey.currentState?.validate() ?? false;
-    widget.onValidationChanged(isValid);
+    if (response.statusCode == 200) {
+      logger.i('User saved successfully: ${response.body}');
+      if (mounted) {
+        Navigator.pushNamed(context, '/SwipeCardsClass');
+      }
+    } else {
+      logger.e('Failed to save user: ${response.body}',
+          error: 'Send user data failure');
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    const Color textColor = Styl.grisNevado;
-    const Color textBaseColor = Styl.cieloNevado;
-
-    return Form(
-      key: _fieldKey,
-      child: TextFormField(
-        controller: widget.controller,
-        style: const TextStyle(
-          color: Styl.cieloNevado, // Change input text color
-          fontSize: 16.0, // Adjust font size
-          fontWeight: FontWeight.normal, // Customize weight
+    final List<String> choices =
+        AppLocalizations.of(context)!.translateList('matchTags');
+    return Scaffold(
+        backgroundColor: Styl.azulProfundo,
+        appBar: const WidgetCloseAppBar(
+          goBack: true,
         ),
-        obscureText: widget.hidden ? _obscureText : false, // Toggle password visibility
-        decoration: InputDecoration(
-          fillColor: Styl.azulProfundo,
-          contentPadding: const EdgeInsets.only(bottom: 0.0),
-          enabledBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: textColor),
-          ),
-          focusedBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: textBaseColor),
-          ),
-          errorBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Styl.naranjaLava),
-          ),
-          focusedErrorBorder: const UnderlineInputBorder(
-            borderSide: BorderSide(color: Styl.naranjaLava),
-          ),
-          focusColor: textBaseColor,
-          labelText:
-              AppLocalizations.of(context)!.translate(widget.viewLblName),
-          labelStyle: const TextStyle(color: textColor),
-          errorStyle: const TextStyle(
-            color: Styl.cieloNevado, // Change the error message color
-            fontSize: 12.0, // Adjust the font size
-            fontWeight: FontWeight.bold, // Optional: make the text bold
-          ),
-          suffixIcon: widget.hidden
-              ? IconButton(
-                  icon: Icon(
-                    _obscureText ? Icons.visibility : Icons.visibility_off,
-                    color: textColor,
+        body: Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: Styl.verticalPadding,
+              horizontal: Styl.horizontalPadding,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                HeaderOne(
+                  message:
+                      AppLocalizations.of(context)!.translate('TagsViewTitle'),
+                ),
+                SizedBox(height: Styl.respoHeightSmall(context)),
+                TextOne(
+                  message: AppLocalizations.of(context)!
+                      .translate('TagsViewDescription'),
+                ),
+                SizedBox(height: Styl.respoHeightMedium(context)),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Choice<String>.inline(
+                        multiple: true,
+                        clearable: true,
+                        value: ChoiceSingle.value(selectedValue),
+                        onChanged: ChoiceSingle.onChanged(setSelectedValue),
+                        itemCount: choices.length,
+                        itemBuilder: (state, i) {
+                          return ChoiceChip(
+                            selectedColor: Styl.rosaFantasia,
+                            backgroundColor: Styl.cieloNevado,
+                            selected: selectedValues.contains(
+                                choices[i]), // Check if the choice is selected
+                            onSelected: (isSelected) {
+                              setSelectedValue(choices[i]);
+                            },
+                            label: Text(
+                              choices[i],
+                            ),
+                            labelStyle: const TextStyle(
+                              fontSize: 12.0,
+                            ),
+                          );
+                        },
+                        listBuilder: ChoiceList.createWrapped(
+                          spacing: 2,
+                          runSpacing: 2,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 0,
+                            vertical: 40,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                  onPressed: () {
-                    setState(() {
-                      _obscureText = !_obscureText;
-                    });
+                ),
+
+                // const Spacer(),
+                WidgetButton(
+                  isEnabled: true,
+                  // topPadding: Styl.respoHeightMedium(context),
+                  // bottomPadding: Styl.respoHeightSmall(context),
+                  // acceptOrContinue: false,
+                  // isGradient: true,
+                  logicHere: () async {
+                    //Also this sends us directly to cards.
+                    await _sendUserData();
+                    
                   },
                 )
-              : null, // Add visibility toggle for password fields
-        ),
-        maxLength: 30,
-        validator: (value) {
-          if (value == null || value.isEmpty) {
-            return AppLocalizations.of(context)!.translate(widget.translateTag);
-          }
-          if (!RegExp(TypeValidation.valsForNames).hasMatch(value)) {
-            return AppLocalizations.of(context)!
-                .translate(widget.translateError);
-          }
-          return null;
-        },
-      ),
-    );
+              ],
+            )));
   }
 }
