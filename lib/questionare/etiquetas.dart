@@ -29,7 +29,7 @@ class PersonalityTagsState extends State<PersonalityTags> {
   // Track which button is selected (1 for Button 1, 2 for Button 2, null if none)
   Future<void> _sendUserData() async {
     final user = Provider.of<CentralStateModel>(context, listen: false);
-    const url = 'http://192.168.1.66:5000/create_user';
+    const url = 'http://192.168.1.xx:5000/create_user';
     final response = await http.post(
       Uri.parse(url),
       headers: {'Content-Type': 'application/json'},
